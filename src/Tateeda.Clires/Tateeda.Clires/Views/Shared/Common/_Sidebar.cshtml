@@ -1,0 +1,26 @@
+﻿<div style="margin-left: -290px; margin-top: 0px; display: none;" id="sidebar">
+
+    <br />
+    <div class="btn-group pull-right">
+        <input type="button" class="btn-warning" id="stopSitebar" value="Stop Sliding" />
+        <input type="button" class="btn-warning" id="startSitebar" value="Start Sliding" />
+    </div>
+    <br />
+    <br />
+    <div class="content">
+        <div class="title pull-right">
+
+            <p>
+                <i class="ui-icon-help"></i>
+                <label class="white-text">
+                    Help for:  @ViewBag.Title
+                </label>
+            </p>
+            @{
+                string helpView = string.IsNullOrWhiteSpace(ViewBag.HelpPage) ? "_HelpGeneral" : ViewBag.HelpPage;
+            }
+            @Html.Partial("Help/" + helpView)
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@using System.Web.Optimization
+@{
+	ViewBag.Title = "Schedule Calendar";
+	Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+}
+@Styles.Render("~/Content/calendar/css",
+"~/Content/calendar/jquery-ui-timepicker-addon.css")
+@section scripts
+{
+	@Scripts.Render("~/bundles/calendar", "~/Scripts/app/calendar/visitScheduler.js")
+}
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div id='calendar'></div>
+
+		<div class="modal hide fade in" style="display: none;" id="studycontainer-modal">
+			<div class="modal-header">
+				<a class="close" data-dismiss="modal" aria-hidden="true">&nbsp;X&nbsp;</a>
+				<div class="title">Schedule a visit</div>
+			</div>
+			<div class="modal-body model-border">
+				<!-- ko with: cal.vm.appointment() -->
+				@Html.Partial("_Calendar")
+				<!-- /ko -->
+			</div>
+		</div>
+	</div>
+</div>
+
+

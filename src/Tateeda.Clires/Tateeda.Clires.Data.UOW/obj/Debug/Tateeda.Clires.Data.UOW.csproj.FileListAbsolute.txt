@@ -1,0 +1,12 @@
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\bin\Debug\Tateeda.Clires.Data.UOW.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\bin\Debug\Tateeda.Clires.Data.UOW.pdb
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\bin\Debug\Elmah.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\bin\Debug\EntityFramework.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\bin\Debug\NLog.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\bin\Debug\Tateeda.Clires.Core.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\bin\Debug\Tateeda.Clires.Core.pdb
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\bin\Debug\EntityFramework.xml
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\bin\Debug\NLog.xml
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\obj\Debug\Tateeda.Clires.Data.UOW.csprojResolveAssemblyReference.cache
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\obj\Debug\Tateeda.Clires.Data.UOW.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires\Tateeda.Clires.Data.UOW\obj\Debug\Tateeda.Clires.Data.UOW.pdb

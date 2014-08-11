@@ -1,0 +1,95 @@
+﻿@using System.Web.Optimization
+@using Tateeda.Clires.Utility
+@model Tateeda.Clires.Areas.Admin.Model.Forms.FormViewModel
+@{
+    ViewBag.Title = "Study Administration";
+    this.Layout = string.IsNullOrWhiteSpace(this.ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : this.ViewBag.Layout;
+    var enumHelper = new EnumerationHelper();
+}
+@section scripts{
+    @Scripts.Render("~/Scripts/app/Admin/StudyForms/formbuilder.js")
+    <script type="text/javascript">
+        fb.vm.defaultStudyId = Number('@(ViewBag.DefaultStudyId)');
+        fb.vm.loaddefaultStudy();
+    </script>
+}
+<div class="container-fluid">
+    <div class="site-title">Study Forms Management</div>
+
+    <div class="container">
+        <div class="modal hide fade in" style="display: none; top: 40%;" id="form-modal">
+            <div class="modal-header">
+                <a class="close" data-dismiss="modal" style="width: 10px; height: 10px;" aria-hidden="true">&nbsp;X&nbsp;</a>
+                <div class="title">Appointment Study Form</div>
+            </div>
+            <div class="modal-body model-border">
+                @using (@Ajax.BeginForm("CreateNewForm", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "fb.vm.showFormSuccess", OnFailure = "fb.vm.showFormError" }, new { @class = "form-horizontal", id = "frmnewform" }))
+                {                
+                    <!-- ko template: {name: 'frmBuilderTemplate', data: fb.vm.form() } -->
+                    <!-- /ko -->                
+                }
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row-fluid">
+        <div class="span2">
+            <a href="#form-modal" data-toggle="modal" class="btn btn-primary" id="modellink">New Form</a>
+        </div>
+        <div class="span6">
+            @Html.DropDownList("StudyId", enumHelper.GetStudies(true),
+                new Dictionary<string, object>
+					{
+						{ "class", "input-large" }, 
+						{ "placeholder", "Select Study" }, 
+						{ "data-bind", "value: fb.vm.defaultStudyId" }
+					})
+        </div>
+        <div class="span3">
+            <div class='loadingIndicator'><i class="icon-refresh">&nbsp;</i> Loading...</div>
+        </div>
+    </div>
+
+    <div class='cliresGrid studyformgrid'>
+        <div data-bind='simpleGrid: fb.vm.gridViewModel'></div>
+    </div>
+
+    <section draggable="true">
+        <br />
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span8">
+                    <label class="title">Import:</label>
+                </div>
+                <div class="span4">
+                    <label class="title">Download:</label>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span8">
+                    @using (@Html.BeginForm("ImportFormData", "StudyForms", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+                    {			
+                        <input type="file" name="dataFile" class="input-prepend btn" />
+                        <button type="submit" class="btn btn-primary input-prepend">Upload Forms from file(csv)</button>			
+                    }
+                </div>
+                <div class="span4">
+                    <a href="~/Templates/FormQuestionAnswerImport-Short.csv" target="_blank">Data Import Template (csv)</a>
+                    <br />
+                    @Html.ActionLink("Download Current forms (csv)", "ExportFormsData")
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<script type="text/html" id="frmBuilderTemplate">
+    <div data-bind="if: $data !== undefined">
+        <div class="container-fluid">
+            @Html.Partial("_Form", @Model)
+        </div>
+    </div>
+</script>

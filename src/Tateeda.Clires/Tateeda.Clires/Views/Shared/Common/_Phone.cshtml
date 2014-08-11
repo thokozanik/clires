@@ -1,0 +1,32 @@
+﻿@using Tateeda.Clires.Utility
+@model Tateeda.Clires.Areas.Utilities.Models.PhoneViewModel
+@{
+    var enumHelper = new EnumerationHelper();
+}
+
+<div>
+    <label class="control-label" for="Telephone">Telephone:<br /></label>
+    <div class="controls">
+        
+        @Html.TextBoxFor(m => m.Telephone, new Dictionary<string, object>
+            {
+                { "class", "input-large" }, 
+                { "type", "phone"},
+                { "placeholder", "(555) 888-9999" }, 
+                { "template", "(\\d\\d\\d) \\d\\d\\d-\\d\\d\\d\\d"},
+                { "data-bind", "value: Contact.Phones()[0].Telephone" }
+            })
+        
+    </div>
+    <br/>
+    <label class="control-label" for="PhoneTypeId">Type:</label>
+    <div class="controls">
+        @Html.DropDownListFor(m => m.PhoneTypeId, enumHelper.GetPhoneTypes(),
+            new Dictionary<string, object>
+                {
+                    { "class", "input-large" }, 
+                    { "data-bind", "value: Contact.Phones()[0].PhoneTypeId" }
+                })
+    </div>
+</div>
+

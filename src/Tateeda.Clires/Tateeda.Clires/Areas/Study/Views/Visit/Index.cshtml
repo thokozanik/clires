@@ -1,0 +1,70 @@
+﻿@using System.Web.Optimization
+@using Tateeda.Clires.Core.Data.EF
+@model Tateeda.Clires.Areas.Subject.Model.ISubjectVisitViewModel
+
+@{
+    ViewBag.Title = @Model.Visit.Name;
+    Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+
+    var reqForms = @Model.RequiredForms;
+    var inprogForms = @Model.InProgressForms;
+    var complForms = @Model.CompletedForms;
+    var subjDrugs = @Model.Medications.FirstOrDefault() ?? new SubjectDrug();
+    var subject = @Model.Subject;
+    var files = @Model.SubjectFiles;
+}
+
+@section scripts{
+    @Scripts.Render("~/Scripts/app/study/visit/studyVisit.js",
+                    "~/Scripts/app/Drugs/drugs.js",
+                    "~/Scripts/app/Study/Visit/drugHistory.js",
+                    "~/Scripts/app/Utilities/FileHandler.js")
+}
+
+<h2 class="title">Visit: @Model.Visit.Name Subject: @Model.Subject.Contact.FirstName @Model.Subject.Contact.LastName [@Model.Subject.Id]</h2>
+<div class="row-fluid">
+    <div class="span3">
+        <div class='loadingIndicator'><i class="icon-refresh">&nbsp;</i> Loading...</div>
+    </div>
+</div>
+<div class="row-fluid">
+
+    <div class="row-fluid">
+        <div class="tabbable">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#required" data-toggle="tab">Required</a></li>
+                <li><a href="#inprogress" data-toggle="tab">In Progress</a></li>
+                <li><a href="#completed" data-toggle="tab">Completed</a></li>
+                <li><a href="#medhistory" data-toggle="tab">Medication History</a></li>
+                <li><a href="#subject" data-toggle="tab">Subject</a></li>
+                <li><a href="#files" data-toggle="tab">Files</a></li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div id="required" class="tab-pane active">
+                    @Html.Partial("_FormLinkView", reqForms)
+                </div>
+                <div id="inprogress" class="tab-pane">
+                    @Html.Partial("_FormLinkView", inprogForms)
+                </div>
+                <div id="completed" class="tab-pane">
+                    @Html.Partial("_FormLinkView", complForms)
+                </div>
+                <div id="medhistory" class="tab-pane">
+                    @Html.Partial("_SubjectMedictionView", subjDrugs)
+                </div>
+                <div id="subject" class="tab-pane">
+                    @Html.Partial("Subject/_SubjectDetails", subject)
+                </div>
+                <div id="files" class="tab-pane">
+                    @Html.Partial("File/_SubjectFiles", files)
+                </div>
+
+            </div>
+        </div>
+        <!-- /.tab-content -->
+    </div>
+    <!-- /.tabbable -->
+</div>
+

@@ -1,0 +1,22 @@
+﻿@{
+	ViewBag.Title = "Clires Home";
+
+	Layout = ViewBag.LayoutLink;
+}
+
+@section scripts{
+	<script>
+		$(function () {
+			$('.carousel').carousel({
+				interval: 5000
+			});
+		});
+	</script>
+}
+
+<!-- Modal -->
+<div class="offset0">
+	<div class="container-fluid">
+		@Html.Partial("Common/_Carusel")
+	</div>
+</div>

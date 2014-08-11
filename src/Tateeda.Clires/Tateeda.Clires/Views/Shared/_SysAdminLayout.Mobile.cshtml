@@ -1,0 +1,69 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewBag.Title</title>
+
+	@Styles.Render("~/Content/themes/base/css",
+					"~/Content/bootstrap.css",
+					"~/Content/css",
+					"~/Content/Mobile/css",
+					"~/Content/jquerymobile/css")
+
+	@Scripts.Render("~/bundles/jquery",
+					"~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery-mobile")
+	<script>
+		$(document).ready(function () {
+			try {
+				$.mobile.ajaxEnabled = false;
+			} catch (e) { }
+		});
+	</script>
+</head>
+<body class="container-fluid fullBody content-wrapper">
+
+	@Html.Partial("Common/_Sidebar")
+
+	<div class="navbar navbar-static navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container" style="width: auto;">
+
+				<a href="#" class="brand">Sys Admin (Mobile):</a>
+
+				@Html.ActionLink("Client", "Index", new { area = "Study", controller = "Main" }, new { @class = "brand", @style = "font-size:1.0em;" })
+				@Html.ActionLink("Dashboard", "Index", new { area = "Dashboard", controller = "Tasks" }, new { @class = "brand", @style = "font-size:1.0em;" })
+				@Html.ActionLink("Settings", "Index", new { area = "Admin", controller = "Settings" }, new { @class = "brand", @style = "font-size:1.0em;" })
+				@Html.ActionLink("Reports", "Index", new { area = "Admin", controller = "Reports" }, new { @class = "brand", @style = "font-size:1.0em;" })
+			</div>
+		</div>
+		<section id="login">
+			@Html.Partial("_LoginPartial")
+		</section>
+	</div>
+
+	<div id="body">
+		@RenderSection("featured", required: false)
+		<section class="container-fluid main-content">
+			@RenderBody()
+		</section>
+	</div>
+
+	<footer>
+		@Html.Partial("_Footer")
+	</footer>
+
+	@Scripts.Render(
+			"~/bundles/jqueryui",
+			"~/bundles/knockout",
+			"~/bundles/bootstrap",
+			"~/bundles/jqueryval",
+			"~/bundles/tateedajs"
+			)
+
+	@RenderSection("scripts", required: false)
+
+</body>
+</html>

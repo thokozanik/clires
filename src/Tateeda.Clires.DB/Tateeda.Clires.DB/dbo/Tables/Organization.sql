@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[Organization]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+    [Name] NVARCHAR(255) NOT NULL,
+	[Description] NVARCHAR(1000) NULL,
+    [CreatedOn] DATETIME NOT NULL DEFAULT GETUTCDATE(), 
+    [UpdatedOn] DATETIME NULL DEFAULT GETUTCDATE(), 
+    [CreatedBy] NVARCHAR(100) NOT NULL, 
+    [UpdatedBy] NVARCHAR(100) NULL, 
+    [IsActive] BIT NOT NULL DEFAULT 1
+)

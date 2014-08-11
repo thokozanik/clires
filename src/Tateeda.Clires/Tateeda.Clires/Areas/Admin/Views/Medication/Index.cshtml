@@ -1,0 +1,136 @@
+﻿@using System.Web.Optimization
+@{
+	ViewBag.Title = "Medication";
+	Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+}
+
+@section scripts{
+	@Scripts.Render("~/Scripts/app/Drugs/drugs.js")
+}
+<div class="site-title">Medication Management</div>
+<div class="modal hide fade in" style="display: none;" id="drugCategory-modal">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal" style="width: 10px; height: 10px;" aria-hidden="true">&nbsp;X&nbsp;</a>
+		<h3>Drugs Category</h3>
+	</div>
+	<div class="modal-body model-border">
+		<!-- ko with: med.vm.category -->
+		@Html.Partial("_DrugCategory")
+		<!-- /ko -->
+	</div>
+</div>
+
+
+<div class="modal hide fade in" style="display: none;" id="drugClass-modal">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal" style="width: 10px; height: 10px;" aria-hidden="true">&nbsp;X&nbsp;</a>
+		<h3>Drugs Class</h3>
+	</div>
+	<div class="modal-body model-border">
+		<!-- ko template: {name:'editDrugClassTmpl', data: med.vm.clazz} -->
+		<!-- /ko -->
+	</div>
+</div>
+
+<div class="modal hide fade in" style="display: none;" id="drug-modal">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal" style="width: 10px; height: 10px;" aria-hidden="true">&nbsp;X&nbsp;</a>
+		<h3>Medication</h3>
+	</div>
+	<div class="modal-body model-border">
+		<!-- ko template: {name:'editDrugTmpl', data: med.vm.drug} -->
+		<!-- /ko -->
+	</div>
+
+</div>
+
+<div class="control-group">
+	<div class="row-fluid">
+		<div class="row-fluid">
+			<div class="span3">
+				<a href="#drugCategory-modal" data-toggle="modal" class="btn btn-primary" id="modellinkCat">New Drug Category</a>
+			</div>
+			<div class="span3 offset1">
+				<a href="#drugClass-modal" data-toggle="modal" class="btn  btn-primary" id="modellinkClass">New Drug Class</a>
+			</div>
+			<div class="span3 offset1">
+				<a href="#drug-modal" data-toggle="modal" class="btn  btn-primary" id="modellinkDrug">New Medication</a>
+			</div>
+		</div>
+		<br />
+		<div class="row-fluid">
+			<div class="span4 select-medium-height">
+				<select id="DrugCategoryId" size="20" class="select-medium-height"
+						data-bind=" event: {click: med.vm.categoryChanged },                                    
+									options: med.vm.categories,
+									optionsText: 'Name',
+									optionsValue: 'Id',
+									value: med.vm.categoryVal ">
+				</select>
+			</div>
+			<div class="span4 select-medium-height">
+				<select id="DrugClassId" size="20" class="select-medium-height"
+						data-bind=" event: {click: med.vm.classChanged }, 
+									options: med.vm.classes,
+									optionsText: 'Name',
+									optionsValue: 'Id',
+									value: med.vm.classVal">
+				</select>
+			</div>
+			<div class="span4 select-medium-height">
+				<select id="DrugId" name="DrugId" size="20" class="select-medium-height"
+						style="border: none; width: 100%; background: transparent; overflow-y: hidden !important;"
+						data-bind="event: {click: med.vm.drugChanged },
+									options: med.vm.drugs,
+									optionsText: 'Name',
+									optionsValue: 'Id',
+									value: med.vm.drugVal">
+				</select>
+				<br />
+				<!-- ko template: {name: 'drugNavTmpl', data: med.vm.drugsTotal} -->
+				<!-- /ko -->
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span4">
+				<button type="button" class="btn-primary btn" id="editCategory" disabled="disabled">Edit</button>
+			</div>
+			<div class="span4">
+				<button type="button" class="btn-primary btn" id="editClass" disabled="disabled">Edit</button>
+			</div>
+			
+			<div class="span4">
+				<button type="button" class="btn-primary btn" id="editDrug" disabled="disabled">Edit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/html" id="drugNavTmpl">
+	<div data-bind="if: $data>20" class="row ">
+		<div class="span5">
+			<div class="row-fluid">
+				<span class="mini-nav">Page:&nbsp;&nbsp;</span>
+				<input type="number" style="height: 14px; width: 20px;" class="mini-nav" id="pageIndex" data-bind="value: med.vm.currentPageIndex" />
+				<button class="btn btn-mini" id="btnDrugNav">Go</button>
+			</div>
+		</div>
+		<div class="offset1">Pages: <b data-bind="text: Math.ceil($data/20)"></b></div>
+	</div>
+</script>
+
+<script type="text/html" id="editCatgoryTmpl">
+	@Html.Partial("_DrugCategory")
+</script>
+
+<script type="text/html" id="editDrugTmpl">
+	<div data-bind="with: $data">
+		@Html.Partial("_Drug")
+	</div>
+</script>
+
+<script type="text/html" id="editDrugClassTmpl">
+	<div data-bind="with: $data">
+		@Html.Partial("_DrugClass")
+	</div>
+</script>

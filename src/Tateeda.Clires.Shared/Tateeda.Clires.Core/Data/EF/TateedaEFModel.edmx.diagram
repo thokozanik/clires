@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5dc9131c9f1c46d59054e40c7d5e8fef" Name="Diagram1" ZoomLevel="92">
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Address" Width="1.5" PointX="3.75" PointY="21.875" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Appointment" Width="1.5" PointX="9.75" PointY="41.625" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.AppointmentForm" Width="1.5" PointX="12" PointY="48" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.AppUser" Width="1.5" PointX="8.25" PointY="23.875" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Arm" Width="1.5" PointX="5.25" PointY="43.625" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Code" Width="1.5" PointX="0.75" PointY="2.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Contact" Width="1.5" PointX="6" PointY="21.625" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Country" Width="1.5" PointX="0.75" PointY="16" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.CssType" Width="1.5" PointX="5.25" PointY="58.25" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.CTGovSubmission" Width="1.5" PointX="14.75" PointY="2.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Drug" Width="1.5" PointX="5.25" PointY="34.625" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.DrugCategory" Width="1.5" PointX="0.75" PointY="27" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.DrugClass" Width="1.5" PointX="3" PointY="27" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Email" Width="1.5" PointX="8.25" PointY="29.625" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.FormAnswer" Width="1.5" PointX="14.25" PointY="41.625" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.FormVisibilityByVisitForSubject" Width="2.375" PointX="14.75" PointY="49.625" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Language" Width="1.5" PointX="7.75" PointY="5.625" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.LocaleStringResource" Width="1.5" PointX="10" PointY="11.375" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Membership" Width="1.5" PointX="5.25" PointY="9.25" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.MessageProvider" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.MessageQueue" Width="1.5" PointX="12.25" PointY="5.375" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.MessageTemplate" Width="1.5" PointX="10" PointY="5.5" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Profile" Width="1.5" PointX="5.25" PointY="6.125" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.RecreationalDrugOrSubstance" Width="1.5" PointX="12" PointY="41.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Role" Width="1.5" PointX="0.75" PointY="9.125" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.ScheduleSubjectVisit" Width="1.5" PointX="9.75" PointY="63" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Site" Width="1.5" PointX="0.75" PointY="39.375" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.State" Width="1.5" PointX="3" PointY="16.125" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Study" Width="1.5" PointX="3" PointY="34.125" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.SubjectDrug" Width="1.5" PointX="10.5" PointY="33.375" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.TimeZone" Width="1.5" PointX="1.5" PointY="44.875" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.User" Width="1.5" PointX="3" PointY="8.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.VisitForm" Width="1.5" PointX="9.75" PointY="53.5" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_AppointmentForm_Appointment" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_RecreationalDrugOrSubstance_Appointment" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_FormAnswer_AppointmentForm" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_AppUser_Contact" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_AppUser_Role" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_AppUser_Site" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_AppUser_User" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Arm_Study" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Drug_DrugClass" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Drug_Study" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_SubjectDrug_Drug" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_DrugClass_DrugCategory" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_LocaleStringResource_Language" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_MessageTemplate_Language" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.MembershipUser" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_MessageTemplate_MessageProvider" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_MessageQueue_Template" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.UserProfile" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Site_TimeZone" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.ContactAddress" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.ContactEmail" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.CountryState" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.StudySite" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.UsersInRoles" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Answer" Width="1.5" PointX="14.75" PointY="59.625" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.AnswerChildQuestion" Width="1.5" PointX="17" PointY="57.75" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_AnswerChildQuestion_Answer" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Visit" Width="1.5" PointX="7.5" PointY="42.375" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Appointment_Visit" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Visit_Arm" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_FormVisibilityByVisitForSubject_Visit" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_ScheduleSubjectVisit_Visit" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Visit_Visit" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.RefVisit26" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Form" Width="1.5" PointX="5.25" PointY="50" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.FormVerification" Width="1.5" PointX="7.5" PointY="67.75" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_AppointmentForm_Form" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Form_Study" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_FormVerificationRequest_Form" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_FormVisibilityByVisitForSubject_Form" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_VisitForms_Form" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Question" Width="1.5" PointX="12.5" PointY="53.5" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.VisitStep" Width="1.5" PointX="9.75" PointY="48.625" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.VisitStepVisitSequence" Width="1.5" PointX="15" PointY="45.875" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Answer_Question" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_AnswerChildQuestion_Question" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_VisitStep_Arm" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Question_FieldDataType" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Question_Form" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_VisitStepVisitSequence_Visit" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_VisitStepVisitSequence_VisitStep" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.VisitStepMapping" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Setting" Width="1.5" PointX="14.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.SubjectAltNumber" Width="1.5" PointX="10.75" PointY="16.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Phone" Width="1.5" PointX="8.25" PointY="19.125" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.ContactPhone" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Feedback" Width="1.5" PointX="2.75" PointY="2.75" FillColor="255, 255, 128" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Subject" Width="1.5" PointX="8.25" PointY="33.5" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.SubjectDrugHistory" Width="1.5" PointX="12.75" PointY="16.75" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Subject_Contact" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Subject_Site" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_Subject_StudyId" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_SubjectDrug_SubjectId" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.LibraryAnswer" Width="1.5" PointX="14.75" PointY="54.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.LibraryForm" Width="1.5" PointX="14.75" PointY="16.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.LibraryQuestion" Width="1.5" PointX="7.5" PointY="50.875" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_LibraryQuestion_FieldDataType" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_LibraryQuestion_Form" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_LibraryAnswer_Question" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.File" Width="1.5" PointX="0.75" PointY="35.375" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.StudyFile" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.SubjectFile" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.FormInProcess" Width="1.5" PointX="16.75" PointY="2.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.ErrorLog" Width="1.5" PointX="4.75" PointY="2.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.Organization" Width="1.5" PointX="0.75" PointY="31.875" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.OrganizationStudy" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.StudySetupMap" Width="1.5" PointX="15" PointY="12" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.StudySetupStep" Width="1.5" PointX="12.75" PointY="12" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_StudySetupMap_StudySetupSteps" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.FormQuestionAnswerImport" Width="1.5" PointX="16.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Tateeda.Clires.DBModel.UserSetting" Width="1.5" PointX="10.5" PointY="24.75" />
+        <AssociationConnector Association="Tateeda.Clires.DBModel.FK_UserSettings_AppUser" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

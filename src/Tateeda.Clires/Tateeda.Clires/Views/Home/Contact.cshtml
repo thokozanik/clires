@@ -1,0 +1,59 @@
+﻿@{
+	ViewBag.Title = "Contact";
+	ViewBag.HelpPage = "_HelpContact";
+}
+
+<div class="row-fluid">
+	<hgroup class="title offset">
+		<h1>@ViewBag.Title.</h1>
+	</hgroup>
+
+	<article class="offset0">
+
+		<section class="contact">
+			<header>
+				<h3>Phone</h3>
+			</header>
+			<p>
+				<span class="label">Main:</span>
+				<span>858.353.0780</span>
+			</p>
+		</section>
+
+		<section class="contact">
+			<header>
+				<h3>Email</h3>
+			</header>
+			<p>
+				<span class="label">Support:</span>
+				<span><a href="mailto:support@tateeda.com">support@tateeda.com</a></span>
+			</p>
+			<p>
+				<span class="label">General:</span>
+				<span><a href="mailto:slava@tateeda.com">info@tateeda.com</a></span>
+			</p>
+		</section>
+
+		<section class="contact">
+			<header>
+				<h3>Address</h3>
+			</header>
+			<p>
+				San Diego, CA 92130
+			</p>
+		</section>
+
+	</article>
+	<aside style="top:250px; position: absolute; right: 10px;">       	  
+	    <div>
+	        <img src="~/Images/TateedaLogo2013.png" />
+	    </div>
+		<p>
+			Details at <a href="http://tateeda.com/ClinicalStudy.aspx" target="_search">Tateeda.com</a>
+		</p>
+		<ul>
+			<li>@Html.ActionLink("Home", "Index", "Home")</li>
+			<li>@Html.ActionLink("About", "About", "Home")</li>
+		</ul>
+	</aside>
+</div>

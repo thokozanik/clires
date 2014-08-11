@@ -1,0 +1,42 @@
+﻿@using System.Web.Optimization
+@using Tateeda.Clires.Utility
+@model Tateeda.Clires.Areas.Admin.Model.Users.AppUserViewModel
+@{
+    ViewBag.Title = "Users Administration";
+    Layout = string.IsNullOrWhiteSpace(this.ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : this.ViewBag.Layout;
+
+}
+
+@section scripts{
+    @Scripts.Render("~/Scripts/app/Admin/Users/users.js")
+}
+<div class="site-title">Application Users</div>
+<div class="container">
+    <div class="modal hide fade in" style="display: none;" id="newuser-modal">
+        <div class="modal-header">
+           <a class="close" data-dismiss="modal" style="width: 10px; height: 10px;" aria-hidden="true">&nbsp;X&nbsp;</a>
+            <h3>Application User</h3>
+        </div>
+        <!-- ko with: admin.vm.user() -->
+        @Html.Partial("_User")
+        <!-- /ko -->
+    </div>
+
+    <div class="row-fluid">
+        <div class="span2">
+            <a href="#newuser-modal" data-toggle="modal" class="btn btn-primary" id="modellink">New User</a>
+        </div>
+        <div class="span4">
+            <select id="sites">
+                <option value="" selected>Select</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+<div class='cliresGrid app-grid'>
+    <div data-bind='simpleGrid: admin.vm.gridViewModel'></div>
+</div>
+
+@*<div id="debug">DEBUG</div>*@

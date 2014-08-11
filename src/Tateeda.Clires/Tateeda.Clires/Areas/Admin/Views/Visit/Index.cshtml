@@ -1,0 +1,51 @@
+﻿@using System.Web.Optimization
+@using Tateeda.Clires.Utility
+@{
+	ViewBag.Title = "Visits";
+	Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+	var enumHelper = new EnumerationHelper();
+}
+
+@section scripts{
+	@Scripts.Render("~/Scripts/app/Admin/Visits/visit.js")
+	<script type="text/javascript">
+		vis.vm.defaultStudyId = Number('@(ViewBag.DefaultStudyId)');
+		vis.vm.loaddefaultStudy();
+	</script>
+}
+<div class="site-title">Application Visits</div>
+<div class="container">
+	<div class="modal hide fade in" style="display: none;" id="visit-modal">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal" style="width: 10px; height: 10px;" aria-hidden="true">&nbsp;X&nbsp;</a>
+			<h3>Visit</h3>
+		</div>
+		<!-- ko with: vis.vm.visit() -->
+		@Html.Partial("_Visit")
+		<!-- /ko -->
+	</div>
+
+	<div class="row-fluid">
+		<div class="span2">
+			<a href="#visit-modal" data-toggle="modal" class="btn btn-primary" id="modellink">New Visit</a>
+		</div>
+		<div class="span4">
+			@Html.DropDownList("StudyId", enumHelper.GetStudies(true), 
+								new Dictionary<string, object>
+                                {
+                                    { "class", "input-large" }, 
+                                    { "placeholder", "Select Study" }, 
+                                    { "data-bind", "value: vis.vm.defaultStudyId" }
+								})
+		</div>
+		<div class="span3">
+			<div class='loadingIndicator'><i class="icon-refresh">&nbsp;</i> Loading...</div>
+		</div>
+	</div>
+</div>
+<br />
+<div class='cliresGrid app-grid'>
+	<div data-bind='simpleGrid: vis.vm.gridViewModel'></div>
+</div>
+
+@*<div id="debug">DEBUG</div>*@

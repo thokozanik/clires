@@ -1,0 +1,217 @@
+﻿<script type="text/html" id="frmview">
+    
+    @*<div style="width: 800px; overflow: scroll;" data-bind="text: ko.mapping.toJSON($data, null, 2)"></div>*@
+
+    <label class="ui-dialog-title" data-bind="html: Header || '' "></label>
+    <label class="site-title" data-bind="html: Name || '' "></label>
+    <label class="typeahead" data-bind="html: Title || '' "></label>
+
+    <div class="help-block directions" data-bind="html: Directions || '' "></div>
+    <div class="item" data-bind="template: {name: 'question', foreach: QuestionsViewModel }"></div>
+    <div class="help-block directions" data-bind="html: Trailer || '' "></div>
+</script>
+
+<script type="text/html" id="question">
+    
+    @*<div style="width: 800px; overflow: scroll;" data-bind="html: ko.mapping.toJSON($data, null, 2)"></div>*@
+
+    <div class="question" data-bind="attr:{id:'divQuestionId_' + $data.Id()}">
+
+        <label class="help-inline question-header" data-bind="html: Header || ''"></label>
+        <div class="help-block directions" data-bind="html: Directions || '' "></div>
+
+        <span class="icon-question-sign"></span>&nbsp;<span data-bind="html: QuestionText"></span>
+        <span data-bind="if: IsRequired" class="required">*</span>
+
+        <div data-bind="if: FieldDataTypeName() !== 'select' ">
+            @*<div data-bind="if: $parent.LayoutTypeId === 1">*@
+            <div data-bind="template: {name: function() {return getTemplateName($data.FieldDataTypeName());}, foreach: AnswersViewModel }"></div>
+        </div>
+        <div data-bind="if: FieldDataTypeName() === 'select' ">
+            <div data-bind="template: {name: 'optionanswer'}"></div>
+        </div>
+        <label class="help-block directions" data-bind="html: Trailer || ''"></label>
+    </div>
+
+    <!-- ko if: $data.ParentQuestionId -->
+    @*<div data-bind="html: ko.mapping.toJSON($data.Id())"></div>*@
+    <span data-bind="afterRender: $('#divQuestionId_'+$data.Id()).hide()"></span>
+    <!-- /ko -->
+
+    <span data-bind="afterRender: fv.vm.addFieldRule($data.Id(), $data.ValidationRule())"></span>
+
+</script>
+
+<script type="text/html" id="childQuestion">
+    <div class="question offset1" data-bind="if: $data.ParentId">
+        <label class="help-inline question-header" data-bind="html: Header || ''"></label>
+        <div class="help-block directions" data-bind="html: Directions || '' "></div>
+
+        <span class="icon-question-sign"></span>&nbsp;<span data-bind="html: QuestionText"></span>
+        <span data-bind="if: IsRequired" class="required">*</span>
+
+        <div data-bind="if: FieldDataTypeName() !== 'select' ">
+            <div data-bind="template: {name: function() {return getTemplateName($data.FieldDataTypeName());}, foreach: AnswersViewModel }"></div>
+        </div>
+        <div data-bind="if: FieldDataTypeName() === 'select' ">
+            <div data-bind="template: {name: 'optionanswer'}"></div>
+        </div>
+        <label class="help-block directions" data-bind="html: Trailer || '' "></label>
+    </div>
+</script>
+
+<script type="text/html" id="answer">
+
+    <div class="clearfix">
+        <input data-bind="attr: 
+            {type: CssInputType, 
+                name: 'q_' + QuestionId(), 
+                value: Id, 
+                'class': $parent.Required(), 
+                checked: $data.Selected,
+                id: 'answerQuestionId_' + QuestionId()
+            }" />
+        <span data-bind="html: OptionText, attr:{id:'optTextId_' + Id()}"></span>
+    </div>
+
+    <!-- ko if: $data.ChildQuestionIds -->
+    <span data-bind="afterRender: addAnswerBindingCanRender(Id(), 'true', Id())"></span>
+    <span data-bind="afterRender: addAnswerBinding(QuestionId(), $data.ChildQuestionIds(), Id())"></span>
+    <!-- /ko -->
+
+</script>
+
+<script type="text/html" id="optionanswer">
+    <div>
+        <!-- ko if: $data.IsRequired -->
+        <select required="required" data-bind="
+    attr:{  
+        name: 'q_'+ $data.AnswersViewModel()[0].QuestionId()                                         
+    },            
+    options: $data.AnswersViewModel,
+    optionsCaption: 'Select...',
+    optionsText: 'OptionText',
+    optionsValue: 'Id',
+    value: SelectedOptionItem($data.AnswersViewModel())
+            ">
+        </select>
+        <!-- /ko -->
+
+        <!-- ko if: !$data.IsRequired -->
+        <select data-bind="
+    attr:{
+        name: 'q_'+ $data.AnswersViewModel()[0].QuestionId()            
+    },
+    options: $data.AnswersViewModel,
+    optionsCaption: 'Select...',
+    optionsText: 'OptionText',
+    optionsValue: 'Id',
+    value: SelectedOptionItem($data.AnswersViewModel())
+            ">
+        </select>
+        <!-- /ko -->
+    </div>
+</script>
+
+<script type="text/html" id="numericanswer">
+
+    @* <div style="color: red;">numericanswer answer DATA with Q ID: <span data-bind="html: ko.mapping.toJSON($data.QuestionId())"></span>
+        numericanswer: ID: <span data-bind="html: ko.mapping.toJSON($data.Id())"></span>
+    </div>
+    <div style="overflow: scroll;" data-bind="html: ko.mapping.toJSON($data)"></div>*@
+
+
+    <div>
+        <!-- ko if: $parent.IsRequired() -->
+        <input type="number" required="required"
+            data-bind="{attr: 
+            {'value-id': Id, 
+                class: CssClass, 
+                id: $parent.Id, 
+                name: 'q_' + $data.QuestionId()
+            },
+    value: AnswerText
+}" />
+        <!-- /ko -->
+        <!-- ko if: !$parent.IsRequired() -->
+        <input type="number" data-bind="{attr: 
+            {'value-id': Id, 
+                class: CssClass, 
+                id: $parent.Id, 
+                name: 'q_' + $data.QuestionId()
+            },
+    value: AnswerText
+}" />
+        <!-- /ko -->
+    </div>
+</script>
+
+<script type="text/html" id="texttempl">
+    @* <div style="color: red;">Text Tmepl answer DATA with Q ID: <span data-bind="html: ko.mapping.toJSON($data.QuestionId())"></span>
+       Texttempl: ID: <span data-bind="html: ko.mapping.toJSON($data.Id())"></span>
+    </div>
+    <div style="overflow: scroll;" data-bind="html: ko.mapping.toJSON($data)"></div>*@
+
+    <div>
+        <!-- ko if: $parent.IsRequired() -->
+        <input type="text" required="required" data-bind="
+             {
+                 attr:{   
+                     'value-id': Id, 
+                     class: CssClass, 
+                     id: $parent.Id, 
+                     name: 'q_' + $parent.Id()                     
+                 },
+                 value: AnswerText
+             }" />
+        <!-- /ko -->
+        <!-- ko if: !$parent.IsRequired() -->
+        <input type="text" data-bind="
+             {attr:{   
+                 'value-id': Id, 
+                 class: CssClass, 
+                 id: $parent.Id, 
+                 name: 'q_' + $parent.Id()                     
+             },
+                 value: AnswerText
+             }" />
+        <!-- /ko -->
+
+    </div>
+</script>
+
+<script type="text/html" id="datetempl">
+
+    @*    <div style="color: red;">datetempl answer DATA with Q ID: <span data-bind="html: ko.mapping.toJSON($data.QuestionId())"></span>
+        datetempl: ID: <span data-bind="html: ko.mapping.toJSON($data.Id())"></span>
+    </div>
+    <hr/>
+    <div style="overflow: scroll;" data-bind="html: ko.mapping.toJSON($data)"></div>*@
+
+    <div>
+        <!-- ko if: $parent.IsRequired() -->
+        <input required="required" data-bind="{
+    attr: 
+    {type: 'date', 
+        'value-id': Id, 
+        class: 'date', 
+        id: $parent.Id, 
+        name: 'q_' + $parent.Id()
+    },
+    value: AnswerText
+}" />
+        <!-- /ko -->
+        <!-- ko if: !$parent.IsRequired() -->
+        <input data-bind="{
+    attr: 
+    {type: 'date', 
+        'value-id': Id, 
+        class: 'date', 
+        id: $parent.Id, 
+        name: 'q_' + $parent.Id()
+    },
+    value: AnswerText
+}" />
+        <!-- /ko -->
+    </div>
+</script>

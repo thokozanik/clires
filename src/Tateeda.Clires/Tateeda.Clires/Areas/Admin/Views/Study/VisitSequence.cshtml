@@ -1,0 +1,183 @@
+﻿@using System.Web.Optimization
+@using Tateeda.Clires.Utility
+@{
+	ViewBag.Title = "Visits Sequence";
+	Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+	var enumHelper = new EnumerationHelper();
+}
+
+@section scripts
+{
+	@Scripts.Render("~/Scripts/app/Admin/Study/visitsequence.js")
+	<script type="text/javascript">
+		study.vm.defaultStudyId = Number('@(ViewBag.DefaultStudyId)');
+		study.vm.loaddefaultStudy();
+	</script>
+}
+<div class="site-title">Visit Sequence Mapping</div>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3">
+			<div class="control-group">
+				<label class="control-label" for="ArmId">Study:</label>
+				@Html.DropDownList("StudyId", enumHelper.GetStudies(true),
+						new Dictionary<string, object>
+                                {
+                                    { "class", "input-large" }, 
+                                    { "placeholder", "Select Study" }, 
+                                    { "data-bind", "value: study.vm.defaultStudyId" }
+								})
+			</div>
+			@using (Ajax.BeginForm("AddStep", new AjaxOptions { HttpMethod = "POST", OnComplete = "OnCompleteWithCallback", OnFailure = "OnFailure" }))
+   {
+            
+				<div id="studyDetailsBlock">
+					<label class="control-label" for="ArmId">Arm:</label>
+					<select class="input-large" id="ArmId" name="ArmId"
+						data-bind="
+                   options: study.vm.arms, 
+                   optionsText: 'Name',
+                   optionsValue: 'Id',
+                   value: study.vm.arm, 
+                   optionsCaption: 'Select Arm...'">
+					</select>
+					<br />
+				</div>
+				<div id="armBlock">
+					<fieldset class="table-bordered" style="padding: 3px;">
+						<label class="control-label" for="stepName">Step Name <span class="required">*</span>:</label>
+						<input type="text" id="stepName" name="stepName" required="required" class="required input-large" placeholder="Step Name" /><br />
+						<label class="control-label" for="stepName">Step Description:</label>
+						<input type="text" class="input-large" name="description" id="stepDescription" placeholder="Description" />
+						<button class="btn btn-primary" type="submit">Add Step</button>
+					</fieldset>
+
+					<br />
+					<select class="input-large" size="10" id="StepId" name="StepId"
+						data-bind="
+                   stepChanged: study.vm.step,
+                   options: study.vm.steps, 
+                   optionsText: 'Name', 
+                   optionsValue: 'Id',
+                   value: study.vm.step">
+					</select>
+				</div>
+   }
+		</div>
+
+		<div class="span2">
+			<div id="visitsBlock">
+				<label class="control-label">Visits:</label>
+				<select class="input-medium" size="28" id="VisitId" name="VisitId"
+					data-bind="visitChanged: study.vm.visit,
+                   options: study.vm.visits, 
+                   optionsText: 'Name', 
+                   optionsValue: 'Id',
+                   value: study.vm.visit">
+				</select>
+			</div>
+		</div>
+
+		<div class="span7 container-fluid">
+			<div id="mappedStepsBlock">
+				<div class="row-fluid">
+					<div class="span3 fc-header-title">
+						Map Visits
+					</div>
+					<div class="span2 fc-header-title">
+						Deviation [days]
+					</div>
+					<div class="span2">
+						Days From Base
+					</div>
+					<div class="span2">
+						Sort Order
+					</div>
+					<div class="span1">
+						Terminate
+					</div>
+				</div>
+				<div class="row-fluid">
+					<!-- ko template:{name: 'mappedVisitsTmpl', data: study.vm.newMappedVisit } -->
+					<!-- /ko -->
+				</div>
+				<div class="row-fluid">
+					<div class='cliresGrid app-grid span12'>
+						<div data-bind='simpleGrid: study.vm.gridViewModel'></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal hide fade in" style="display: none;" id="modal">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal" style="width: 10px; height: 10px;" aria-hidden="true">&nbsp;X&nbsp;</a>
+		<h3>Edit Sequence Mapping</h3>
+		<div class="row-fluid">
+			<!-- ko template:{name: 'editMappedVisitsTmpl', data: study.vm.mappedVisit } -->
+			<!-- /ko -->
+		</div>
+	</div>
+</div>
+
+<script type="text/html" id="editMappedVisitsTmpl">
+	<div data-bind="if: $data.VisitName!== undefined">
+		<table>
+			<thead>
+				<th>Visit Name</th>
+				<th>Deviation</th>
+				<th>Days from base</th>
+				<th>Order</th>
+				<th>Terminate</th>
+			</thead>
+			<tr>
+				<td class="cell-center">
+					<label data-bind="text: VisitName" />
+				</td>
+				<td class="cell-center">
+					<input type="text" class="input-mini" data-bind="value: Deviation" /></td>
+				<td class="cell-center">
+					<input type="text" class="input-mini" placeholder="7" data-bind="value: DaysFromBase" /></td>
+				<td class="cell-center">
+					<input type="text" class="input-mini" placeholder="0" data-bind="value: SortOrder" /></td>
+
+				<td class="cell-center">
+					<input type="checkbox" data-bind="checked: IsTermination" /></td>
+				<td class="cell-center">
+					<div>
+						<button class="btn-primary" id="updateVisit">Update</button>
+					</div>
+				</td>
+				<td class="cell-center">
+					<div>
+						<button class="btn-danger" id="unmapVisit">Delete</button>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</script>
+
+<script type="text/html" id="mappedVisitsTmpl">
+	<div data-bind="if: $data.VisitName !== undefined">
+
+		<div class="span2">
+			<input class="btn btn-primary" type="button" id="mapSteps" disabled="disabled" data-bind="value: $data.VisitName || 'Add' " />
+		</div>
+		<div class="span1 offset1">
+			<input type="text" class="input-tiny" data-bind="value: Deviation" />
+		</div>
+		<div class="span1 offset1">
+			<input type="text" class="input-tiny" placeholder="7" data-bind="value: DaysFromBase" />
+		</div>
+		<div class="span1 offset1">
+			<input type="text" class="input-tiny" placeholder="7" data-bind="value: SortOrder" />
+		</div>
+		<div class="span1 offset1">
+			<input type="checkbox" data-bind="checked: IsTermination" />
+		</div>
+	</div>
+
+</script>

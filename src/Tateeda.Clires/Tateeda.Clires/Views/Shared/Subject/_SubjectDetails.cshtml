@@ -1,0 +1,160 @@
+﻿@using Tateeda.Clires.Areas.Subject.Model
+@using Tateeda.Clires.Core.Data.Enums
+@model SubjectViewModel
+@{
+    var enumHelper = new Tateeda.Clires.Utility.EnumerationHelper();
+    var email = @Model.Contact.Emails != null ? @Model.Contact.Emails.FirstOrDefault().Address : "";
+}
+<div class="control-group">
+    <div class="accordion" id="accordionUser">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionUser" href="#collapseUserInfo">Subject Info </a>
+            </div>
+            <div id="collapseUserInfo" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                    <div class="row-fluid">
+                        <div class="row-fluid">
+                            <div class="span3 offset1">
+                                <label class="control-label" for="FirstName">First Name:</label>
+                            </div>
+                            <div class="span3 offset1">
+                                @Html.DisplayTextFor(m => m.Contact.FirstName)
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span3 offset1">
+                                <label class="control-label" for="LastName">Last Name:</label>
+                            </div>
+                            <div class="span3 offset1">
+                                @Html.DisplayTextFor(m => m.Contact.LastName)
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span3 offset1">
+                                <label class="control-label" for="DateOfBirth">Date of Birth:</label>
+                            </div>
+                            <div class="span3 offset1">
+                                @Html.DisplayTextFor(m => m.DateOfBirth)
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span3 offset1">
+                                <label class="control-label" for="Nickname">SSN:</label>
+                            </div>
+                            <div class="span3 offset1">
+                                @Html.DisplayTextFor(m => m.SSN)
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span3 offset1">
+                                <label class="control-label" for="Nickname">Nickname:</label>
+                            </div>
+                            <div class="span3 offset1">
+                                @Html.DisplayTextFor(m => m.Nickname)
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span3 offset1">
+                                <label class="control-label" for="NIMHID">NIMH ID:</label>
+                            </div>
+                            <div class="span3 offset1">
+                                @Html.DisplayTextFor(m => m.NIMHID)
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span3 offset1">
+                                <label class="control-label" for="IsActive">Is Active:</label>
+                            </div>
+                            <div class="span3 offset1">
+                                @Html.Raw(Model.IsActive ? "Yes" : "No")
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span3 offset1">
+                                <label class="control-label" for="IsActive">Gender:&nbsp;</label>
+                            </div>
+                            <div class="span3 offset1">
+                                @Html.Raw(@Model.GenderTypeId == (int)GenderType.Male ? "Male" : "Female")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @* <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionUser" href="#collapseAddress">Address
+                    </a>
+                </div>
+                <div id="collapseAddress" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        @Html.Partial("Common/_Address")
+                    </div>
+                </div>
+            </div>*@
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionUser" href="#collapseOther">Other Info
+                    </a>
+                </div>
+                <div id="collapseOther" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <label class="control-label" for="Email">Email:</label>
+                        <div class="controls">
+                            <a href="mailto:@email">@email</a>
+                        </div>
+                        <br />
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionUser" href="#collapseMedication">Medications</a>
+                </div>
+                <div id="collapseMedication" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        @{
+                            if (@Model.SubjectDrugs != null)
+                            {
+                                <ul>
+                                    @foreach (ISubjectDrugViewModel med in @Model.SubjectDrugs)
+                                    {
+                                        <li>
+                                            <label>@med.DrugName &nbsp;Dose:@med.Dosage
+                                                @string.Format("Started on: {0:d}", med.StartDate)
+                                                @if (med.EndDate != null)
+                                                {
+                                                    string.Format("Ended on: {0:d}", med.EndDate);
+                                                }
+                                                else
+                                                {
+                                                    string.Format("Current");
+                                                }
+
+                                                @if (med.Comments != null)
+                                                {
+                                                    string.Format(" Comments:{0}", med.Comments);
+                                                }
+                                                @if (med.Notes != null || med.MdNotes != null)
+                                                {
+                                                    string.Format(" {0} {1}", med.Notes, med.MdNotes);
+                                                }
+                                                @if (med.IsBeforeStudy)
+                                                {
+                                                    string.Format(" Pre Trial");
+                                                }
+                                            </label>
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+                        
+        </div>
+    </div>
+</div>

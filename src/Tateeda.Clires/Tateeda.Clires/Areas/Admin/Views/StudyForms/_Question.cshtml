@@ -1,0 +1,82 @@
+﻿@model Tateeda.Clires.Areas.Admin.Model.Forms.QuestionViewModel
+@using Tateeda.Clires.Utility
+@{
+    var enumHelper = new EnumerationHelper();
+    var formId = int.Parse(string.Format("{0}", @ViewBag.parentFormId));
+    
+}
+@Html.HiddenFor(m => m.FormId, new { @value = formId })
+@Html.HiddenFor(m => m.Id, new Dictionary<string, object> { { "data-bind", "value: Id" } })
+<div class="control-group">
+    <label class="control-label" for="QuestionText">Question:<span class="required">*</span></label>
+    <div class="controls">
+        @Html.TextAreaFor(m => m.QuestionText, new Dictionary<string, object> { { "class", "input-xlarge" }, { "required", "required" }, { "placeholder", "Question" }, { "data-bind", "value: QuestionText" } })
+    </div>
+    <div class="controls">
+        <table>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Type <span class="required">*</span></th>
+                    <th>Sort Order</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.TextBoxFor(m => m.Code, new Dictionary<string, object> { { "class", "input-mini" }, { "placeholder", "Code" }, { "data-bind", "value: Code" } })
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(m => m.FieldDataTypeId, enumHelper.GetOptions(6), new Dictionary<string, object> { { "class", "input-medium" }, { "required", "required" }, { "style", "width: 105px;" }, { "data-bind", "value: FieldDataTypeId" } })
+                    </td>
+                    <td align="center">
+                        @Html.TextBoxFor(m => m.SortOrder, new Dictionary<string, object> { { "class", "input-mini" }, { "placeholder", "0" }, { "data-bind", "value: SortOrder" }, { "style", "width:20px;" } })
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>Required</th>
+                    <td></td>
+                    <th>Is Active</th>
+                </tr>
+                <tr>
+
+                    <td align="center">
+                        @Html.CheckBoxFor(m => m.IsRequired, new Dictionary<string, object> { { "data-bind", "checked: IsRequired" } })
+                    </td>
+                    <td></td>
+
+                    <td align="center">@Html.CheckBoxFor(m => m.IsActive, new Dictionary<string, object> { { "data-bind", "checked: IsActive" } })</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="validation-rule-input">
+        <label class="control-label" for="ValidationRule">Validation Rule</label>
+        <div class="controls">
+            @Html.TextAreaFor(m => m.ValidationRule, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "Answer validation rule (JavaScript)" }, { "data-bind", "value: ValidationRule" } })
+        </div>
+        <br/>
+    </div>
+    <label class="control-label" for="Directions">Directions</label>
+    <div class="controls">
+        @Html.TextAreaFor(m => m.Directions, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "question directions can be as HTML" }, { "data-bind", "value: Directions" } })
+    </div>
+    <br />
+    <label class="control-label" for="Header">Header</label>
+    <div class="controls">
+        @Html.TextAreaFor(m => m.Header, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "question header can be as HTML" }, { "data-bind", "value: Header" } })
+    </div>
+    <br />
+    <label class="control-label" for="Trailer">Trailer</label>
+    <div class="controls">
+        @Html.TextAreaFor(m => m.Trailer, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "question trailer can be as HTML" }, { "data-bind", "value: Trailer" } })
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn  btn-primary" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary">Save</button>
+</div>
+
+@*<div data-bind="html: ko.toJSON($data)">Debug..</div>*@

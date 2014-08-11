@@ -1,0 +1,80 @@
+﻿@using Tateeda.Clires.Core.Users
+@using Tateeda.Clires.Data.UOW
+<div class="loginBlock">
+	@{
+		var role = "";
+		if (User != null)
+		{
+			var adminUow = DependencyResolver.Current.GetService<IAdminUnitOfWork>();
+			var name = Membership.GetUser(User.Identity.Name);
+			if (name != null)
+			{
+				var user = adminUow.UserRepository.GetUser(new Guid(name.ProviderUserKey.ToString()));
+				var appUser = user.AppUsers.FirstOrDefault();
+				if (appUser != null)
+				{
+					role = " - " + appUser.Role.RoleName;
+				}
+				else if (user != null)
+				{
+					role = " - " + user.Roles.FirstOrDefault().RoleName;
+				}
+			}
+		}
+	}
+	@if (Request.IsAuthenticated)
+ {
+		<div>
+			@Html.ActionLink(User.Identity.Name + role, "ChangePassword", "Account", new { area = "" }, new { @class = "shadowed", title = "Change password" })
+			@Html.ActionLink("Log off", "LogOff", "Account", new { area = "" }, new { @class = "shadowed" })
+		</div>
+ }
+ else
+ {
+		<ul>
+			<li>@Html.ActionLink("Log in", "Login", "Account", routeValues: new { area = "" }, htmlAttributes: new { id = "loginLink", @class = "shadowed" })</li>
+		</ul>
+ }
+	@if (!Request.IsAuthenticated)
+	{
+		@Html.Partial("Common/_DemoRequest")
+	}
+	 
+@*
+	<div class="badge-warning dev-lable" onclick="window.location='http://tateeda.com'">Clires-4 Dev Version</div>
+
+	@if (!Request.IsAuthenticated)
+ {
+		
+		<br />
+		<div class="loging-huck">
+			<div class="alert-block text-warning">
+				<b class="icon-warning-sign"></b>
+				This application still under constructions.<br />
+				Demo accounts:<br />
+				<h4><span id="usradmin_login">admin</span>/<i><span id="pwadmin_login">password</span></i></h4>
+				<h4><span id="usrapp_login">appuser</span>/<i><span id="pwapp_login">Password1</span></i></h4>
+				<a href="#myModal" role="button" class="btn btn-info" data-toggle="modal">Developer Note</a>
+			</div>
+		</div>    
+		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">We want your feedback.</h3>
+			</div>
+			<div class="modal-body">
+				<p>Each page has a feedback area at the bottom.</p>
+				<p>
+					Please leave your note.
+			It will help us build better software for you.
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn  btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+			</div>
+		</div>    
+ }*@
+</div>
+
+
+

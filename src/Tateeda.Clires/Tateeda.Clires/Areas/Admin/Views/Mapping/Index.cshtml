@@ -1,0 +1,33 @@
+﻿@using System.Web.Optimization
+@using Tateeda.Clires.Utility
+@{
+	ViewBag.Title = "Mapping";
+	Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+	var enumHelper = new EnumerationHelper();
+}
+@section scripts{
+	@Scripts.Render("~/Scripts/app/Admin/Study/study.js", "~/Scripts/app/Admin/Matrix/map.js")
+	<script type="text/javascript">
+		study.vm.defaultStudyId = Number('@(ViewBag.DefaultStudyId)');
+	</script>
+}
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3">
+			@Html.DropDownList("StudyId", enumHelper.GetStudies(true),
+				new Dictionary<string, object>
+					{
+						{ "class", "input-large" }, 
+						{ "placeholder", "Select Study" }, 
+						{ "data-bind", "value: study.vm.defaultStudyId" }
+					})
+		</div>
+		<div class="span2">
+			<div class='loadingIndicator'><i class="icon-refresh">&nbsp;</i> Loading...</div>
+		</div>
+	</div>
+</div>
+
+<div id="result" class="container-fluid fixed-div">
+</div>

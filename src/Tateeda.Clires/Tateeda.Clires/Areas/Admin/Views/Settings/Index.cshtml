@@ -1,0 +1,34 @@
+﻿@using System.Web.Optimization
+@using Tateeda.Clires.Utility
+@{
+	ViewBag.Title = "Settings";
+	Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+	var enumHelper = new EnumerationHelper();
+}
+
+@section scripts{
+
+	@Scripts.Render("~/Scripts/app/Admin/Settings/settings.js")	
+}
+
+<div class="site-title">Application Configurations</div>
+<div class="control-group">
+	<div class="row-fluid">
+		<div id="defStudyDiv">
+			<div class="span5 cell-center">
+				<span>Set Default study:</span>
+                @Html.DropDownList("StudyId", enumHelper.GetStudies(false),
+											new Dictionary<string, object>
+                                {
+                                    { "class", "input-large pre-append" }, 
+                                    { "placeholder", "Select Study" }, 
+                                    { "data-bind", "value: settings.vm.defaultStudyId" }
+								})
+			</div>
+			<div class="span3">
+				<button class="btn btn-primary" id="submitDefStudy">Set Default</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="alert-success" id="result"></div>

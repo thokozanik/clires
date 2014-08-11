@@ -1,0 +1,24 @@
+﻿@using Tateeda.Clires.Controllers
+<div class="content-wrapper">
+
+	@Html.Partial("Feeds/_Feedback")
+
+	<div class="row-fluid">
+		Build: @typeof(HomeController).Assembly.GetName().Version.ToString() &nbsp;<a href="http://tateeda.com" target="_serch"><span class="pull-right"> Powered By  &copy; @DateTime.Now.Year - Tateeda Media Network</span></a>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-35927159-1']);
+	_gaq.push(['_setDomainName', 'tateeda.com']);
+	_gaq.push(['_setAllowLinker', true]);
+	_gaq.push(['_trackPageview']);
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>

@@ -1,0 +1,92 @@
+﻿@model Tateeda.Clires.Areas.Admin.Model.Report.ReportModel
+
+<div class="container-fluid">
+	<div class="row-fluid">
+        <div class="span6">
+		    <ul>
+			<li>
+				<span class="title">Subjects:</span>
+				<ul>
+					<li>Total: <span class="title">@Model.SubjectsReportModel.TotalSubjectsPerStydy</span></li>
+					<li>Active: <span class="title">@Model.SubjectsReportModel.TotalActiveSubjectsCount</span></li>
+					<li>In Active: <span class="title">@Model.SubjectsReportModel.TotalInActiveSubjectsCount</span></li>
+				</ul>
+				<ul>
+					<span>Active per site:</span>
+					@foreach (var list in Model.SubjectsReportModel.TotalActiveSubjectsPerStudyForAllSites)
+					{
+						<li><span class="title">@list.Key</span>&nbsp;<span>Total:</span><span class="title">@list.Value</span></li>
+					}
+				</ul>
+			</li>
+			<li>
+				<span class="title">Visits: </span>
+				<ul>											
+					<li>
+						<span style="color: green;">Completed:</span>
+						<ul>
+							@foreach (var list in Model.SubjectsReportModel.TotalCompletedAppointmentsPerStudy)
+							{
+								<li><span class="title">@list.Key</span>&nbsp;<span>Total:</span><span class="title">@list.Value</span></li>
+							}
+						</ul>
+					</li>
+				</ul>
+				
+				<ul>
+					<li>
+						<span style="color: darkolivegreen">In Progress:</span>
+						<ul>
+							@foreach (var list in Model.SubjectsReportModel.TotalInProgressAppointmentsPerStudy)
+							{
+								<li><span class="title">@list.Key</span>&nbsp;<span>Total:</span><span class="title">@list.Value</span></li>
+							}
+						</ul>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<span style="color: blue">Scheduled:</span>
+						<ul>
+							@foreach (var list in Model.SubjectsReportModel.TotalScheduledAppointmentsPerStudy)
+							{
+								<li><span class="title">@list.Key</span>&nbsp;<span>Total:</span><span class="title">@list.Value</span></li>
+							}
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<span class="title">Forms: </span>
+				<ul>											
+					<li>
+						<span style="color: green;">Completed:</span>
+						<ul>
+							@foreach (var list in Model.SubjectsReportModel.TotalCompletedFormsPerStudy)
+							{
+								<li><span class="title">@list.Key</span>&nbsp;<span>Total:</span><span class="title">@list.Value</span></li>
+							}
+						</ul>
+					</li>
+				</ul>
+				
+				<ul>
+					<li>
+						<span style="color: darkolivegreen">In Progress:</span>
+						<ul>
+							@foreach (var list in Model.SubjectsReportModel.TotalInProgressFormsPerStudy)
+							{
+								<li><span class="title">@list.Key</span>&nbsp;<span>Total:</span><span class="title">@list.Value</span></li>
+							}
+						</ul>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+        </div>
+        <div class="span6">            
+            @Html.Partial("/Areas/Dashboard/Views/Shared/_AdminStats.cshtml")
+        </div>
+	</div>
+</div>

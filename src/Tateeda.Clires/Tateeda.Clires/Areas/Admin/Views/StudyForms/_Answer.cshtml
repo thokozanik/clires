@@ -1,0 +1,76 @@
+﻿@using Tateeda.Clires.Utility
+@model Tateeda.Clires.Areas.Admin.Model.Forms.AnswerViewModel
+@{
+    var formId = int.Parse(string.Format("{0}", @ViewBag.FormId));
+    var enumHelper = new EnumerationHelper();
+    var questionsList = (MultiSelectList)enumHelper.GetFormQuestions(formId, ViewBag.parentQuestionId??0);
+}
+
+@Html.HiddenFor(m => m.QuestionId, new Dictionary<string, object> { { "data-bind", "value: QuestionId" } })
+@Html.HiddenFor(m=>m.Id, new Dictionary<string, object> { { "data-bind", "value: Id" } })
+
+<div class="control-group">
+    <label class="control-label" for="OptionText">Answer:<span class="required">*</span></label>
+    <div class="controls">       
+        @Html.TextAreaFor(m=>m.OptionText, new Dictionary<string, object> { { "class", "input-xlarge" },{"required", "required"}, { "placeholder", "Answer" }, { "data-bind", "value: OptionText" } })
+    </div>
+    <div class="controls">
+        <table>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Score</th>
+                    <th>Sort Order</th>
+                    <th>Is Active</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>                        
+                        @Html.TextBoxFor(m=>m.Code, new Dictionary<string, object> { { "class", "input-mini" },  { "placeholder", "Code" }, { "data-bind", "value: Code" } })
+                    </td>
+                    <td align="center">
+                        @Html.TextBoxFor(m=>m.Score, new Dictionary<string, object> { { "class", "input-mini" }, { "placeholder", "0" }, {"style", "width:30px;"}, { "data-bind", "value: Score" } })
+                    </td>
+                    <td align="center">                        
+                        @Html.TextBoxFor(m=>m.SortOrder, new Dictionary<string, object> { { "class", "input-mini" }, { "placeholder", "0" }, {"style", "width:30px;"}, { "data-bind", "value: SortOrder" } })
+                    </td>     
+                    <td align="center">@Html.CheckBoxFor(m=>m.IsActive, new Dictionary<string, object> { { "data-bind", "checked: IsActive" } })</td>               
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <br />
+
+    <label class="control-label" for="ChildQuestions">Child Questions</label>
+    <div class="controls">
+        @Html.ListBoxFor(m=>m.ChildQuestionIds, questionsList, new {@size = "5", @class="input-xlarge"})
+        <div class="info">
+            <div class="text-warning" style="font-size: x-small">Parent Question must be radio or checkbox type <br/>
+                Selected child question will be hidden.<br /> 
+                They will be shown only if this answer is selected.<br/>
+            </div>            
+        </div>
+    </div>
+
+     <br />
+    <label class="control-label" for="Directions">Directions</label>
+    <div class="controls">
+        @Html.TextAreaFor(m => m.Directions, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "answer directions can be as HTML" }, { "data-bind", "value: Directions" } })        
+    </div>
+    <br />
+    <label class="control-label" for="Header">Header</label>
+    <div class="controls">
+        @Html.TextAreaFor(m => m.Header, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "answer header can be as HTML" }, { "data-bind", "value: Header" } })         
+    </div>
+    <br />
+    <label class="control-label" for="Trailer">Trailer</label>
+    <div class="controls">
+        @Html.TextAreaFor(m => m.Trailer, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "answer trailer can be as HTML" }, { "data-bind", "value: Trailer" } })         
+    </div>
+</div>
+<div class="modal-footer">
+    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel" />
+    <button type="submit" class="btn btn-primary">Save</button>
+</div>

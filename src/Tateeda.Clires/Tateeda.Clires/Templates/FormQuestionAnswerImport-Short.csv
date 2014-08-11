@@ -1,0 +1,10 @@
+﻿StudyId,FormId,FormName,Title,Description,FormType,QuestionId,QuestionText,QuestionTypeId,AnswerId,AnswerText
+,,,,,,,,,,,,,FormTypeId,Form Type Name,,FieldDataTypeId,Field Data Type Name
+,,,,,,,,,,,,,1,Study Form,,1,radio
+,,,,,,,,,,,,,2,Lab Form,,2,checkbox
+,,,,,,,,,,,,,,,,3,text-short
+,,,,,,,,,,,,,,,,4,text-long
+,,,,,,,,,,,,,,,,5,text-medium
+,,,,,,,,,,,,,,,,6,select
+,,,,,,,,,,,,,,,,7,number
+,,,,,,,,,,,,,,,,8,date

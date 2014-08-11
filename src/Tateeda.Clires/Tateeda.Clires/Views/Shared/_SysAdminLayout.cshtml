@@ -1,0 +1,94 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewBag.Title</title>
+	@Styles.Render("~/Content/themes/base/css", 
+					"~/Content/bootstrap.css", 
+					"~/Content/css")
+
+	@Scripts.Render("~/bundles/jquery", 
+					"~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery-mobile")
+
+</head>
+<body class="container-fluid fullBody content-wrapper">
+
+	@Html.Partial("Common/_Sidebar")
+
+	<div class="navbar navbar-static navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container" style="width: auto;">
+				
+				<a href="#" class="brand">Sys Admin:</a>
+
+				@*@Html.ActionLink("Client", "Index", new { area = "Study", controller = "Main" }, new { @class = "brand", @style = "font-size:1.0em;" })*@
+				@Html.ActionLink("Dashboard", "Index", new { area = "Dashboard", controller = "Tasks" }, new { @class = "brand", @style = "font-size:1.0em;" })
+
+
+				@Html.ActionLink("Users", "Index", new { area = "Admin", controller = "Users" }, new { @class = "brand", @style = "font-size:1.0em;" })
+				@Html.ActionLink("Subjects", "Index", new { area = "Admin", controller = "Subjects" }, new { @class = "brand", @style = "font-size:1.0em;" })
+
+				@Html.ActionLink("Drugs", "Index", new { area = "Admin", controller = "Medication" }, new { @class = "brand", @style = "font-size:1.0em;" })
+				@Html.ActionLink("Forms", "Index", new { area = "Admin", controller = "StudyForms" }, new { @class = "brand", @style = "font-size:1.0em;" })
+				@Html.ActionLink("Visits", "Index", new { area = "Admin", controller = "Visit" }, new { @class = "brand", @style = "font-size:1.0em;" })
+
+				@Html.ActionLink("Settings", "Index", new { area = "Admin", controller = "Settings" }, new { @class = "brand", @style = "font-size:1.0em;" })
+				@Html.ActionLink("Reports", "Index", new { area = "Admin", controller = "Reports" }, new { @class = "brand", @style = "font-size:1.0em;" })
+
+				<ul class="nav" role="navigation">
+					<li class="dropdown">
+						<a href="#" id="studies" role="button" class="dropdown-toggle" data-toggle="dropdown">Studies<b class="caret"></b></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="dropStudy">
+							<li>@Html.ActionLink("New Study Wizard", "Index", new { area = "Admin", controller = "StudySetup" }, new { @tabindex = "-1" })</li>
+							<li>@Html.ActionLink("Studies", "Index", new { area = "Admin", controller = "Study" }, new { @tabindex = "-1" })</li>
+							<li>@Html.ActionLink("Study Arms", "Arms", new { area = "Admin", controller = "Study" }, new { @tabindex = "-1" })</li>
+							<li>@Html.ActionLink("Study Sites", "Index", new { area = "Admin", controller = "Sites" }, new { @tabindex = "-1" })</li>
+							<li>@Html.ActionLink("Visit Sequence", "VisitSequence", new { area = "Admin", controller = "Study" }, new { @tabindex = "-1" })</li>
+						</ul>
+					</li>
+				</ul>
+
+				<ul class="nav" role="navigation">
+					<li class="dropdown">
+						<a href="#" id="matrix" role="button" class="dropdown-toggle" data-toggle="dropdown">Matrix<b class="caret"></b></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+							<li>@Html.ActionLink("Map", "Index", new { area = "Admin", controller = "Mapping" }, new { @tabindex = "-1" })</li>
+							<li>@Html.ActionLink("Settings", "Settings", new { area = "Admin", controller = "Mapping" }, new { @tabindex = "-1" })</li>
+							<li class="divider"></li>
+							<li><a tabindex="-1" href="#"></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<section id="login">
+			@Html.Partial("_LoginPartial")
+		</section>
+	</div>
+
+	<div id="body">
+		@RenderSection("featured", required: false)
+		<section class="container-fluid main-content">
+			@RenderBody()
+		</section>
+	</div>
+
+	<footer>
+		@Html.Partial("_Footer")
+	</footer>
+
+	  @Scripts.Render(                        
+            "~/bundles/jqueryui",
+            "~/bundles/knockout",
+            "~/bundles/bootstrap",            
+            "~/bundles/jqueryval",
+			"~/bundles/tateedajs"
+            )
+
+	@RenderSection("scripts", required: false)
+
+</body>
+</html>

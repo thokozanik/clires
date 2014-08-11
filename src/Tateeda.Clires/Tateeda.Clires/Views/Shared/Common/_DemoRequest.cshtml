@@ -1,0 +1,68 @@
+﻿<div class="modal hide fade in" style="display: none;" id="demo-modal">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal" style="width: 10px; height: 10px;" aria-hidden="true">&nbsp;X&nbsp;</a>
+		<h3>Demo Request</h3>
+	</div>
+	@using (Html.BeginForm("DemoRequest", "Home", FormMethod.Post))
+ {
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span4">
+					<label>Last Name:<b class="required">*</b></label>
+				</div>
+				<div class="span4">
+					<input type="text" name="LastName" required="required" />
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<label>First Name:<b class="required">*</b></label>
+				</div>
+				<div class="span4">
+					<input type="text" name="FirstName" required="required"/>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<label>Organization:<b class="required">*</b></label>
+				</div>
+				<div class="span4">
+					<input type="text" name="Organization" required="required"/>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<label>Contact Email:<b class="required">*</b></label>
+				</div>
+				<div class="span4">
+					<input type="email" name="ContactEmail" required="required"/>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<label>Contact Phone:</label>
+				</div>
+				<div class="span4">
+					<input type="tel" name="ContactPhone" />
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<label>Request:</label>
+				</div>
+				<div class="span4">
+					<textarea name="Comment"></textarea>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span8 right">
+					<button class="btn btn-primary" type="submit">Submit Request</button>
+				</div>
+			</div>
+		</div>
+		
+ }
+</div>
+<div>
+	<a href="#demo-modal" data-toggle="modal" class="btn btn-primary top">Demo Request</a>
+</div>

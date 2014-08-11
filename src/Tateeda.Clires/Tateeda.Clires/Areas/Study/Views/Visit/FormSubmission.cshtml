@@ -1,0 +1,107 @@
+﻿@using System.Web.Optimization
+@using Tateeda.Clires.Core.Data.EF
+@using Tateeda.Clires.Data.UOW
+@model IAppointmentForm
+
+@{
+    ViewBag.Title = "Visit Form";
+    Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+
+    var adminUow = DependencyResolver.Current.GetService<IAdminUnitOfWork>();
+    int subjectId = @ViewBag.SubjectId;
+    int formId = @ViewBag.FormId;
+    int appUserId = @ViewBag.AppUserId;
+
+    bool isLockedForm = adminUow.FormRepository.CanOpenFormToWriteForSubject(formId, subjectId, appUserId);
+}
+@if (!isLockedForm)
+{
+    var procForm = new FormInProcess { AppUserId = appUserId, FormId = formId, IsLocked = true, MaxLockTimeMin = 3, OpenendOn = DateTime.UtcNow, SubjectId = subjectId };
+    adminUow.FormRepository.MarkSubjectFormAsReadOnly(procForm);
+    adminUow.Commit();
+}
+
+@section scripts{
+    @Scripts.Render(
+        "~/Scripts/app/admin/StudyForms/formview.js",
+        "~/Scripts/app/study/visit/formSubmission.js")
+
+    @{
+        if (ViewBag.AppointmentFormId > 0)
+        {
+        <script type="text/javascript">
+            loadAppointmentForm('@ViewBag.AppointmentFormId');
+        </script>
+        }
+        else
+        {
+        <script type="text/javascript">
+            loadform('@ViewBag.FormId');
+        </script>
+        }               
+    }
+}
+
+<div class="container">
+    <div class="row-fluid">
+    <div class="breadcrumb">&nbsp;|&nbsp;<a href="/Study/Visit/Index/@ViewBag.AppointmentId">Appointment</a>&nbsp;|&nbsp;<span class="">Form Submission</span></div>
+    </div>
+    <div class='loadingIndicator'><i class="icon-refresh">&nbsp;</i> Loading...</div>
+    
+    <form method="POST" id="frmSubmission">
+        <input type="hidden" name="FormId" value="@ViewBag.FormId"/>
+        <input type="hidden" name="SubjectId" value="@ViewBag.SubjectId"/>
+        <input type="hidden" name="AppointmentId" value="@ViewBag.AppointmentId"/>
+        <input type="hidden" name="AppointmentFormId" value="@ViewBag.AppointmentFormId"/>
+        <input type="hidden" name="VisitId" value="@ViewBag.VisitId"/>
+
+        <div class="studyform">
+            <!-- ko template: {name: 'frmview', data: fv.vm.form} -->
+            <!-- /ko -->
+        </div>
+        <br />
+        <div class="row-fluid">
+            <div class="span2">
+                <label for="Notes" class="label" style="width: 100%">Form Notes:</label>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">
+                @Html.TextAreaFor(m=>m.Notes, 
+                new Dictionary<string, object>
+                {
+                    { "style", "width: 99%" }, 
+                    { "placeholder", "Form notes" }
+                })
+                
+            </div>
+        </div>
+
+        @if (!isLockedForm)
+        {
+            <!-- ko if: $data.formCompleted -->
+            <div class="warning">
+                This form has been completed. Back to
+                <a href="/Study/Visit/Index/@ViewBag.AppointmentId">Appointment</a>
+            </div>
+            <!--/ko-->
+
+            <!-- ko ifnot: $data.formCompleted -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary" id="saveContinue">Save & Continue</button>
+                <button type="button" class="btn btn-primary" id="saveFinish">Save & Finish</button>
+                <button type="button" class="btn btn-primary" id="saveAndRequest">Save & Request Info</button>
+            </div>
+            <!--/ko-->
+        }
+        else
+        {
+            <div class="text-warning">
+                This form is locked by other user for editing.<br />
+                Please try again later.
+            </div>
+        }
+    </form>
+</div>
+
+@Html.Partial("Forms/_FormTmpl")

@@ -1,0 +1,66 @@
+﻿@using System.Web.Optimization
+@using Tateeda.Clires.System
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewBag.Title</title>
+
+	@Styles.Render("~/Content/themes/base/css",
+					"~/Content/bootstrap.css",
+					"~/Content/css",
+					"~/Content/Mobile/css",
+					"~/Content/jquerymobile/css")
+
+	@Scripts.Render("~/bundles/jquery",
+					"~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery-mobile")
+	<script>
+		$(document).ready(function () {
+			try {
+				$.mobile.ajaxEnabled = false;
+			} catch (e) { }
+		});
+	</script>
+</head>
+<body class="container-fluid fullBody">
+	<div id="navbar-admin" class="navbar navbar-static">
+		<div class="navbar-inner">
+			<div class="container" style="width: auto;">
+				@Html.ActionLink("Home", "Index", new { area = "Study", controller = "Main" }, new { @class = "brand", @style = "font-size:1.0em;" })
+				@Html.ActionLink("Dashboard", "Index", new { area = "Dashboard", controller = "Tasks" }, new { @class = "brand", @style = "font-size:1.0em;" })
+				<b class="divider divider-vertical"></b>
+				@Html.ActionLink("Subjects", "Index", new { area = "Subject", controller = "Info" }, new { @class = "brand", @style = "font-size:1.0em;" })
+				<b class="divider divider-vertical"></b>
+				@Html.ActionLink("Schedule", "Index", new { area = "Schedule", controller = "Calendar" }, new { @class = "brand", @style = "font-size:1.0em;" })
+
+				<section id="login">
+					@Html.Partial("_LoginPartial")
+				</section>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="body">
+		<section class="container-fluid">
+			@RenderBody()
+		</section>
+	</div>
+
+	<footer>
+		@Html.Partial("_Footer")
+	</footer>
+
+	@Scripts.Render(
+			"~/bundles/jqueryui",
+			"~/bundles/knockout",
+			"~/bundles/bootstrap",
+			"~/bundles/jqueryval",
+			"~/bundles/tateedajs"
+			)
+	@RenderSection("scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+﻿@using Tateeda.Clires.Utility
+@model Tateeda.Clires.Areas.Admin.Model.Forms.FormViewModel
+@{
+    var enumHelper = new EnumerationHelper();    
+}
+@Html.HiddenFor(m => m.Id, new Dictionary<string, object> { { "data-bind", "value: Id" } })
+@Html.HiddenFor(m => m.Status, new Dictionary<string, object> { { "data-bind", "value: Status" } })
+
+
+<div class="accordion" id="accordionForm">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionForm" href="#collapseFormMain">Form Info <span class="required">*</span></a>
+        </div>
+        <div id="collapseFormMain" class="accordion-body collapse in">
+            <label class="control-label" for="Study">For Study:<span class="required">*</span></label>
+            <div class="controls">
+                @Html.DropDownListFor(m => m.StudyId, enumHelper.GetStudies(true),
+                                  new Dictionary<string, object>
+                                      {
+                                          { "class", "input-large" }, 
+                                          { "required", "required" },  
+                                          { "data-bind", "value: StudyId" }
+                                      })
+
+            </div>
+            <br />
+            <label class="control-label" for="Name">Form Name:<span class="required">*</span></label>
+            <div class="controls">
+                @Html.TextAreaFor(m => m.Name,
+                                          new Dictionary<string, object>
+                                              {
+                                                  { "class", "input-xlarge" },
+                                                  { "placeholder", "form name" }, 
+                                                  { "required", "required" }, 
+                                                  { "data-bind", "value: Name" }
+                                              })
+            </div>
+            <div class="controls">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Code:</th>
+                            <th>Form Type:<span class="required">*</span></th>
+                            <th>Order:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(m => m.Code, null,
+                                                 new Dictionary<string, object>
+                                                     {
+                                                         { "class", "input-small" }, 
+                                                         { "style", "width:50px;" }, 
+                                                         { "placeholder", "form code" }, 
+                                                         { "data-bind", "value: Code" }
+                                                     })
+                            </td>
+                            <td>
+                                @Html.DropDownListFor(m => m.FormTypeId, enumHelper.GetOptions(1),
+                                                      new Dictionary<string, object>
+                                                          {
+                                                              { "class", "input-medium" }, 
+                                                              { "required", "required" }, 
+                                                              { "data-bind", "value: FormTypeId" }
+                                                          })
+                            </td>
+                            <td align="center">
+                                @Html.TextBoxFor(m => m.SortOrder, null,
+                                                 new Dictionary<string, object>
+                                                     {
+                                                         { "class", "input-small" }, 
+                                                         { "placeholder", "0" }, 
+                                                         { "required", "required" }, 
+                                                         { "data-bind", "value: SortOrder" }, 
+                                                         { "min", "0" }, { "style", "width: 20px;" }
+                                                     })
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br />
+                <div class="row-fluid">
+                    <div class="span6">Form Layout:<span class="required">*</span></div>
+                    <div class="span1">
+                        @Html.DropDownListFor(m => m.LayoutTypeId, enumHelper.GetOptions(5),
+                                              new Dictionary<string, object>
+                                                  {
+                                                      { "class", "input-medium" }, 
+                                                      { "required", "required" }, 
+                                                      { "data-bind", "value: LayoutTypeId" }
+                                                  })
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6">Active:</div>
+                    <div class="span1">@Html.CheckBoxFor(m => m.IsActive,
+                                                         new Dictionary<string, object>
+                                                             {
+                                                                 { "data-bind", "checked: IsActive" }
+                                                             })
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6">Filled by Subject:</div>
+                    <div class="span1">
+                        @Html.CheckBoxFor(m => m.IsFilledBySubject,
+                                          new Dictionary<string, object>
+                                              {
+                                                  { "data-bind", "checked: IsFilledBySubject" }
+                                              })
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6">Show Score:</div>
+                    <div class="span1">@Html.CheckBoxFor(m => m.ShowTotalScore,
+                                                         new Dictionary<string, object>
+                                                             {
+                                                                 { "data-bind", "checked: ShowTotalScore" }
+                                                             })
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6">Notify On Change:</div>
+                    <div class="span1">
+                        @Html.CheckBoxFor(m => m.NotifyOnChange,
+                                          new Dictionary<string, object>
+                                              {
+                                                  { "data-bind", "checked: NotifyOnChange" }
+                                              })
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6">Notify On Completion:</div>
+                    <div class="span1">@Html.CheckBoxFor(m => m.NotifyOnCompletion,
+                                                         new Dictionary<string, object>
+                                                             {
+                                                                 { "data-bind", "checked: NotifyOnCompletion" }
+                                                             })
+                    </div>
+                </div>
+
+            </div>
+
+            <br />
+            <label class="control-label" for="Title">Title:<span class="required">*</span></label>
+            <div class="controls">
+                @Html.TextAreaFor(m => m.Title,
+                new Dictionary<string, object>
+                    {
+                        { "class", "input-xlarge" }, 
+                        { "placeholder", "form title" }, 
+                        { "required", "required" }, 
+                        { "data-bind", "value: Title" }
+                    })
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionForm" href="#collapseDetails">Details</a>
+        </div>
+        <div id="collapseDetails" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <label class="control-label" for="Description">Description:</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Description, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "form description" }, { "data-bind", "value: Description" } })
+                </div>
+                <br />
+                <label class="control-label" for="Directions">Directions:</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Directions, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "form directions can be as HTML" }, { "data-bind", "value: Directions" } })
+                </div>
+                <br />
+                <label class="control-label" for="Header">Header:</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Header, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "form header can be as HTML" }, { "data-bind", "value: Header" } })
+                </div>
+                <br />
+                <label class="control-label" for="Trailer">Trailer:</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Trailer, new Dictionary<string, object> { { "class", "input-xlarge" }, { "placeholder", "form trailer can be as HTML" }, { "data-bind", "value: Trailer" } })
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn  btn-primary" data-dismiss="modal">Close</button>
+   <button type="submit" class="btn btn-primary">Save</button>
+</div>
+
+
+

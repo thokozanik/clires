@@ -1,0 +1,9 @@
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.DB\Tateeda.Clires.DB\bin\Debug\Tateeda.Clires.DB.dacpac
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.DB\Tateeda.Clires.DB\bin\Debug\Tateeda.Clires.DB.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.DB\Tateeda.Clires.DB\bin\Debug\Tateeda.Clires.DB.pdb
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.DB\Tateeda.Clires.DB\obj\Debug\Model.xml
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.DB\Tateeda.Clires.DB\obj\Debug\refactor.xml
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.DB\Tateeda.Clires.DB\obj\Debug\postdeploy.sql
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.DB\Tateeda.Clires.DB\obj\Debug\predeploy.sql
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.DB\Tateeda.Clires.DB\obj\Debug\Tateeda.Clires.DB.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.DB\Tateeda.Clires.DB\obj\Debug\Tateeda.Clires.DB.pdb

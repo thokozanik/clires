@@ -1,0 +1,29 @@
+﻿@using (Ajax.BeginForm(actionName: "LeaveFeedback", ajaxOptions: new AjaxOptions { HttpMethod = "POST", OnComplete = "$('#feedbackText').val('');" }))
+{
+	<div class="container-fluid">
+		<hr />
+		<div class="row-fluid">		
+			
+			<div class="span3">
+				<input type="hidden" name="score" id="score" value="-1" />
+				Help to improve.
+				<br />
+				Please leave a feedback:
+			</div>
+			<div class="span6">
+				<textarea name="text" id="feedbackText" style="width: 99%" placeholder="Feedback"></textarea>
+			</div>
+
+			<div class="span2">
+				<b class="feedback icon-star"></b>
+				<b class="feedback icon-star"></b>
+				<b class="feedback icon-star"></b>
+				<b class="feedback icon-star"></b>
+				<b class="feedback icon-star"></b>
+			</div>
+			<div class="span1">
+				<button type="submit" class="btn btn-small btn-info">Submit</button>
+			</div>			
+		</div>
+	</div>
+}

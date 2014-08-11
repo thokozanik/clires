@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[RecreationalDrugOrSubstance] (
+    [Id] INT            IDENTITY (1, 1) NOT NULL,
+    [Name]                          NVARCHAR (100) NOT NULL,
+    [SubjectId]                     INT            NOT NULL,
+    [Dose]                          NVARCHAR (50)  NULL,
+    [Unit]                          NVARCHAR (20)  NULL,
+    [Frequency]                     INT            NULL,
+    [FrequencyUnit]                 NVARCHAR (20)  NULL,
+    [TypeName]                      NVARCHAR (50)  NULL,
+    [UseStartDate]                  DATE           NULL,
+    [UseEndDate]                    DATE           NULL,
+    [AppointementId]                INT            NULL,    
+    [Comments]                      VARCHAR (500)  NULL,
+    [Description] NVARCHAR (500)  NULL,
+    [SortOrder]  INT             DEFAULT ((0)) NOT NULL,
+    [Status]     INT             DEFAULT ((1)) NOT NULL,
+    [CreatedOn]  DATETIME    DEFAULT (GETUTCDATE())     NOT NULL,
+    [UpdatedOn]  DATETIME        DEFAULT (GETUTCDATE()) NULL,
+    [CreatedBy]  NVARCHAR (100)  NOT NULL,
+    [UpdatedBy]  NVARCHAR (100)  NULL,
+    [IsActive] BIT NOT NULL DEFAULT 1, 
+    CONSTRAINT [PK_RecreationalDrugOrSubstance] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (FILLFACTOR = 90),
+    CONSTRAINT [FK_RecreationalDrugOrSubstance_Appointment] FOREIGN KEY ([AppointementId]) REFERENCES [dbo].[Appointment] ([Id])
+);
+

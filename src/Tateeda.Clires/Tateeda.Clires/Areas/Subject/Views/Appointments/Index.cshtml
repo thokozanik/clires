@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Tateeda.Clires.Areas.Schedule.Model.AppointmentViewModel>
+@{
+	ViewBag.Title = "Appointments";
+	Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+}
+<div class="site-title">@Model. Appointments</div>
+@{
+	foreach (var appt in Model)
+	{
+		Html.Partial("Appointment/_ApptViewTmpl", appt);
+	}
+}

@@ -1,0 +1,65 @@
+﻿@using Tateeda.Clires.Areas.Admin.Model.Forms
+@using Tateeda.Clires.Core.Data.Enums
+@model IEnumerable<Tateeda.Clires.Areas.Admin.Model.Forms.FormViewModel>
+
+@{
+    var defForms = @Model.Where(f => f.FormTypeId == (int)FormType.DefaultForm).ToList();
+    var labForms = @Model.Where(f => f.FormTypeId == (int)FormType.LabForm).ToList();
+    var apptId = ViewBag.AppointementId + "";
+}
+
+<div class="row-fluid">
+    <div class="row-fluid">
+        <div class="span1 offset1">
+            <h4>Forms:</h4>
+        </div>
+        <div class="span6">
+            <ol>
+                @if (defForms != null && defForms.Count > 0)
+                {
+                    foreach (FormViewModel f in defForms)
+                    {                            
+                    <li>
+                        @using (Html.BeginForm("FormSubmission", "Visit", new { @area = "Study" }, FormMethod.Post,
+                                    new { @class = "form-inline", @id = f.Id + "_frm" }))
+                        {                                                       
+                            <input type="hidden" name="vid" value="@apptId"/>
+                            <button type="submit" class="btn-link">@f.Name</button>
+                            <input type="hidden" name="fid" value="@f.Id"/>
+                            
+                        }
+                    </li>
+                    }
+                }
+
+            </ol>
+        </div>
+    </div>
+    <hr />
+    <div class="row-fluid">
+        <div class="span1 offset1">
+            <h4>Labs:</h4>
+        </div>
+        <div class="span6">
+            <ol>
+
+                @if (labForms != null && labForms.Count > 0)
+                {
+                    foreach (FormViewModel l in labForms)
+                    {
+                    <li>
+                        @using (Html.BeginForm("FormSubmission", "Visit", new { @area = "Study" }, FormMethod.Post,
+                                    new { @class = "form-inline", @id = l.Id + "_frm" }))
+                        {
+                            <input type="hidden" name="fid" value="@l.Id"/>
+                            <input type="hidden" name="vid" value="@apptId"/>
+                            <button type="submit" class="btn-link">@l.Name</button>
+                        }
+                    </li>
+                    }
+                }
+            </ol>
+        </div>
+    </div>
+</div>
+

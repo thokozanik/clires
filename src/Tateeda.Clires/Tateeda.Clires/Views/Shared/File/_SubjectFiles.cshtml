@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Tateeda.Clires.Areas.Utilities.Models.FileViewModel>
+
+<div id="dialog-form" title="Select File To Upload">
+    <div class="row-fluid">
+        <form action="/Utilities/Util/UploadSubjectFile" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" class="input-xlarge" />
+            <input type="hidden" name="subjectId" value="@ViewBag.SubjectId" />
+            <input type="submit" class="btn btn-primary" value="Upload" />
+        </form>
+        <div>
+            <lable>Size Limit: 10MB</lable>
+        </div>
+        <div class="warning label-warning">
+            <b class="icon-warning-sign"></b>Restricted Files: *.exe|*.js|*.vb|other scripts<br />            
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="span5">
+
+        <h5>Uploaded Files:</h5>
+        <ul>
+            @if (@Model != null)
+            {
+                foreach (var f in @Model)
+                {
+                <li>@Html.ActionLink(f.Name, "FileViewer",
+                                         new
+                                             {
+                                                 @controller = "Util",
+                                                 @area = "Utilities",
+                                                 @fileId = f.Id,
+                                                 @enctype = "multipart/form-data",
+                                                 @target = "_search"
+                                             })</li>
+                }
+            }
+        </ul>
+    </div>
+    <div class="span4">
+        <input type="button" id="open-FileUploader" value="Upload File" />
+    </div>
+</div>

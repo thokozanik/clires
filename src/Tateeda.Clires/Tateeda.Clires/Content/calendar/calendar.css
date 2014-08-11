@@ -1,0 +1,55 @@
+﻿body, html
+{
+    padding: 5px;
+    overflow: hidden;
+}
+
+#my_form
+{
+    position: absolute;
+    z-index: 22785;
+    font-family: Tahoma;
+    font-size: 10pt;
+    width: 500px;
+    overflow: visible;
+}
+
+.titleBox
+{
+    width: 100%;
+    min-width: 100px;
+}
+
+.title
+{
+    font-variant: small-caps;
+    font-weight: bold;
+    text-align: right;
+    min-width: 100px;
+    vertical-align: top;
+}
+
+.center
+{
+    font-variant: small-caps;
+    font-weight: bold;
+    text-align: center;
+    min-width: 100px;
+}
+
+.button
+{
+    font-variant: small-caps;
+    font-weight: bold;
+    text-align: center;
+    background-color: transparent;
+    width: 100px;
+}
+
+.delete-Calendar-event
+{
+	position: absolute;
+	right: 2px;
+	z-index: 10000;
+	margin: 2px;
+}

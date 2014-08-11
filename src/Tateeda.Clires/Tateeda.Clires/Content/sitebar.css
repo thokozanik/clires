@@ -1,0 +1,309 @@
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400italic|Open+Sans:300,400italic,400,700);
+
+/* =============================================================================
+   Sidebar - main navigation, logo & tagline
+   ========================================================================== */
+
+#sidebar {
+    width: 252px;
+    height: 100%;
+    padding: 0 30px;
+    position: fixed;
+    z-index: 10000;
+    /* below - beautiful css gradient :) */
+    background: #C8E3F1;
+    background: -moz-linear-gradient(top, #C8E3F1 0%, #3B6CA4 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#C8E3F1), color-stop(100%,#3B6CA4));
+    background: -webkit-linear-gradient(top, #C8E3F1 0%,#3B6CA4 100%);
+    background: -o-linear-gradient(top, #C8E3F1 0%,#3B6CA4 100%);
+    background: -ms-linear-gradient(top, #C8E3F1 0%,#3B6CA4 100%);
+    background: linear-gradient(top, #C8E3F1 0%,#3B6CA4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#C8E3F1', endColorstr='#3B6CA4',GradientType=0 );
+}
+
+.help-text {
+    color: #2E42DB;
+    font-size: 0.7em;
+    font-weight: normal;
+    padding: 3px;
+}
+
+.Stick #sidebar {
+    margin-left: 0;
+}
+
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+@media all and (max-width: 640px) {
+
+    .select-replace.cover, #responsiveMenu select {
+        z-index: 99999 !important;
+    }
+
+    body {
+        background: #FFF !important;
+    }
+
+    .folioGrid {
+        overflow: hidden !important;
+    }
+
+    #sidebar {
+        width: 300px;
+        height: 100%;
+        padding: 12px 20px 0 20px;
+        position: absolute;
+        z-index: 99999;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 0.9em;
+    }
+
+    .Dark #sidebar {
+        border-bottom: 1px solid #666;
+    }
+}
+
+@media all and (max-width: 359px) {
+
+    /* Fix sidebar & menu */
+
+    #tagline, #menu, #copy {
+        display: none;
+    }
+
+    #sidebar {
+        top: 0;
+        width: 300px;
+        height: 50px;
+        padding-top: 12px;
+        position: absolute;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 99999;
+    }
+}
+
+@media all and (max-width: 1150px) and (min-width: 641px) {
+
+    /*#sidebar {
+        width: 280px;
+        height: 100%;
+        padding-top: 12px;
+        position: relative;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }*/
+
+}
+
+@media all and (max-width: 769px) and (min-width: 641px) {
+    #sidebar {
+        width: 300px;
+        top: 0;
+        height: 100%;
+        padding-top: 12px;
+        position: absolute;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 9999;
+    }
+}
+
+@media all and (max-height: 550px) {
+    #copy {
+        display: none;
+    }
+}
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: black !important;
+        text-shadow: none !important;
+        filter: none !important;
+        -ms-filter: none !important;
+    }
+    /* Black prints faster: h5bp.com/s */
+    a, a:visited {
+        text-decoration: underline;
+    }
+
+        a[href]:after {
+            content: " (" attr(href) ")";
+        }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+        content: "";
+    }
+    /* Don't show links for images, or javascript/internal links */
+    pre, blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+    /* h5bp.com/t */
+    tr, img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2, h3 {
+        page-break-after: avoid;
+    }
+}
+
+@media all and (min-width: 641px) {
+}
+
+.ie8 .closedSkie #sidebar {
+    margin-left: -280px;
+}
+
+.ie8 #sidebar, .ie9 #sidebar {
+    width: 260px;
+}
+
+
+/* =============================================================================
+   Light Sidebar Theme
+   ========================================================================== */
+
+.Light #sidebar {
+    background: #FFF;
+    filter: none !important;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* =============================================================================
+   Dark Sidebar Theme
+   ========================================================================== */
+
+.Dark #sidebar {
+    background: #3f3f3f;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNmM2YzZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzYTNhM2EiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #3f3f3f 0%, #3a3a3a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f3f3f), color-stop(100%,#3a3a3a));
+    background: -webkit-linear-gradient(top, #3f3f3f 0%,#3a3a3a 100%);
+    background: -o-linear-gradient(top, #3f3f3f 0%,#3a3a3a 100%);
+    background: -ms-linear-gradient(top, #3f3f3f 0%,#3a3a3a 100%);
+    background: linear-gradient(top, #3f3f3f 0%,#3a3a3a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', endColorstr='#3a3a3a',GradientType=0 );
+}
+
+/** NANO SCROLLBAR **/
+
+.nano {
+    position: relative;
+    height: 475px;
+    overflow: hidden;
+    padding: 0;
+}
+
+    .nano > .content {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 25px 30px;
+    }
+
+        .nano > .content::-webkit-scrollbar {
+            visibility: hidden;
+        }
+
+.has-scrollbar .content::-webkit-scrollbar {
+    visibility: visible;
+}
+
+.nano > .pane {
+    background: #222;
+    position: absolute;
+    width: 6px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    margin: 64px 5px 5px 5px;
+    visibility: hidden\9; /* Target only IE7 and IE8 with this hack */
+    opacity: .01;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+}
+
+    .nano > .pane > .slider {
+        background: #F15A23;
+        position: relative;
+        width: 6px;
+        cursor: pointer;
+    }
+
+.nano:hover > .pane, .pane.active {
+    visibility: visible\9; /* Target only IE7 and IE8 with this hack */
+    opacity: 1;
+}
+
+/* Sidebar Widget - EDIT HERE */
+
+.sidewidget {
+    position: absolute;
+    width: 220px;
+    bottom: 120px;
+    z-index: 999;
+}
+
+    .sidewidget span {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #F89E80;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .sidewidget li, .sidewidget a, .sidewidget {
+        color: #F89E80 !important;
+    }
+
+#sidebar .white-text {
+    color: #707070;
+}

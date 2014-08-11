@@ -1,0 +1,76 @@
+﻿@using Tateeda.Clires.Core.Data.Enums
+@model Tateeda.Clires.Areas.Subject.Model.SubjectViewModel
+
+<div class="row-fluid">
+	<div class="row-fluid">
+		<div class="span2">
+			<b>Visit</b>
+		</div>
+		<div class="span2">
+			<b>Date</b>
+		</div>
+		<div class="span2">
+			<b>Visit Status</b>
+		</div>
+		<div class="span2">
+			<b>Total Forms</b>
+		</div>
+		<div class="span2">
+			<b>Completed</b>
+		</div>
+		<div class="span2">
+			<b>In Progress</b>
+		</div>
+	</div>
+	@{
+		foreach (var appt in @Model.Appointments)
+		{
+		<div class="row-fluid">
+			<div class="tablular">
+				<div class="span2">
+					<i class="icon-star"></i>&nbsp;@Html.ActionLink(string.Format("{0}", appt.Visit.Name), "Index", new { @area = "Study", @controller = "Visit", id = appt.Id })
+				</div>
+				<div class="span2">
+					<i class="icon-calendar"></i>&nbsp;@string.Format("{0:d}", appt.StartDate.Add(appt.StartTime.Value))
+				</div>
+				<div class="span2">
+				
+					@{
+			switch (appt.Status)
+			{
+				case 1:
+					<i class="icon-warning-sign"></i>
+					<span>Scheduled</span>
+					break;
+				case 2:
+					<i class="icon-info-sign"></i>
+					<span>In Progress</span>
+					break;
+				case 4:
+					<i class="icon-check"></i>
+					<span>Completed</span>
+					break;
+				case 6:
+					<i class="ui-icon-cancel"></i>
+					<span>Canceled</span>
+					break;
+
+					<i class="icon-question-sign"></i>
+					<span>Unknown</span>
+			}
+					}
+				</div>
+				<div class="span2">
+					@appt.Visit.VisitForms.Count
+				</div>
+				<div class="span2">
+					@appt.AppointmentForms.Count(s => s.FormStatusTypeId == (int)ApptFormStatusType.Completed)
+				</div>
+				<div class="span2">
+					@appt.AppointmentForms.Count(s => s.FormStatusTypeId == (int)ApptFormStatusType.InProgress)
+				</div>
+			</div>
+		</div>
+		}
+	}
+</div>

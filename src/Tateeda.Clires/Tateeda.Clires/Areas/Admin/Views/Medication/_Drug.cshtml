@@ -1,0 +1,62 @@
+﻿@model Tateeda.Clires.Areas.Admin.Model.Drugs.DrugViewModel
+
+@using (Ajax.BeginForm("EditDrug", null,
+            new AjaxOptions { HttpMethod = "POST", OnComplete = "OnCompleteWithCallback", OnFailure = "OnFailure" },
+            new { @class = "form-horizontal" })) {
+
+    <div class="control-group">
+        <label class="control-label" for="Name">Name:<span class="required">*</span></label>
+        <div class="controls">
+            @Html.TextBoxFor(m => m.Name,
+            new Dictionary<string, object>
+                {
+                    { "class", "input-large" }, 
+                    { "required", "required" }, 
+                    { "placeholder", "Drug Name" }, 
+                    { "data-bind", "value: Name" }
+                })
+        </div>
+
+        <br />
+
+        <label class="control-label" for="DrugCategoryId">Category:</label>
+        <div class="controls">
+            <select  name="DrugCategoryId" id="catId"
+                     data-bind="
+                event:{change: med.vm.categoryChanged},
+                options: med.vm.categories,
+                                optionsText: 'Name',
+                                optionsValue: 'Id',
+                                optionsCaption: 'Select'">
+            </select>
+        </div>
+        <br />
+        
+        <label class="control-label" for="DrugClassId">Class:</label>
+        <div class="controls">
+            <select  name="DrugClassId" id="classId"
+                data-bind=" event: {change: med.vm.classChanged }, 
+                                    options: med.vm.classes,
+                                    optionsText: 'Name',
+                                    optionsValue: 'DrugClassId'">
+            </select>
+        </div>
+        <br />
+        <label class="control-label" for="Description">Description:</label>
+        <div class="controls">
+            @Html.TextAreaFor(m => m.Description,
+            new Dictionary<string, object>
+                {
+                    { "class", "input-large" }, 
+                    { "placeholder", "Category Description" }, 
+                    { "data-bind", "value: Description" }
+                })
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn  btn-primary" data-dismiss="modal">Cancel</button>
+        <input type="button" class="btn btn-danger" id="btnDeleteClass" value="Delete" />
+        <input type="submit" class="btn btn-primary" value="Save" />
+    </div>
+}

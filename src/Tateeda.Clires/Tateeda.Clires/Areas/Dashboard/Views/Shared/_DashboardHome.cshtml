@@ -1,0 +1,121 @@
+﻿@model Tateeda.Clires.Areas.Dashboard.Models.IDashboardViewModel
+<div class="row-fluid">
+	@if (!Model.IsAdmin)
+	{
+		<div class="row-fluid">
+			<div class="span6">
+				<h4>Upcoming appointments:</h4>
+				<div class="row-fluid">
+					<div class="span2">
+						<b>Visit:</b>
+					</div>
+					<div class="offset1 span2">
+						<b>Date:</b>
+					</div>
+					<div class="span3">
+						<b>Subject Id:</b>
+					</div>
+				</div>
+				<div class="container-fluid dashboard-cell">
+					@{
+						if (@Model.Appointments != null)
+						{
+							foreach (var appt in @Model.Appointments)
+							{
+
+								<div class="row-fluid">
+									<div class="span2">
+										@Html.ActionLink(appt.Visit.Name, "Index", "Visit", new {area = "Study", @id = appt.Id}, null)
+									</div>
+									<div class="offset1 span2">
+										@string.Format("{0:d}", appt.StartDate)
+									</div>
+									<div class="offset1 span2">
+										@appt.SubjectId
+									</div>
+								</div>
+							}
+						}
+						else
+						{
+							<div>No appointments in next 14 days</div>
+						}
+					}
+				</div>
+			</div>
+
+			<div class="span6">
+				<h4>My Subjects Summary:</h4>
+				<div class="row-fluid">
+					<div class="span3"><b>Subject Id:</b></div>
+					<div class="span3 offset1"><b>Name:</b></div>
+					<div class="span3 offset1"><b>DOB:</b></div>
+				</div>
+				<div class="container-fluid dashboard-cell">
+					@{
+						if (@Model.AppUserView.Subjects != null)
+						{
+							foreach (var subj in @Model.AppUserView.Subjects)
+							{
+								<div class="row-fluid">
+									<div class="span3">@Html.ActionLink(string.Format("{0}", subj.Id), "Details", new {@area = "Subject", @controller = "Info", @id = subj.Id}) </div>
+									<div class="span3">@string.Format("{0} {1}", subj.Contact.FirstName, subj.Contact.LastName)</div>
+									<div class="span3">@string.Format("{0:d}", subj.DateOfBirth)</div>
+								</div>
+							}
+						}
+					}
+				</div>
+			</div>
+
+		</div>
+		<hr />
+	}
+
+	<div class="row-fluid">
+		<div class="span6">
+			<h4>Statistics:</h4>
+		</div>
+		<div class="span6">
+			@if (!Model.IsAdmin)
+			{
+				<h4>Appointments Summary:</h4>
+			}
+			else
+			{
+				<h4>Study Summary:</h4>
+			}
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span6">
+			@Html.Partial("_AdminStats")
+		</div>
+
+		<div class="span6">
+			@if (!Model.IsAdmin)
+			{
+				<div class="row-fluid">
+					<div class="span4"><b>Scheduled Visits</b></div>
+					<div class="span4"><b>Completed Visits</b></div>
+					<div class="span4"><b>Pending Forms</b></div>
+				</div>
+
+				<div class="row-fluid">				
+					<div class="span4">
+						@string.Format("{0}", @Model.Appointments.Count())
+					</div>
+					<div class="span4">0</div>
+					<div class="span4">@Model.Appointments.Sum(a => a.Visit.VisitForms.Count())</div>
+				</div>
+			}
+			else
+			{
+				<div class="dashboard-cell-admin">
+					@Html.Partial("Report/_StudySummaryReport", Model.AdminReport)
+				</div>
+			}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,71 @@
+﻿@using Tateeda.Clires.Utility
+@model Tateeda.Clires.Core.Data.EF.IAddress
+@{
+    var enumHelper = new EnumerationHelper();
+}
+
+<div>
+    <label class="control-label" for="Street">Street:</label>
+    <div class="controls">
+        @Html.TextBoxFor(m => m.Street, new Dictionary<string, object>
+            {
+                { "class", "input-large" }, 
+                { "placeholder", "Street" }, 
+                { "data-bind", "value: $data.Contact.Addresses()[0].Street" }
+            })
+    </div>
+    <br />
+    <label class="control-label" for="City">City:</label>
+    <div class="controls">
+        @Html.TextBoxFor(m => m.City, new Dictionary<string, object>
+            {
+                { "class", "input-large" }, 
+                { "placeholder", "City" }, 
+                { "data-bind", "value: $data.Contact.Addresses()[0].City" }
+            })
+    </div>
+    <br />
+    <label class="control-label" for="PostalCode">Zip code:</label>
+    <div class="controls">
+        @Html.TextBoxFor(m => m.PostalCode, new Dictionary<string, object>
+            {
+                { "class", "input-large" }, 
+                { "placeholder", "Postal Code" }, 
+                { "data-bind", "value: $data.Contact.Addresses()[0].PostalCode" }
+            })
+    </div>
+    <br />
+
+    <label class="control-label" for="CountryId">Country:<span class="required">*</span></label>
+    <div class="controls">
+        @Html.DropDownListFor(m => m.CountryId, enumHelper.GetCountries(),
+            new Dictionary<string, object>
+                {
+                    { "class", "input-large" }, 
+                    { "required", "required"},
+                    { "data-bind", "value: $data.Contact.Addresses()[0].CountryId" }
+                })
+    </div>
+    <br />
+    <label class="control-label" for="StateId">State:</label>
+    <div class="controls">
+        @Html.DropDownListFor(m => m.StateId, enumHelper.GetStates(),
+            new Dictionary<string, object>
+                {
+                    { "class", "input-large" }, 
+                    { "data-bind", "value: $data.Contact.Addresses()[0].StateId" }
+                })
+    </div>
+    <br />
+    <label class="control-label" for="AddressTypeId">Type:<span class="required">*</span></label>
+	<div class="controls">
+		<div data-bind="html: ko.mapping.fromJSON($data)"></div>
+		@Html.DropDownListFor(m => m.AddressTypeId, enumHelper.GetAddressTypes(),
+							  new Dictionary<string, object>
+								  {
+									  { "class", "input-large" }, 
+									  { "required", "required"},
+									  { "data-bind", "value: $data.Contact.Addresses()[0].AddressTypeId" }
+								  })
+	</div>
+</div>

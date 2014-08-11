@@ -1,0 +1,1070 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EFBB92D4-FFB0-4273-AFE3-75D99371407F}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tateeda.Clires</RootNamespace>
+    <AssemblyName>Tateeda.Clires</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <FileAlignment>1024</FileAlignment>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>False</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <PrecompileBeforePublish>true</PrecompileBeforePublish>
+    <UseMerge>true</UseMerge>
+    <WDPMergeOption>MergeAllOutputsToASingleAssembly</WDPMergeOption>
+    <SingleAssemblyName>Tateeda.Clires.V4</SingleAssemblyName>
+    <PublishDatabases>false</PublishDatabases>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Deployment" Order="1" Enabled="True" Description="Run Create DB and then all in the order">
+          <Destination Path="Data Source=localhost%3bInitial Catalog=Tateeda.Clires.DB%3bIntegrated Security=True" />
+          <Object Type="DbFullSql" Enabled="False">
+            <PreSource Path="Data Source=localhost%3bInitial Catalog=Tateeda.Clires.DB%3bIntegrated Security=True" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+          <Object Type="DbFullSql" xmlns="">
+            <Source Path="..\..\Tateeda.Clires.DB\CreateClires4DBSQL.sql" Transacted="False" />
+          </Object>
+          <Object Type="DbFullSql" xmlns="">
+            <Source Path="..\..\Tateeda.Clires.DB\Tateeda.Clires.DB\dbo\Encription\DBEncript.sql" Transacted="False" />
+          </Object>
+          <Object Type="DbFullSql" xmlns="">
+            <Source Path="..\..\Tateeda.Clires.DB\Tateeda.Clires.DB\dbo\Scripts\1.TypeTables.sql" Transacted="False" />
+          </Object>
+          <Object Type="DbFullSql" xmlns="">
+            <Source Path="..\..\Tateeda.Clires.DB\Tateeda.Clires.DB\dbo\Scripts\2.StartDefaultValues.sql" Transacted="False" />
+          </Object>
+          <Object Type="DbFullSql" xmlns="">
+            <Source Path="..\..\Tateeda.Clires.DB\Tateeda.Clires.DB\dbo\Scripts\2a.Form.data.sql" Transacted="False" />
+          </Object>
+          <Object Type="DbFullSql" xmlns="">
+            <Source Path="..\..\Tateeda.Clires.DB\Tateeda.Clires.DB\dbo\Scripts\2b.Question.data.sql" Transacted="False" />
+          </Object>
+          <Object Type="DbFullSql" xmlns="">
+            <Source Path="..\..\Tateeda.Clires.DB\Tateeda.Clires.DB\dbo\Scripts\3.DataInserts.sql" Transacted="False" />
+          </Object>
+          <Object Type="DbFullSql" xmlns="">
+            <Source Path="..\..\Tateeda.Clires.DB\Tateeda.Clires.DB\dbo\Scripts\3a.Answer.data.sql" Transacted="False" />
+          </Object>
+          <Object Type="DbFullSql" xmlns="">
+            <Source Path="..\..\Tateeda.Clires.DB\Tateeda.Clires.DB\dbo\Encription\DBEncript.sql" Transacted="False" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="Entities-Deployment" Order="2" Enabled="True">
+          <Destination Path="" />
+          <Object Type="DbFullSql" Enabled="True">
+            <PreSource Path="Data Source=dock.arvixe.com%3bInitial Catalog=_CliresV4%3bUser ID=odesuk%3bPassword=sk68.com" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\Entities-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <DeployEncryptKey>sk68.com</DeployEncryptKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>false</ExcludeApp_Data>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PrecompileBeforePublish>true</PrecompileBeforePublish>
+    <PublishDatabases>false</PublishDatabases>
+    <UseMerge>true</UseMerge>
+    <WDPMergeOption>MergeAllPagesAndControlToASingleAssembly</WDPMergeOption>
+    <EnableUpdateable>false</EnableUpdateable>
+    <SingleAssemblyName>
+    </SingleAssemblyName>
+    <DebugSymbols>true</DebugSymbols>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>False</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <ContentAssemblyName>Tateeda.Clires.SiteContent</ContentAssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.0.1\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc4.3.0.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=2.1.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleMobileConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MainController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MappingController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MedicationController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReportsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SitesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StudyController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StudyFormsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StudySetupController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SubjectsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VisitController.cs" />
+    <Compile Include="Areas\Admin\Model\Report\ReportModel.cs" />
+    <Compile Include="Areas\Admin\Model\Report\SubjectsReportModel.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\TasksController.cs" />
+    <Compile Include="Areas\Dashboard\DashboardAreaRegistration.cs" />
+    <Compile Include="Areas\Help\HelpAreaRegistration.cs" />
+    <Compile Include="Areas\Utilities\Controllers\JsonUtilController.cs" />
+    <Compile Include="Areas\Utilities\Controllers\UtilController.cs" />
+    <Compile Include="Areas\Utilities\Models\PhoneViewModel.cs" />
+    <Compile Include="Areas\Utilities\UtilitiesAreaRegistration.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ViewSwitcherController.cs" />
+    <Compile Include="Extensions\AppointmentExtension.cs" />
+    <Compile Include="Extensions\DurgExtension.cs" />
+    <Compile Include="Extensions\FileExtension.cs" />
+    <Compile Include="Areas\Admin\Model\Drugs\DrugCategoryViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Drugs\DrugClassViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Drugs\DrugsGroupViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Drugs\DrugViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Study\VisitStepVisitSequenceViewModel.cs" />
+    <Compile Include="Areas\Financial\FinancialAreaRegistration.cs" />
+    <Compile Include="Areas\Schedule\Controllers\CalendarController.cs" />
+    <Compile Include="Areas\Schedule\ScheduleAreaRegistration.cs" />
+    <Compile Include="Areas\Study\Controllers\MainController.cs" />
+    <Compile Include="Areas\Study\Controllers\VisitController.cs" />
+    <Compile Include="Areas\Study\StudyAreaRegistration.cs" />
+    <Compile Include="Areas\Subject\Controllers\AppointmentsController.cs" />
+    <Compile Include="Areas\Subject\Controllers\InfoController.cs" />
+    <Compile Include="Areas\Subject\SubjectAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JsonController.cs" />
+    <Compile Include="Extensions\FormExtension.cs" />
+    <Compile Include="Extensions\SiteExtension.cs" />
+    <Compile Include="Extensions\StudyExtension.cs" />
+    <Compile Include="Extensions\SubjectExtension.cs" />
+    <Compile Include="Extensions\UserExtension.cs" />
+    <Compile Include="Extensions\VisitExtension.cs" />
+    <Compile Include="Areas\Admin\Model\Study\VisitStepModel.cs" />
+    <Compile Include="Areas\Admin\Model\Forms\AnswerViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Forms\QuestionViewModel.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Areas\Admin\Model\Forms\FormViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Matrix\MatrixSettingsViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Matrix\VisitFormsView.cs" />
+    <Compile Include="Areas\Admin\Model\Matrix\VisitSettingsViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Site\SiteViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Study\ArmViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Study\StudyViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Users\AppUserViewModel.cs" />
+    <Compile Include="Areas\Admin\Model\Study\VisitViewModel.cs" />
+    <Compile Include="Areas\Dashboard\Models\DashboardViewModel.cs" />
+    <Compile Include="Areas\Schedule\Model\AppointmentViewModel.cs" />
+    <Compile Include="Areas\Subject\Model\SubjectDrugViewModel.cs" />
+    <Compile Include="Areas\Subject\Model\SubjectViewModel.cs" />
+    <Compile Include="Areas\Subject\Model\SubjectVisitViewModel.cs" />
+    <Compile Include="Areas\Utilities\Models\FileViewModel.cs" />
+    <Compile Include="Models\DemoRequestModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Bootstrap.cs" />
+    <Compile Include="System\BaseController.cs" />
+    <Compile Include="System\GlobalVariables.cs" />
+    <Compile Include="Utility\Common.cs" />
+    <Compile Include="Utility\EnumerationHelper.cs" />
+    <Compile Include="Utility\IEnumerationHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\calendar\calendar.css" />
+    <Content Include="Content\calendar\jquery-ui-timepicker-addon.css" />
+    <Content Include="Content\canvasXpress\css\buttons.css" />
+    <Content Include="Content\canvasXpress\css\canvasXpress.css" />
+    <Content Include="Content\canvasXpress\css\color-field.css" />
+    <Content Include="Content\canvasXpress\css\ext-all.css" />
+    <Content Include="Content\canvasXpress\css\global.css" />
+    <Content Include="Content\canvasXpress\images\081.png" />
+    <Content Include="Content\canvasXpress\images\083.png" />
+    <Content Include="Content\canvasXpress\images\084.png" />
+    <Content Include="Content\canvasXpress\images\accept.png" />
+    <Content Include="Content\canvasXpress\images\accordion.png" />
+    <Content Include="Content\canvasXpress\images\accordion_active.png" />
+    <Content Include="Content\canvasXpress\images\accordion_active_bg.png" />
+    <Content Include="Content\canvasXpress\images\accordion_bg.png" />
+    <Content Include="Content\canvasXpress\images\add.png" />
+    <Content Include="Content\canvasXpress\images\add1.png" />
+    <Content Include="Content\canvasXpress\images\advanced_find.png" />
+    <Content Include="Content\canvasXpress\images\align_bottom.png" />
+    <Content Include="Content\canvasXpress\images\align_left.png" />
+    <Content Include="Content\canvasXpress\images\align_right.png" />
+    <Content Include="Content\canvasXpress\images\align_top.png" />
+    <Content Include="Content\canvasXpress\images\arrow.gif" />
+    <Content Include="Content\canvasXpress\images\arrow.png" />
+    <Content Include="Content\canvasXpress\images\arrow1.gif" />
+    <Content Include="Content\canvasXpress\images\arrowdown.png" />
+    <Content Include="Content\canvasXpress\images\arrowleft.png" />
+    <Content Include="Content\canvasXpress\images\arrowright.png" />
+    <Content Include="Content\canvasXpress\images\arrows_4_way.png" />
+    <Content Include="Content\canvasXpress\images\arrowup.png" />
+    <Content Include="Content\canvasXpress\images\arrow_left.png" />
+    <Content Include="Content\canvasXpress\images\arrow_right.png" />
+    <Content Include="Content\canvasXpress\images\bg.gif" />
+    <Content Include="Content\canvasXpress\images\bg_sp.gif" />
+    <Content Include="Content\canvasXpress\images\bookmark.png" />
+    <Content Include="Content\canvasXpress\images\bring_forward.png" />
+    <Content Include="Content\canvasXpress\images\bring_front.png" />
+    <Content Include="Content\canvasXpress\images\bullet_red.png" />
+    <Content Include="Content\canvasXpress\images\cancel.png" />
+    <Content Include="Content\canvasXpress\images\cancel1.png" />
+    <Content Include="Content\canvasXpress\images\canvasXpress.gif" />
+    <Content Include="Content\canvasXpress\images\case_sensitive.png" />
+    <Content Include="Content\canvasXpress\images\cell.png" />
+    <Content Include="Content\canvasXpress\images\checked.gif" />
+    <Content Include="Content\canvasXpress\images\clock.png" />
+    <Content Include="Content\canvasXpress\images\close.png" />
+    <Content Include="Content\canvasXpress\images\close_l.png" />
+    <Content Include="Content\canvasXpress\images\close_w.png" />
+    <Content Include="Content\canvasXpress\images\cog-add.png" />
+    <Content Include="Content\canvasXpress\images\cog-delete.png" />
+    <Content Include="Content\canvasXpress\images\cog-edit.png" />
+    <Content Include="Content\canvasXpress\images\cog-error.png" />
+    <Content Include="Content\canvasXpress\images\cog-go.png" />
+    <Content Include="Content\canvasXpress\images\cog.png" />
+    <Content Include="Content\canvasXpress\images\color-trigger.gif" />
+    <Content Include="Content\canvasXpress\images\color-trigger.png" />
+    <Content Include="Content\canvasXpress\images\color.png" />
+    <Content Include="Content\canvasXpress\images\color_swatch.png" />
+    <Content Include="Content\canvasXpress\images\configure.png" />
+    <Content Include="Content\canvasXpress\images\configure_hide.png" />
+    <Content Include="Content\canvasXpress\images\configure_show.png" />
+    <Content Include="Content\canvasXpress\images\connect.png" />
+    <Content Include="Content\canvasXpress\images\connections.png" />
+    <Content Include="Content\canvasXpress\images\control_eject_blue.png" />
+    <Content Include="Content\canvasXpress\images\control_eject_grey.png" />
+    <Content Include="Content\canvasXpress\images\control_end_blue.png" />
+    <Content Include="Content\canvasXpress\images\control_end_grey.png" />
+    <Content Include="Content\canvasXpress\images\control_forward_blue.png" />
+    <Content Include="Content\canvasXpress\images\control_forward_grey.png" />
+    <Content Include="Content\canvasXpress\images\control_pause_blue.png" />
+    <Content Include="Content\canvasXpress\images\control_pause_grey.png" />
+    <Content Include="Content\canvasXpress\images\control_play_blue.png" />
+    <Content Include="Content\canvasXpress\images\control_play_grey.png" />
+    <Content Include="Content\canvasXpress\images\control_rewind_blue.png" />
+    <Content Include="Content\canvasXpress\images\control_rewind_grey.png" />
+    <Content Include="Content\canvasXpress\images\control_start_blue.png" />
+    <Content Include="Content\canvasXpress\images\control_start_grey.png" />
+    <Content Include="Content\canvasXpress\images\control_stop_blue.png" />
+    <Content Include="Content\canvasXpress\images\control_stop_grey.png" />
+    <Content Include="Content\canvasXpress\images\copy.png" />
+    <Content Include="Content\canvasXpress\images\cross.gif" />
+    <Content Include="Content\canvasXpress\images\cxn.png" />
+    <Content Include="Content\canvasXpress\images\datatable.png" />
+    <Content Include="Content\canvasXpress\images\delete.png" />
+    <Content Include="Content\canvasXpress\images\disk.png" />
+    <Content Include="Content\canvasXpress\images\distribute_horizontal.png" />
+    <Content Include="Content\canvasXpress\images\distribute_vertical.png" />
+    <Content Include="Content\canvasXpress\images\dna.jpg" />
+    <Content Include="Content\canvasXpress\images\dna.png" />
+    <Content Include="Content\canvasXpress\images\dna1.png" />
+    <Content Include="Content\canvasXpress\images\download.png" />
+    <Content Include="Content\canvasXpress\images\edges.png" />
+    <Content Include="Content\canvasXpress\images\edit.png" />
+    <Content Include="Content\canvasXpress\images\er.png" />
+    <Content Include="Content\canvasXpress\images\eye.png" />
+    <Content Include="Content\canvasXpress\images\fast_forward.png" />
+    <Content Include="Content\canvasXpress\images\fb_map.gif" />
+    <Content Include="Content\canvasXpress\images\field_bg.gif" />
+    <Content Include="Content\canvasXpress\images\find.png" />
+    <Content Include="Content\canvasXpress\images\flip_horizontal.png" />
+    <Content Include="Content\canvasXpress\images\flip_vertical.png" />
+    <Content Include="Content\canvasXpress\images\folder_close.png" />
+    <Content Include="Content\canvasXpress\images\folder_open.png" />
+    <Content Include="Content\canvasXpress\images\funnel.png" />
+    <Content Include="Content\canvasXpress\images\funnel_cross.png" />
+    <Content Include="Content\canvasXpress\images\gene.jpg" />
+    <Content Include="Content\canvasXpress\images\group-checked.gif" />
+    <Content Include="Content\canvasXpress\images\handle.png" />
+    <Content Include="Content\canvasXpress\images\handle_bottom_left.png" />
+    <Content Include="Content\canvasXpress\images\handle_bottom_right.png" />
+    <Content Include="Content\canvasXpress\images\handle_left_bottom.png" />
+    <Content Include="Content\canvasXpress\images\handle_left_top.png" />
+    <Content Include="Content\canvasXpress\images\handle_right_bottom.png" />
+    <Content Include="Content\canvasXpress\images\handle_right_top.png" />
+    <Content Include="Content\canvasXpress\images\handle_top_left.png" />
+    <Content Include="Content\canvasXpress\images\handle_top_right.png" />
+    <Content Include="Content\canvasXpress\images\header.jpg" />
+    <Content Include="Content\canvasXpress\images\header_nsp.jpg" />
+    <Content Include="Content\canvasXpress\images\header_sp.jpg" />
+    <Content Include="Content\canvasXpress\images\help.png" />
+    <Content Include="Content\canvasXpress\images\help1.png" />
+    <Content Include="Content\canvasXpress\images\hide_selected.png" />
+    <Content Include="Content\canvasXpress\images\iconify_l.png" />
+    <Content Include="Content\canvasXpress\images\iconify_w.png" />
+    <Content Include="Content\canvasXpress\images\img1.png" />
+    <Content Include="Content\canvasXpress\images\in.png" />
+    <Content Include="Content\canvasXpress\images\information.png" />
+    <Content Include="Content\canvasXpress\images\inout.png" />
+    <Content Include="Content\canvasXpress\images\item-over.gif" />
+    <Content Include="Content\canvasXpress\images\jquery.png" />
+    <Content Include="Content\canvasXpress\images\legend.png" />
+    <Content Include="Content\canvasXpress\images\lightbulb.png" />
+    <Content Include="Content\canvasXpress\images\lightbulb_off.png" />
+    <Content Include="Content\canvasXpress\images\lightning.png" />
+    <Content Include="Content\canvasXpress\images\magnifier_zoom_in.png" />
+    <Content Include="Content\canvasXpress\images\magnifier_zoom_out.png" />
+    <Content Include="Content\canvasXpress\images\magnify.png" />
+    <Content Include="Content\canvasXpress\images\maximize_l.png" />
+    <Content Include="Content\canvasXpress\images\maximize_w.png" />
+    <Content Include="Content\canvasXpress\images\mem.png" />
+    <Content Include="Content\canvasXpress\images\membrane.png" />
+    <Content Include="Content\canvasXpress\images\menu-parent.gif" />
+    <Content Include="Content\canvasXpress\images\menu.gif" />
+    <Content Include="Content\canvasXpress\images\menu_dropdown.png" />
+    <Content Include="Content\canvasXpress\images\met.png" />
+    <Content Include="Content\canvasXpress\images\minimize_l.png" />
+    <Content Include="Content\canvasXpress\images\minimize_w.png" />
+    <Content Include="Content\canvasXpress\images\minus.png" />
+    <Content Include="Content\canvasXpress\images\mit.png" />
+    <Content Include="Content\canvasXpress\images\move_back.png" />
+    <Content Include="Content\canvasXpress\images\move_backwards.png" />
+    <Content Include="Content\canvasXpress\images\move_bottom.png" />
+    <Content Include="Content\canvasXpress\images\move_forwards.png" />
+    <Content Include="Content\canvasXpress\images\move_front.png" />
+    <Content Include="Content\canvasXpress\images\move_left.png" />
+    <Content Include="Content\canvasXpress\images\move_right.png" />
+    <Content Include="Content\canvasXpress\images\move_top.png" />
+    <Content Include="Content\canvasXpress\images\network.png" />
+    <Content Include="Content\canvasXpress\images\next_bottom.png" />
+    <Content Include="Content\canvasXpress\images\next_bottom_active.png" />
+    <Content Include="Content\canvasXpress\images\next_left.png" />
+    <Content Include="Content\canvasXpress\images\next_left_active.png" />
+    <Content Include="Content\canvasXpress\images\next_right.png" />
+    <Content Include="Content\canvasXpress\images\next_right_active.png" />
+    <Content Include="Content\canvasXpress\images\next_top.png" />
+    <Content Include="Content\canvasXpress\images\next_top_active.png" />
+    <Content Include="Content\canvasXpress\images\node-tree.png" />
+    <Content Include="Content\canvasXpress\images\nodes.png" />
+    <Content Include="Content\canvasXpress\images\nuc.png" />
+    <Content Include="Content\canvasXpress\images\object-rotate-right.png" />
+    <Content Include="Content\canvasXpress\images\out.png" />
+    <Content Include="Content\canvasXpress\images\package_graphics.png" />
+    <Content Include="Content\canvasXpress\images\pause.png" />
+    <Content Include="Content\canvasXpress\images\pencil.png" />
+    <Content Include="Content\canvasXpress\images\picture.png" />
+    <Content Include="Content\canvasXpress\images\pictures.png" />
+    <Content Include="Content\canvasXpress\images\picture_add.png" />
+    <Content Include="Content\canvasXpress\images\picture_delete.png" />
+    <Content Include="Content\canvasXpress\images\picture_edit.png" />
+    <Content Include="Content\canvasXpress\images\picture_red.png" />
+    <Content Include="Content\canvasXpress\images\picture_save.png" />
+    <Content Include="Content\canvasXpress\images\pin.png" />
+    <Content Include="Content\canvasXpress\images\pixel_w.png" />
+    <Content Include="Content\canvasXpress\images\play.png" />
+    <Content Include="Content\canvasXpress\images\power_off.png" />
+    <Content Include="Content\canvasXpress\images\power_on.png" />
+    <Content Include="Content\canvasXpress\images\prev_bottom.png" />
+    <Content Include="Content\canvasXpress\images\prev_bottom_active.png" />
+    <Content Include="Content\canvasXpress\images\prev_left.png" />
+    <Content Include="Content\canvasXpress\images\prev_left_active.png" />
+    <Content Include="Content\canvasXpress\images\prev_right.png" />
+    <Content Include="Content\canvasXpress\images\prev_right_active.png" />
+    <Content Include="Content\canvasXpress\images\prev_top.png" />
+    <Content Include="Content\canvasXpress\images\prev_top_active.png" />
+    <Content Include="Content\canvasXpress\images\print.png" />
+    <Content Include="Content\canvasXpress\images\prot.png" />
+    <Content Include="Content\canvasXpress\images\prot1.png" />
+    <Content Include="Content\canvasXpress\images\prot2.png" />
+    <Content Include="Content\canvasXpress\images\prot4.png" />
+    <Content Include="Content\canvasXpress\images\prot5.png" />
+    <Content Include="Content\canvasXpress\images\prot6.png" />
+    <Content Include="Content\canvasXpress\images\prot7.png" />
+    <Content Include="Content\canvasXpress\images\prot8.png" />
+    <Content Include="Content\canvasXpress\images\prot9.png" />
+    <Content Include="Content\canvasXpress\images\readmore.png" />
+    <Content Include="Content\canvasXpress\images\redo.png" />
+    <Content Include="Content\canvasXpress\images\refresh.png" />
+    <Content Include="Content\canvasXpress\images\refresh1.png" />
+    <Content Include="Content\canvasXpress\images\reset.png" />
+    <Content Include="Content\canvasXpress\images\resize_l.png" />
+    <Content Include="Content\canvasXpress\images\resize_w.png" />
+    <Content Include="Content\canvasXpress\images\rewind.png" />
+    <Content Include="Content\canvasXpress\images\rotate_anticlockwise.png" />
+    <Content Include="Content\canvasXpress\images\rotate_anticlockwise_cont.png" />
+    <Content Include="Content\canvasXpress\images\rotate_clockwise.png" />
+    <Content Include="Content\canvasXpress\images\rotate_clockwise_cont.png" />
+    <Content Include="Content\canvasXpress\images\save.png" />
+    <Content Include="Content\canvasXpress\images\scroller_body_hor_bottom.png" />
+    <Content Include="Content\canvasXpress\images\scroller_body_hor_top.png" />
+    <Content Include="Content\canvasXpress\images\scroller_body_ver_left.png" />
+    <Content Include="Content\canvasXpress\images\scroller_body_ver_right.png" />
+    <Content Include="Content\canvasXpress\images\scroller_empty_hor_bottom.png" />
+    <Content Include="Content\canvasXpress\images\scroller_empty_hor_top.png" />
+    <Content Include="Content\canvasXpress\images\scroller_empty_ver_left.png" />
+    <Content Include="Content\canvasXpress\images\scroller_empty_ver_right.png" />
+    <Content Include="Content\canvasXpress\images\scroller_handle_hor_bottom.png" />
+    <Content Include="Content\canvasXpress\images\scroller_handle_hor_top.png" />
+    <Content Include="Content\canvasXpress\images\scroller_handle_ver_left.png" />
+    <Content Include="Content\canvasXpress\images\scroller_handle_ver_right.png" />
+    <Content Include="Content\canvasXpress\images\send_back.png" />
+    <Content Include="Content\canvasXpress\images\send_backwards.png" />
+    <Content Include="Content\canvasXpress\images\shape_group.png" />
+    <Content Include="Content\canvasXpress\images\shape_ungroup.png" />
+    <Content Include="Content\canvasXpress\images\share_this.png" />
+    <Content Include="Content\canvasXpress\images\show_selected.png" />
+    <Content Include="Content\canvasXpress\images\simple_find.png" />
+    <Content Include="Content\canvasXpress\images\sortudown.png" />
+    <Content Include="Content\canvasXpress\images\sortup.png" />
+    <Content Include="Content\canvasXpress\images\sort_asc.gif" />
+    <Content Include="Content\canvasXpress\images\sort_desc.gif" />
+    <Content Include="Content\canvasXpress\images\square-gray-left.gif" />
+    <Content Include="Content\canvasXpress\images\square-gray-right.gif" />
+    <Content Include="Content\canvasXpress\images\stock_filters-pop-art.png" />
+    <Content Include="Content\canvasXpress\images\stop.png" />
+    <Content Include="Content\canvasXpress\images\style.png" />
+    <Content Include="Content\canvasXpress\images\table.png" />
+    <Content Include="Content\canvasXpress\images\tbottom.png" />
+    <Content Include="Content\canvasXpress\images\text_distribute_h.png" />
+    <Content Include="Content\canvasXpress\images\text_distribute_v.png" />
+    <Content Include="Content\canvasXpress\images\text_padding_bottom.png" />
+    <Content Include="Content\canvasXpress\images\text_padding_h.png" />
+    <Content Include="Content\canvasXpress\images\text_padding_left.png" />
+    <Content Include="Content\canvasXpress\images\text_padding_right.png" />
+    <Content Include="Content\canvasXpress\images\text_padding_top.png" />
+    <Content Include="Content\canvasXpress\images\text_padding_v.png" />
+    <Content Include="Content\canvasXpress\images\tleft.png" />
+    <Content Include="Content\canvasXpress\images\transpose.png" />
+    <Content Include="Content\canvasXpress\images\trans_bottom_left.png" />
+    <Content Include="Content\canvasXpress\images\trans_bottom_right.png" />
+    <Content Include="Content\canvasXpress\images\trans_left_bottom.png" />
+    <Content Include="Content\canvasXpress\images\trans_left_top.png" />
+    <Content Include="Content\canvasXpress\images\trans_right_bottom.png" />
+    <Content Include="Content\canvasXpress\images\trans_right_top.png" />
+    <Content Include="Content\canvasXpress\images\trans_top_left.png" />
+    <Content Include="Content\canvasXpress\images\trans_top_right.png" />
+    <Content Include="Content\canvasXpress\images\tright.png" />
+    <Content Include="Content\canvasXpress\images\ttop.png" />
+    <Content Include="Content\canvasXpress\images\turn_left.png" />
+    <Content Include="Content\canvasXpress\images\turn_right.png" />
+    <Content Include="Content\canvasXpress\images\unchecked.gif" />
+    <Content Include="Content\canvasXpress\images\undo.png" />
+    <Content Include="Content\canvasXpress\images\unpin.png" />
+    <Content Include="Content\clires.css" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\icons-18-black.png" />
+    <Content Include="Content\images\icons-18-white.png" />
+    <Content Include="Content\images\icons-36-black.png" />
+    <Content Include="Content\images\icons-36-white.png" />
+    <Content Include="Content\jquery.mobile-1.2.0.css" />
+    <Content Include="Content\jquery.mobile-1.2.0.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.2.0.css" />
+    <Content Include="Content\jquery.mobile.structure-1.2.0.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.2.0.css" />
+    <Content Include="Content\jquery.mobile.theme-1.2.0.min.css" />
+    <Content Include="Content\clires.Mobile.css" />
+    <Content Include="Content\sitebar.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\themes\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\themes\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\themes\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\themes\redmond\jquery-ui-1.8.23.custom.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.all.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.base.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.button.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.core.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.slider.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\redmond\jquery.ui.theme.css" />
+    <Content Include="Content\toastr-responsive.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="default.htm" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Subject\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
+    <Content Include="googlef01843b4a8c5da59.html" />
+    <Content Include="Images\banner\1.JPG" />
+    <Content Include="Images\banner\3.JPG" />
+    <Content Include="Images\banner\4.JPG" />
+    <Content Include="Images\banner\5.JPG" />
+    <Content Include="Images\banner\6.JPG" />
+    <Content Include="Images\banner\CliresLogo.jpg" />
+    <Content Include="Images\banner\CliresLogo.png" />
+    <Content Include="Images\TateedaLogo2013-150x32.png" />
+    <Content Include="Images\TateedaLogo2013.png" />
+    <Content Include="Logs\LogPlaceHolder.txt" />
+    <Content Include="Scripts\app\Admin\Reports\reports.js" />
+    <Content Include="Scripts\app\Admin\Settings\settings.js" />
+    <Content Include="Scripts\app\Admin\Study\arms.js" />
+    <Content Include="Scripts\app\Drugs\drugs.js" />
+    <Content Include="Scripts\app\Admin\Matrix\map.js" />
+    <Content Include="Scripts\app\Admin\Matrix\settings.js" />
+    <Content Include="Scripts\app\Admin\Site\site.js" />
+    <Content Include="Scripts\app\Admin\StudyForms\formbuilder.js" />
+    <Content Include="Scripts\app\Admin\StudyForms\formquestions.js" />
+    <Content Include="Scripts\app\Admin\StudyForms\formview.js" />
+    <Content Include="Scripts\app\Admin\StudyForms\questionanswers.js" />
+    <Content Include="Scripts\app\Admin\Study\study.js" />
+    <Content Include="Areas\Admin\Views\StudyForms\FormQuestions.cshtml" />
+    <Content Include="Areas\Admin\Views\StudyForms\QuestoinAnswers.cshtml" />
+    <Content Include="Areas\Admin\Views\StudyForms\_Form.cshtml" />
+    <Content Include="Areas\Admin\Views\StudyForms\_Question.cshtml" />
+    <Content Include="Areas\Admin\Views\StudyForms\_Answer.cshtml" />
+    <Content Include="Areas\Admin\Views\Main\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\StudyForms\PreViewForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Mapping\Settings.cshtml" />
+    <Content Include="Areas\Subject\Views\Info\Index.cshtml" />
+    <Content Include="Areas\Study\Views\Web.config" />
+    <Content Include="Areas\Study\Views\Main\Index.cshtml" />
+    <Content Include="Areas\Study\Views\Visit\Index.cshtml" />
+    <Content Include="Areas\Subject\Views\Appointments\Index.cshtml" />
+    <Content Include="Scripts\app\Admin\Study\studySites.js" />
+    <Content Include="Scripts\app\Admin\Study\visitsequence.js" />
+    <Content Include="Scripts\app\Admin\Users\users.js" />
+    <Content Include="Content\calendar\fullcalendar.css" />
+    <Content Include="Scripts\app\Admin\Visits\visit.js" />
+    <Content Include="Scripts\app\calendar\calendar.js" />
+    <Content Include="Scripts\app\calendar\visitScheduler.js" />
+    <Content Include="Scripts\app\Dashboard\adminstats.js" />
+    <Content Include="Scripts\app\Dashboard\dashboard.js" />
+    <Content Include="Scripts\app\Dashboard\home.js" />
+    <Content Include="Scripts\app\Dashboard\messages.js" />
+    <Content Include="Scripts\app\Dashboard\profile.js" />
+    <Content Include="Scripts\app\Dashboard\tasks.js" />
+    <Content Include="Areas\Study\Views\Shared\_FormLinkView.cshtml" />
+    <Content Include="Areas\Study\Views\Visit\FormSubmission.cshtml" />
+    <Content Include="Areas\Study\Views\Shared\_SubjectMedictionView.cshtml" />
+    <Content Include="Areas\Utilities\Views\Web.config" />
+    <Content Include="Areas\Utilities\Views\Util\FileViewer.cshtml" />
+    <Content Include="Areas\Utilities\Views\Util\FileSelector.cshtml" />
+    <Content Include="Areas\Help\Views\Web.config" />
+    <Content Include="Areas\Dashboard\Views\Shared\_AdminStats.cshtml" />
+    <Content Include="Areas\Admin\Views\Study\Arms.cshtml" />
+    <Content Include="Areas\Admin\Views\StudySetup\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Index.cshtml" />
+    <Content Include="packages.config" />
+    <Content Include="KeyTateeda.pfx" />
+    <None Include="Properties\PublishProfiles\Local IIS WebDeploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Local-Package.pubxml" />
+    <Content Include="Scripts\bootstrap.min.js.map">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.js" />
+    <Content Include="Scripts\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery-ui.unobtrusive.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\koGrid-2.1.1.debug.js" />
+    <Content Include="Scripts\koGrid-2.1.1.js" />
+    <Content Include="Views\Shared\Report\_StudySummaryReport.cshtml" />
+    <None Include="Properties\PublishProfiles\Clires4-debug.pubxml" />
+    <Content Include="Scripts\app\feedback.js" />
+    <Content Include="Scripts\app\Study\studyMain.js" />
+    <Content Include="Scripts\app\Study\Visit\drugHistory.js" />
+    <Content Include="Scripts\app\Study\Visit\formSubmission.js" />
+    <Content Include="Scripts\app\Study\Visit\studyVisit.js" />
+    <Content Include="Scripts\app\Utilities\FileHandler.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\clires4.tateeda.com - Web Deploy.pubxml" />
+    <Content Include="Scripts\infuser-amd.js" />
+    <Content Include="Scripts\infuser-amd.min.gz.js" />
+    <Content Include="Scripts\infuser-amd.min.js" />
+    <Content Include="Scripts\infuser.js" />
+    <Content Include="Scripts\infuser.min.gz.js" />
+    <Content Include="Scripts\infuser.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.1.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.2.0.js" />
+    <Content Include="Scripts\jquery.mobile-1.2.0.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\koExternalTemplateEngine-amd.js" />
+    <Content Include="Scripts\koExternalTemplateEngine-amd.min.js" />
+    <Content Include="Scripts\koExternalTemplateEngine.js" />
+    <Content Include="Scripts\koExternalTemplateEngine.min.js" />
+    <Content Include="Scripts\koExternalTemplateEngine_all.js" />
+    <Content Include="Scripts\koExternalTemplateEngine_all.min.js" />
+    <Content Include="Scripts\custom\canvasXpress\app.js" />
+    <Content Include="Scripts\custom\canvasXpress\canvas.text.js" />
+    <Content Include="Scripts\custom\canvasXpress\canvas.text.min.js" />
+    <Content Include="Scripts\custom\canvasXpress\canvas2png.js" />
+    <Content Include="Scripts\custom\canvasXpress\canvasXpress.doc.js" />
+    <Content Include="Scripts\custom\canvasXpress\canvasXpress.gif" />
+    <Content Include="Scripts\custom\canvasXpress\canvasXpress.js" />
+    <Content Include="Scripts\custom\canvasXpress\canvasXpress.min.js" />
+    <Content Include="Scripts\custom\canvasXpress\canvasXpress.public.min.js" />
+    <Content Include="Scripts\custom\canvasXpress\color-field.js" />
+    <Content Include="Scripts\custom\canvasXpress\date.format.js" />
+    <Content Include="Scripts\custom\canvasXpress\date.format.min.js" />
+    <Content Include="Scripts\custom\canvasXpress\excanvas.js" />
+    <Content Include="Scripts\custom\canvasXpress\ext-canvasXpress.js" />
+    <Content Include="Scripts\custom\canvasXpress\Ext.ux.SearchWindow.js" />
+    <Content Include="Scripts\custom\canvasXpress\extext.js" />
+    <Content Include="Scripts\custom\canvasXpress\flash10canvas.swf" />
+    <Content Include="Scripts\custom\canvasXpress\flash9canvas.swf" />
+    <Content Include="Scripts\custom\canvasXpress\flashcanvas.js" />
+    <Content Include="Scripts\custom\canvasXpress\gentilis_regular.typeface.js" />
+    <Content Include="Scripts\custom\canvasXpress\helvetiker_regular.typeface.js" />
+    <Content Include="Scripts\custom\canvasXpress\optimer_regular.typeface.js" />
+    <Content Include="Scripts\custom\canvasXpress\sprintf.js" />
+    <Content Include="Scripts\custom\canvasXpress\sprintf.min.js" />
+    <Content Include="Scripts\lib\calendar\jquery-ui-sliderAccess.js" />
+    <Content Include="Scripts\lib\calendar\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\lib\calendar\fullcalendar.js" />
+    <Content Include="Scripts\lib\calendar\fullcalendar.min.js">
+      <DependentUpon>fullcalendar.js</DependentUpon>
+    </Content>
+    <Content Include="Content\calendar\fullcalendar.print.css" />
+    <Content Include="Scripts\lib\calendar\gcal.js" />
+    <Content Include="Scripts\app\config.js" />
+    <Content Include="Scripts\app\Subject\subject.js" />
+    <Content Include="Areas\Subject\Views\Info\_Subject.cshtml" />
+    <Content Include="Areas\Schedule\Views\Web.config" />
+    <Content Include="Areas\Schedule\Views\Calendar\Index.cshtml" />
+    <Content Include="Areas\Schedule\Views\Calendar\_Calendar.cshtml" />
+    <Content Include="Areas\Subject\Views\Info\Details.cshtml" />
+    <Content Include="Areas\Financial\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Study\StudySites.cshtml" />
+    <Content Include="Areas\Admin\Views\Visit\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Study\VisitSequence.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\_User.cshtml" />
+    <Content Include="Areas\Admin\Views\Visit\_Visit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sites\_Site.cshtml" />
+    <Content Include="Content\clires.less" />
+    <Content Include="Areas\Dashboard\Views\Web.config" />
+    <Content Include="Areas\Dashboard\Views\Tasks\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Medication\_DrugCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Medication\_DrugClass.cshtml" />
+    <Content Include="Areas\Admin\Views\Medication\_Drug.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Shared\_DashboardHome.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Tasks\_DashboardProfile.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Shared\_DashboardMessages.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Tasks\_DashboardSettings.cshtml" />
+    <Content Include="Scripts\custom\ajaxForm.js" />
+    <Content Include="Scripts\lib\knockout.simplegrid.1.3.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\TrafficCop-amd.js" />
+    <Content Include="Scripts\TrafficCop-amd.min.gz.js" />
+    <Content Include="Scripts\TrafficCop-amd.min.js" />
+    <Content Include="Scripts\TrafficCop.js" />
+    <Content Include="Scripts\TrafficCop.min.gz.js" />
+    <Content Include="Scripts\TrafficCop.min.js" />
+    <Content Include="Templates\FormQuestionAnswerImport-Short.csv" />
+    <None Include="Templates\FormQuestionAnswerImportTemplate_Full.csv" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Subjects\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sites\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Study\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Mapping\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Medication\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Reports\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\StudyForms\Index.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\aspNetHome.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\facebook.png" />
+    <Content Include="Images\findHosting.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\NuGetGallery.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\twitter.png" />
+    <Content Include="Images\windowsLive.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\EditorTemplates\Week.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Url.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Search.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Month.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime-Local.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Color.cshtml" />
+    <Content Include="web.nlog" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Views\Shared\Forms\_FormTmpl.cshtml" />
+    <Content Include="Views\Shared\Subject\_SubjectDetails.cshtml" />
+    <Content Include="Views\Shared\Appointment\_ApptViewTmpl.cshtml" />
+    <Content Include="Views\Shared\Common\_Address.cshtml" />
+    <Content Include="Views\Shared\Common\_Phone.cshtml" />
+    <Content Include="Views\Shared\_SysAdminLayout.cshtml" />
+    <Content Include="Views\Shared\Feeds\_Feedback.cshtml" />
+    <Content Include="Views\Shared\Subject\_SubjectMedication.cshtml" />
+    <Content Include="Views\Shared\Subject\_SubjectAppointments.cshtml" />
+    <Content Include="Views\Shared\Common\_Carusel.cshtml" />
+    <Content Include="Views\Shared\Subject\_SubjectSearch.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\File\_FileUploader.cshtml" />
+    <Content Include="Views\Shared\File\_SubjectFiles.cshtml" />
+    <Content Include="Views\Shared\_ViewSwitcher.cshtml" />
+    <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
+    <Content Include="Views\Home\Index.Mobile.cshtml" />
+    <Content Include="Views\Shared\Common\_Sidebar.cshtml" />
+    <Content Include="Views\Shared\Help\_HelpLogin.cshtml" />
+    <Content Include="Views\Shared\Help\_HelpContact.cshtml" />
+    <Content Include="Views\Shared\Help\_HelpGeneral.cshtml" />
+    <Content Include="Views\Shared\Help\_HelpStudySetup.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.Mobile.cshtml" />
+    <Content Include="Views\Shared\_SysAdminLayout.Mobile.cshtml" />
+    <Content Include="Views\Shared\_UserLayout.Mobile.cshtml" />
+    <Content Include="Views\Shared\_Footer.Mobile.cshtml" />
+    <Content Include="Views\Shared\Common\_DemoRequest.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="archives\" />
+    <Folder Include="Areas\Admin\Model\Admin\" />
+    <Folder Include="Areas\Admin\Views\Reports\Shared\" />
+    <Folder Include="Areas\Financial\Controllers\" />
+    <Folder Include="Areas\Financial\Models\" />
+    <Folder Include="Areas\Financial\Views\Shared\" />
+    <Folder Include="Areas\Help\Controllers\" />
+    <Folder Include="Areas\Help\Models\" />
+    <Folder Include="Areas\Help\Views\Shared\" />
+    <Folder Include="Areas\Utilities\Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tateeda.Clires.Shared\Tateeda.Clires.Core\Tateeda.Clires.Core.csproj">
+      <Project>{5c5a241c-18e7-464f-ad76-c1cd549044a5}</Project>
+      <Name>Tateeda.Clires.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tateeda.Clires.Data.UOW\Tateeda.Clires.Data.UOW.csproj">
+      <Project>{00b3fa8c-8e22-40b1-b596-1bd92bb5b282}</Project>
+      <Name>Tateeda.Clires.Data.UOW</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>KeyTateeda.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>2525</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2525/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

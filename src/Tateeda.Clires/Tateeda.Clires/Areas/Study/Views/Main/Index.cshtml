@@ -1,0 +1,55 @@
+﻿@using System.Web.Optimization
+@{
+	ViewBag.Title = "Study";
+	Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+}
+
+@section scripts{
+	@Scripts.Render(
+	"~/Scripts/app/Dashboard/dashboard.js",
+	"~/Scripts/app/Dashboard/home.js",
+	"~/Scripts/app/Dashboard/tasks.js",
+	"~/Scripts/app/Study/studyMain.js")
+}
+
+<div class="site-title">Study Home</div>
+
+<div class="row-fluid">
+	<div class="tabbable">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#home" data-toggle="tab">
+				@string.Format("{0:d}-{1:d}", DateTime.Now.AddDays(-7), DateTime.Now.AddDays(7)) Appointments
+			</a></li>
+			<li><a href="#profile" data-toggle="tab">Pending Forms</a></li>
+			<li><a href="#messages" data-toggle="tab">Messages</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="home" class="tab-pane active">
+				<div class="row-fluid">
+					<div class="span3">
+						From:<input type="date" class="input-small input-append date" id="apptFrom" placeholder="mm/dd/yyyy" title="From Date mm/dd/yyyy" 
+                                value="@DateTime.Now.AddDays(-30).ToShortDateString()" />
+					</div>
+					<div class="span4">
+						To:<input type="date" class="input-small input-append date" id="apptTo" placeholder="mm/dd/yyyy" title="To Date mm/dd/yyyy"
+                                      value="@DateTime.Now.AddDays(30).ToShortDateString()">
+
+						<span class='loadingIndicator'><i class="icon-refresh">&nbsp;</i> Loading...</span>
+						<a href="#" id="btnSearch" title="Search for Appointmens"><b class="icon-search input-prepend" title="Search"></b></a>
+					</div>
+				</div>
+				<div class='cliresGrid studygrid'>
+					<div data-bind='simpleGrid: std.vm.gridViewModel'></div>
+				</div>
+			</div>
+			<div id="profile" class="tab-pane">
+				TODO: Create a list of pending forms
+			</div>
+			<div id="messages" class="tab-pane">
+				TODO: Add messages load call
+			</div>
+		</div>
+		<!-- /.tab-content -->
+	</div>
+	<!-- /.tabbable -->
+</div>

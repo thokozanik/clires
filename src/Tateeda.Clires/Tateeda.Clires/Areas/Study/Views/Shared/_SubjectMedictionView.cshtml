@@ -1,0 +1,167 @@
+﻿@using Tateeda.Clires.Core.Data.EF
+@using Tateeda.Clires.Utility
+@model ISubjectDrug
+@{
+	var enumHelper = new EnumerationHelper();
+	const int DoseTypeId = 17;
+	const int MultipleTrialsId = 18;
+	const int ReasonStoppedId = 15;
+	const int ReasonTypeId = 14;
+	const int TreatmentInducedId = 16;
+}
+
+@using (Ajax.BeginForm("AddSubjectDrug",
+	new { @area = "Study", @controller = "Visit" },
+	new AjaxOptions { HttpMethod = "POST", OnComplete = "OnCompleteWithCallback", OnFailure = "OnFailure" },
+	new { @class = "" }))
+{
+	<input type="hidden" name="SubjectId" value="@ViewBag.SubjectId"/>
+	
+	<div class="content-wrapper">
+		<div class="row-fluid">
+
+			<div class="row-fluid">
+				<div class="span12">
+					<span class="control-label">Drug:<b class="required">* </b></span>
+					<input class="input-xxlarge" placeholder="Enter Drug name" required="required" id="drugSearch" name="searchDrugName" /><br />
+					<input type="hidden" id="drugId" name="DrugId" />
+					<select id="drugSearchResult" size="10" class="hide input-xxlarge" style="position: absolute; z-index: 20;"
+						data-bind="
+							options: med.vm.drugs(),
+							optionsText: 'Name',
+							optionsValue: 'Id',
+							value: med.vm.drugVal">
+					</select>
+				</div>
+			</div>
+			<div>
+				<br />
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<label class="control-label">Max Dose Used:<b class="required">*</b></label>
+				</div>
+				<div class="span4">
+					<label class="control-label">Units:<b class="required">*</b></label>
+				</div>
+				<div class="span4">
+					<label class="control-label">Multiple Trials:<b class="required">*</b></label>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<input type="number" required="required" name="Dosage" class="number-only input-large" />
+				</div>
+				<div class="span4">
+					<div class="controls">
+						@Html.DropDownListFor(m => m.DosageType, enumHelper.GetOptions(DoseTypeId),
+							new Dictionary<string, object>
+								{
+									{"class", "input-large"},
+									{"data-bind", "value: $data.DosageType"},
+									{"required", "required"}
+								})
+					</div>
+				</div>
+				<div class="span4">
+					<div class="controls">
+						@Html.DropDownListFor(m => m.MultipleTrialsId, enumHelper.GetOptions(MultipleTrialsId),
+							new Dictionary<string, object>
+								{
+									{"class", "input-large"},
+									{"data-bind", "value: $data.MultipleTrialsId"},
+									{"required", "required"}
+								})
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<label class="control-label">Reason Stopped:<b class="required">*</b></label>
+				</div>
+				<div class="span4">
+					<label class="control-label">Treatment Induced Activation:<b class="required">*</b></label>
+				</div>
+				<div class="span4">
+					<label class="control-label">Response Type:<b class="required">*</b></label>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<div class="controls">
+						@Html.DropDownListFor(m => m.ReasonStoppedId, enumHelper.GetOptions(ReasonStoppedId),
+							new Dictionary<string, object>
+								{
+									{"class", "input-large"},
+									{"data-bind", "value: $data.ReasonStoppedId"},
+									{"required", "required"}
+								})
+					</div>
+				</div>
+				<div class="span4">
+					<div class="controls">
+						@Html.DropDownListFor(m => m.TreatmentInducedId, enumHelper.GetOptions(TreatmentInducedId),
+							new Dictionary<string, object>
+								{
+									{"class", "input-large"},
+									{"data-bind", "value: $data.TreatmentInducedId"},
+									{"required", "required"}
+								})
+					</div>
+				</div>
+				<div class="span4">
+					<div class="controls">
+						@Html.DropDownListFor(m => m.ReasonTypeId, enumHelper.GetOptions(ReasonTypeId),
+							new Dictionary<string, object>
+								{
+									{"class", "input-large"},
+									{"data-bind", "value: $data.ReasonTypeId"},
+									{"required", "required"}
+								})
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+
+				<div class="span4">
+					<label class="control-label">Start Date:<b class="required">*</b></label>
+				</div>
+				<div class="span4">
+					<label class="control-label">End Date:</label>
+				</div>
+				<div class="span4">
+					<label class="control-label">Used Before Study Started:</label>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<input type="date" name="StartDate" class="input-large date" id="startDate" required="required" />
+				</div>
+				<div class="span4">
+					<input type="date" name="EndDate" class="input-large date" id="endDate" />
+				</div>
+				<div class="span4">
+					<input type="checkbox" name="IsBeforeStudy" />
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span4">
+					<label class="control-label">MD Notes:</label>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">
+					<input type="text" name="MdNotes" class="input-full-width" />
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span2 button">
+				<input type="submit" class="btn-primary btn" value="Add" />
+			</div>
+			<div class="span4 alert-success">
+				<div id="historyMsg"></div>
+			</div>
+		</div>
+	</div>
+}

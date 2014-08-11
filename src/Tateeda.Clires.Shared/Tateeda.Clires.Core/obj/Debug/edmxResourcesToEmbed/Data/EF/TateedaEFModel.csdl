@@ -1,0 +1,2231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Tateeda.Clires.DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="Tateeda.Clires.DBModel.Address" />
+    <EntitySet Name="Appointments" EntityType="Tateeda.Clires.DBModel.Appointment" />
+    <EntitySet Name="AppointmentForms" EntityType="Tateeda.Clires.DBModel.AppointmentForm" />
+    <EntitySet Name="AppUsers" EntityType="Tateeda.Clires.DBModel.AppUser" />
+    <EntitySet Name="Arms" EntityType="Tateeda.Clires.DBModel.Arm" />
+    <EntitySet Name="Codes" EntityType="Tateeda.Clires.DBModel.Code" />
+    <EntitySet Name="Contacts" EntityType="Tateeda.Clires.DBModel.Contact" />
+    <EntitySet Name="Countries" EntityType="Tateeda.Clires.DBModel.Country" />
+    <EntitySet Name="CssTypes" EntityType="Tateeda.Clires.DBModel.CssType" />
+    <EntitySet Name="CTGovSubmissions" EntityType="Tateeda.Clires.DBModel.CTGovSubmission" />
+    <EntitySet Name="Drugs" EntityType="Tateeda.Clires.DBModel.Drug" />
+    <EntitySet Name="DrugCategories" EntityType="Tateeda.Clires.DBModel.DrugCategory" />
+    <EntitySet Name="DrugClasses" EntityType="Tateeda.Clires.DBModel.DrugClass" />
+    <EntitySet Name="Emails" EntityType="Tateeda.Clires.DBModel.Email" />
+    <EntitySet Name="FormAnswers" EntityType="Tateeda.Clires.DBModel.FormAnswer" />
+    <EntitySet Name="FormVisibilityByVisitForSubjects" EntityType="Tateeda.Clires.DBModel.FormVisibilityByVisitForSubject" />
+    <EntitySet Name="Languages" EntityType="Tateeda.Clires.DBModel.Language" />
+    <EntitySet Name="LocaleStringResources" EntityType="Tateeda.Clires.DBModel.LocaleStringResource" />
+    <EntitySet Name="Memberships" EntityType="Tateeda.Clires.DBModel.Membership" />
+    <EntitySet Name="MessageProviders" EntityType="Tateeda.Clires.DBModel.MessageProvider" />
+    <EntitySet Name="MessageQueues" EntityType="Tateeda.Clires.DBModel.MessageQueue" />
+    <EntitySet Name="MessageTemplates" EntityType="Tateeda.Clires.DBModel.MessageTemplate" />
+    <EntitySet Name="Profiles" EntityType="Tateeda.Clires.DBModel.Profile" />
+    <EntitySet Name="RecreationalDrugOrSubstances" EntityType="Tateeda.Clires.DBModel.RecreationalDrugOrSubstance" />
+    <EntitySet Name="Roles" EntityType="Tateeda.Clires.DBModel.Role" />
+    <EntitySet Name="ScheduleSubjectVisits" EntityType="Tateeda.Clires.DBModel.ScheduleSubjectVisit" />
+    <EntitySet Name="Sites" EntityType="Tateeda.Clires.DBModel.Site" />
+    <EntitySet Name="States" EntityType="Tateeda.Clires.DBModel.State" />
+    <EntitySet Name="Studies" EntityType="Tateeda.Clires.DBModel.Study" />
+    <EntitySet Name="SubjectDrugs" EntityType="Tateeda.Clires.DBModel.SubjectDrug" />
+    <EntitySet Name="TimeZones" EntityType="Tateeda.Clires.DBModel.TimeZone" />
+    <EntitySet Name="Users" EntityType="Tateeda.Clires.DBModel.User" />
+    <EntitySet Name="VisitForms" EntityType="Tateeda.Clires.DBModel.VisitForm" />
+    <AssociationSet Name="FK_AppointmentForm_Appointment" Association="Tateeda.Clires.DBModel.FK_AppointmentForm_Appointment">
+      <End Role="Appointment" EntitySet="Appointments" />
+      <End Role="AppointmentForm" EntitySet="AppointmentForms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecreationalDrugOrSubstance_Appointment" Association="Tateeda.Clires.DBModel.FK_RecreationalDrugOrSubstance_Appointment">
+      <End Role="Appointment" EntitySet="Appointments" />
+      <End Role="RecreationalDrugOrSubstance" EntitySet="RecreationalDrugOrSubstances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FormAnswer_AppointmentForm" Association="Tateeda.Clires.DBModel.FK_FormAnswer_AppointmentForm">
+      <End Role="AppointmentForm" EntitySet="AppointmentForms" />
+      <End Role="FormAnswer" EntitySet="FormAnswers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppUser_Contact" Association="Tateeda.Clires.DBModel.FK_AppUser_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="AppUser" EntitySet="AppUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppUser_Role" Association="Tateeda.Clires.DBModel.FK_AppUser_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="AppUser" EntitySet="AppUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppUser_Site" Association="Tateeda.Clires.DBModel.FK_AppUser_Site">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="AppUser" EntitySet="AppUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppUser_User" Association="Tateeda.Clires.DBModel.FK_AppUser_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AppUser" EntitySet="AppUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Arm_Study" Association="Tateeda.Clires.DBModel.FK_Arm_Study">
+      <End Role="Study" EntitySet="Studies" />
+      <End Role="Arm" EntitySet="Arms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Drug_DrugClass" Association="Tateeda.Clires.DBModel.FK_Drug_DrugClass">
+      <End Role="DrugClass" EntitySet="DrugClasses" />
+      <End Role="Drug" EntitySet="Drugs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Drug_Study" Association="Tateeda.Clires.DBModel.FK_Drug_Study">
+      <End Role="Study" EntitySet="Studies" />
+      <End Role="Drug" EntitySet="Drugs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectDrug_Drug" Association="Tateeda.Clires.DBModel.FK_SubjectDrug_Drug">
+      <End Role="Drug" EntitySet="Drugs" />
+      <End Role="SubjectDrug" EntitySet="SubjectDrugs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugClass_DrugCategory" Association="Tateeda.Clires.DBModel.FK_DrugClass_DrugCategory">
+      <End Role="DrugCategory" EntitySet="DrugCategories" />
+      <End Role="DrugClass" EntitySet="DrugClasses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocaleStringResource_Language" Association="Tateeda.Clires.DBModel.FK_LocaleStringResource_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="LocaleStringResource" EntitySet="LocaleStringResources" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageTemplate_Language" Association="Tateeda.Clires.DBModel.FK_MessageTemplate_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="MessageTemplate" EntitySet="MessageTemplates" />
+    </AssociationSet>
+    <AssociationSet Name="MembershipUser" Association="Tateeda.Clires.DBModel.MembershipUser">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Membership" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageTemplate_MessageProvider" Association="Tateeda.Clires.DBModel.FK_MessageTemplate_MessageProvider">
+      <End Role="MessageProvider" EntitySet="MessageProviders" />
+      <End Role="MessageTemplate" EntitySet="MessageTemplates" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageQueue_Template" Association="Tateeda.Clires.DBModel.FK_MessageQueue_Template">
+      <End Role="MessageTemplate" EntitySet="MessageTemplates" />
+      <End Role="MessageQueue" EntitySet="MessageQueues" />
+    </AssociationSet>
+    <AssociationSet Name="UserProfile" Association="Tateeda.Clires.DBModel.UserProfile">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Profile" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Site_TimeZone" Association="Tateeda.Clires.DBModel.FK_Site_TimeZone">
+      <End Role="TimeZone" EntitySet="TimeZones" />
+      <End Role="Site" EntitySet="Sites" />
+    </AssociationSet>
+    <AssociationSet Name="ContactAddress" Association="Tateeda.Clires.DBModel.ContactAddress">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="ContactEmail" Association="Tateeda.Clires.DBModel.ContactEmail">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="Email" EntitySet="Emails" />
+    </AssociationSet>
+    <AssociationSet Name="CountryState" Association="Tateeda.Clires.DBModel.CountryState">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="StudySite" Association="Tateeda.Clires.DBModel.StudySite">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Study" EntitySet="Studies" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRoles" Association="Tateeda.Clires.DBModel.UsersInRoles">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="Answers" EntityType="Tateeda.Clires.DBModel.Answer" />
+    <EntitySet Name="AnswerChildQuestions" EntityType="Tateeda.Clires.DBModel.AnswerChildQuestion" />
+    <AssociationSet Name="FK_AnswerChildQuestion_Answer" Association="Tateeda.Clires.DBModel.FK_AnswerChildQuestion_Answer">
+      <End Role="Answer" EntitySet="Answers" />
+      <End Role="AnswerChildQuestion" EntitySet="AnswerChildQuestions" />
+    </AssociationSet>
+    <EntitySet Name="Visits" EntityType="Tateeda.Clires.DBModel.Visit" />
+    <AssociationSet Name="FK_Appointment_Visit" Association="Tateeda.Clires.DBModel.FK_Appointment_Visit">
+      <End Role="Visit" EntitySet="Visits" />
+      <End Role="Appointment" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visit_Arm" Association="Tateeda.Clires.DBModel.FK_Visit_Arm">
+      <End Role="Arm" EntitySet="Arms" />
+      <End Role="Visit" EntitySet="Visits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FormVisibilityByVisitForSubject_Visit" Association="Tateeda.Clires.DBModel.FK_FormVisibilityByVisitForSubject_Visit">
+      <End Role="Visit" EntitySet="Visits" />
+      <End Role="FormVisibilityByVisitForSubject" EntitySet="FormVisibilityByVisitForSubjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleSubjectVisit_Visit" Association="Tateeda.Clires.DBModel.FK_ScheduleSubjectVisit_Visit">
+      <End Role="Visit" EntitySet="Visits" />
+      <End Role="ScheduleSubjectVisit" EntitySet="ScheduleSubjectVisits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visit_Visit" Association="Tateeda.Clires.DBModel.FK_Visit_Visit">
+      <End Role="Visit" EntitySet="Visits" />
+      <End Role="Visit1" EntitySet="Visits" />
+    </AssociationSet>
+    <AssociationSet Name="RefVisit26" Association="Tateeda.Clires.DBModel.RefVisit26">
+      <End Role="Visit" EntitySet="Visits" />
+      <End Role="VisitForm" EntitySet="VisitForms" />
+    </AssociationSet>
+    <EntitySet Name="Forms" EntityType="Tateeda.Clires.DBModel.Form" />
+    <EntitySet Name="FormVerifications" EntityType="Tateeda.Clires.DBModel.FormVerification" />
+    <AssociationSet Name="FK_AppointmentForm_Form" Association="Tateeda.Clires.DBModel.FK_AppointmentForm_Form">
+      <End Role="Form" EntitySet="Forms" />
+      <End Role="AppointmentForm" EntitySet="AppointmentForms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Form_Study" Association="Tateeda.Clires.DBModel.FK_Form_Study">
+      <End Role="Study" EntitySet="Studies" />
+      <End Role="Form" EntitySet="Forms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FormVerificationRequest_Form" Association="Tateeda.Clires.DBModel.FK_FormVerificationRequest_Form">
+      <End Role="Form" EntitySet="Forms" />
+      <End Role="FormVerification" EntitySet="FormVerifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FormVisibilityByVisitForSubject_Form" Association="Tateeda.Clires.DBModel.FK_FormVisibilityByVisitForSubject_Form">
+      <End Role="Form" EntitySet="Forms" />
+      <End Role="FormVisibilityByVisitForSubject" EntitySet="FormVisibilityByVisitForSubjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitForms_Form" Association="Tateeda.Clires.DBModel.FK_VisitForms_Form">
+      <End Role="Form" EntitySet="Forms" />
+      <End Role="VisitForm" EntitySet="VisitForms" />
+    </AssociationSet>
+    <EntitySet Name="Questions" EntityType="Tateeda.Clires.DBModel.Question" />
+    <EntitySet Name="VisitSteps" EntityType="Tateeda.Clires.DBModel.VisitStep" />
+    <EntitySet Name="VisitStepVisitSequences" EntityType="Tateeda.Clires.DBModel.VisitStepVisitSequence" />
+    <AssociationSet Name="FK_Answer_Question" Association="Tateeda.Clires.DBModel.FK_Answer_Question">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnswerChildQuestion_Question" Association="Tateeda.Clires.DBModel.FK_AnswerChildQuestion_Question">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="AnswerChildQuestion" EntitySet="AnswerChildQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitStep_Arm" Association="Tateeda.Clires.DBModel.FK_VisitStep_Arm">
+      <End Role="Arm" EntitySet="Arms" />
+      <End Role="VisitStep" EntitySet="VisitSteps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_FieldDataType" Association="Tateeda.Clires.DBModel.FK_Question_FieldDataType">
+      <End Role="CssType" EntitySet="CssTypes" />
+      <End Role="Question" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_Form" Association="Tateeda.Clires.DBModel.FK_Question_Form">
+      <End Role="Form" EntitySet="Forms" />
+      <End Role="Question" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitStepVisitSequence_Visit" Association="Tateeda.Clires.DBModel.FK_VisitStepVisitSequence_Visit">
+      <End Role="Visit" EntitySet="Visits" />
+      <End Role="VisitStepVisitSequence" EntitySet="VisitStepVisitSequences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitStepVisitSequence_VisitStep" Association="Tateeda.Clires.DBModel.FK_VisitStepVisitSequence_VisitStep">
+      <End Role="VisitStep" EntitySet="VisitSteps" />
+      <End Role="VisitStepVisitSequence" EntitySet="VisitStepVisitSequences" />
+    </AssociationSet>
+    <AssociationSet Name="VisitStepMapping" Association="Tateeda.Clires.DBModel.VisitStepMapping">
+      <End Role="Visit" EntitySet="Visits" />
+      <End Role="VisitStep" EntitySet="VisitSteps" />
+    </AssociationSet>
+    <EntitySet Name="Settings" EntityType="Tateeda.Clires.DBModel.Setting" />
+    <EntitySet Name="SubjectAltNumbers" EntityType="Tateeda.Clires.DBModel.SubjectAltNumber" />
+    <EntitySet Name="Phones" EntityType="Tateeda.Clires.DBModel.Phone" />
+    <AssociationSet Name="ContactPhone" Association="Tateeda.Clires.DBModel.ContactPhone">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="Phone" EntitySet="Phones" />
+    </AssociationSet>
+    <FunctionImport Name="uspGetSubjectById" ReturnType="Collection(Tateeda.Clires.DBModel.uspGetSubjectById_Result)">
+      <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetSubjectBySiteId" ReturnType="Collection(Tateeda.Clires.DBModel.uspGetSubjectBySiteId_Result)">
+      <Parameter Name="SiteId" Mode="In" Type="Int32" />
+      <Parameter Name="StudyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspSubjectFindByFirstLastName" ReturnType="Collection(Tateeda.Clires.DBModel.uspSubjectFindByFirstLastName_Result)">
+      <Parameter Name="SiteId" Mode="In" Type="Int32" />
+      <Parameter Name="StudyId" Mode="In" Type="Int32" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSubjectInsert" ReturnType="Collection(Decimal)">
+      <Parameter Name="SiteId" Mode="In" Type="Int32" />
+      <Parameter Name="StudyId" Mode="In" Type="Int32" />
+      <Parameter Name="Nickname" Mode="In" Type="String" />
+      <Parameter Name="FamilyId" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="NIMHID" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="Int32" />
+      <Parameter Name="YearBorn" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+      <Parameter Name="SortOrder" Mode="In" Type="Int32" />
+      <Parameter Name="SSN" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="DateOfBirth" Mode="In" Type="String" />
+      <Parameter Name="ContactTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="Street" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="Zip" Mode="In" Type="String" />
+      <Parameter Name="StateId" Mode="In" Type="Int32" />
+      <Parameter Name="CountryId" Mode="In" Type="Int32" />
+      <Parameter Name="CountryCode" Mode="In" Type="String" />
+      <Parameter Name="AddressTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="AreaCode" Mode="In" Type="Int32" />
+      <Parameter Name="PhoneNumber" Mode="In" Type="Int32" />
+      <Parameter Name="Telephone" Mode="In" Type="String" />
+      <Parameter Name="PhoneTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="EmailAddress" Mode="In" Type="String" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSubjectUpdate" ReturnType="Collection(Int32)">
+      <Parameter Name="SubjectId" Mode="In" Type="Int32" />
+      <Parameter Name="SiteId" Mode="In" Type="Int32" />
+      <Parameter Name="Nickname" Mode="In" Type="String" />
+      <Parameter Name="FamilyId" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="NIMHID" Mode="In" Type="String" />
+      <Parameter Name="Gender" Mode="In" Type="Int32" />
+      <Parameter Name="YearBorn" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+      <Parameter Name="SortOrder" Mode="In" Type="Int32" />
+      <Parameter Name="SSN" Mode="In" Type="String" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="DateOfBirth" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Feedbacks" EntityType="Tateeda.Clires.DBModel.Feedback" />
+    <EntitySet Name="Subjects" EntityType="Tateeda.Clires.DBModel.Subject" />
+    <EntitySet Name="SubjectDrugHistories" EntityType="Tateeda.Clires.DBModel.SubjectDrugHistory" />
+    <AssociationSet Name="FK_Subject_Contact" Association="Tateeda.Clires.DBModel.FK_Subject_Contact">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="Subject" EntitySet="Subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_Site" Association="Tateeda.Clires.DBModel.FK_Subject_Site">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Subject" EntitySet="Subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_StudyId" Association="Tateeda.Clires.DBModel.FK_Subject_StudyId">
+      <End Role="Study" EntitySet="Studies" />
+      <End Role="Subject" EntitySet="Subjects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectDrug_SubjectId" Association="Tateeda.Clires.DBModel.FK_SubjectDrug_SubjectId">
+      <End Role="Subject" EntitySet="Subjects" />
+      <End Role="SubjectDrug" EntitySet="SubjectDrugs" />
+    </AssociationSet>
+    <EntitySet Name="LibraryAnswers" EntityType="Tateeda.Clires.DBModel.LibraryAnswer" />
+    <EntitySet Name="LibraryForms" EntityType="Tateeda.Clires.DBModel.LibraryForm" />
+    <EntitySet Name="LibraryQuestions" EntityType="Tateeda.Clires.DBModel.LibraryQuestion" />
+    <AssociationSet Name="FK_LibraryQuestion_FieldDataType" Association="Tateeda.Clires.DBModel.FK_LibraryQuestion_FieldDataType">
+      <End Role="CssType" EntitySet="CssTypes" />
+      <End Role="LibraryQuestion" EntitySet="LibraryQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LibraryQuestion_Form" Association="Tateeda.Clires.DBModel.FK_LibraryQuestion_Form">
+      <End Role="Form" EntitySet="Forms" />
+      <End Role="LibraryQuestion" EntitySet="LibraryQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LibraryAnswer_Question" Association="Tateeda.Clires.DBModel.FK_LibraryAnswer_Question">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="LibraryAnswer" EntitySet="LibraryAnswers" />
+    </AssociationSet>
+    <EntitySet Name="Files" EntityType="Tateeda.Clires.DBModel.File" />
+    <AssociationSet Name="StudyFile" Association="Tateeda.Clires.DBModel.StudyFile">
+      <End Role="File" EntitySet="Files" />
+      <End Role="Study" EntitySet="Studies" />
+    </AssociationSet>
+    <AssociationSet Name="SubjectFile" Association="Tateeda.Clires.DBModel.SubjectFile">
+      <End Role="File" EntitySet="Files" />
+      <End Role="Subject" EntitySet="Subjects" />
+    </AssociationSet>
+    <EntitySet Name="FormInProcesses" EntityType="Tateeda.Clires.DBModel.FormInProcess" />
+    <EntitySet Name="ErrorLogs" EntityType="Tateeda.Clires.DBModel.ErrorLog" />
+    <EntitySet Name="Organizations" EntityType="Tateeda.Clires.DBModel.Organization" />
+    <AssociationSet Name="OrganizationStudy" Association="Tateeda.Clires.DBModel.OrganizationStudy">
+      <End Role="Organization" EntitySet="Organizations" />
+      <End Role="Study" EntitySet="Studies" />
+    </AssociationSet>
+    <EntitySet Name="StudySetupMaps" EntityType="Tateeda.Clires.DBModel.StudySetupMap" />
+    <EntitySet Name="StudySetupSteps" EntityType="Tateeda.Clires.DBModel.StudySetupStep" />
+    <AssociationSet Name="FK_StudySetupMap_StudySetupSteps" Association="Tateeda.Clires.DBModel.FK_StudySetupMap_StudySetupSteps">
+      <End Role="StudySetupStep" EntitySet="StudySetupSteps" />
+      <End Role="StudySetupMap" EntitySet="StudySetupMaps" />
+    </AssociationSet>
+    <EntitySet Name="FormQuestionAnswerImports" EntityType="Tateeda.Clires.DBModel.FormQuestionAnswerImport" />
+    <EntitySet Name="UserSettings" EntityType="Tateeda.Clires.DBModel.UserSetting" />
+    <AssociationSet Name="FK_UserSettings_AppUser" Association="Tateeda.Clires.DBModel.FK_UserSettings_AppUser">
+      <End Role="AppUser" EntitySet="AppUsers" />
+      <End Role="UserSetting" EntitySet="UserSettings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="AddressTypeId" Nullable="false" />
+    <Property Type="String" Name="Street" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PostalCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="StateId" />
+    <Property Type="Int32" Name="CountryId" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Contacts" Relationship="Tateeda.Clires.DBModel.ContactAddress" FromRole="Address" ToRole="Contact" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="Int32" Name="VisitId" Nullable="false" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="Int32" Name="AppUserId" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Location" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="0" />
+    <Property Type="Time" Name="StartTime" Precision="7" />
+    <Property Type="DateTime" Name="EndDate" Nullable="false" Precision="0" />
+    <Property Type="Time" Name="EndTime" Precision="7" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="String" Name="CreatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="AppointmentForms" Relationship="Tateeda.Clires.DBModel.FK_AppointmentForm_Appointment" FromRole="Appointment" ToRole="AppointmentForm" />
+    <NavigationProperty Name="RecreationalDrugOrSubstances" Relationship="Tateeda.Clires.DBModel.FK_RecreationalDrugOrSubstance_Appointment" FromRole="Appointment" ToRole="RecreationalDrugOrSubstance" />
+    <NavigationProperty Name="Visit" Relationship="Tateeda.Clires.DBModel.FK_Appointment_Visit" FromRole="Appointment" ToRole="Visit" />
+    <Property Type="Int32" Name="VisitStepId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AppointmentForm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="FormId" Nullable="false" />
+    <Property Type="Int32" Name="AppointmentId" Nullable="false" />
+    <Property Type="Int32" Name="FormStatusTypeId" Nullable="false" />
+    <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Comments" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TotalScore" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Appointment" Relationship="Tateeda.Clires.DBModel.FK_AppointmentForm_Appointment" FromRole="AppointmentForm" ToRole="Appointment" />
+    <NavigationProperty Name="FormAnswers" Relationship="Tateeda.Clires.DBModel.FK_FormAnswer_AppointmentForm" FromRole="AppointmentForm" ToRole="FormAnswer" />
+    <NavigationProperty Name="Form" Relationship="Tateeda.Clires.DBModel.FK_AppointmentForm_Form" FromRole="AppointmentForm" ToRole="Form" />
+  </EntityType>
+  <EntityType Name="AppUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="MembershipUserId" Nullable="false" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="Guid" Name="RoleId" Nullable="false" />
+    <Property Type="Int32" Name="ContactId" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="String" Name="Comments" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Contact" Relationship="Tateeda.Clires.DBModel.FK_AppUser_Contact" FromRole="AppUser" ToRole="Contact" />
+    <NavigationProperty Name="Role" Relationship="Tateeda.Clires.DBModel.FK_AppUser_Role" FromRole="AppUser" ToRole="Role" />
+    <NavigationProperty Name="Site" Relationship="Tateeda.Clires.DBModel.FK_AppUser_Site" FromRole="AppUser" ToRole="Site" />
+    <NavigationProperty Name="User" Relationship="Tateeda.Clires.DBModel.FK_AppUser_User" FromRole="AppUser" ToRole="User" />
+    <NavigationProperty Name="UserSettings" Relationship="Tateeda.Clires.DBModel.FK_UserSettings_AppUser" FromRole="AppUser" ToRole="UserSetting" />
+  </EntityType>
+  <EntityType Name="Arm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="StudyId" Nullable="false" />
+    <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Study" Relationship="Tateeda.Clires.DBModel.FK_Arm_Study" FromRole="Arm" ToRole="Study" />
+    <NavigationProperty Name="Visits" Relationship="Tateeda.Clires.DBModel.FK_Visit_Arm" FromRole="Arm" ToRole="Visit" />
+    <NavigationProperty Name="VisitSteps" Relationship="Tateeda.Clires.DBModel.FK_VisitStep_Arm" FromRole="Arm" ToRole="VisitStep" />
+  </EntityType>
+  <EntityType Name="Code">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="CodeTypeId" Nullable="false" />
+    <Property Type="Int32" Name="EnumId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="ContactTypeId" Nullable="false" />
+    <Property Type="String" Name="FirstName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MiddleName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="AppUsers" Relationship="Tateeda.Clires.DBModel.FK_AppUser_Contact" FromRole="Contact" ToRole="AppUser" />
+    <NavigationProperty Name="Addresses" Relationship="Tateeda.Clires.DBModel.ContactAddress" FromRole="Contact" ToRole="Address" />
+    <NavigationProperty Name="Emails" Relationship="Tateeda.Clires.DBModel.ContactEmail" FromRole="Contact" ToRole="Email" />
+    <NavigationProperty Name="Phones" Relationship="Tateeda.Clires.DBModel.ContactPhone" FromRole="Contact" ToRole="Phone" />
+    <NavigationProperty Name="Subjects" Relationship="Tateeda.Clires.DBModel.FK_Subject_Contact" FromRole="Contact" ToRole="Subject" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Abbr" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Iso3" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="FlagImgUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="States" Relationship="Tateeda.Clires.DBModel.CountryState" FromRole="Country" ToRole="State" />
+  </EntityType>
+  <EntityType Name="CssType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="CssClassName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="InputType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Html" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Questions" Relationship="Tateeda.Clires.DBModel.FK_Question_FieldDataType" FromRole="CssType" ToRole="Question" />
+    <NavigationProperty Name="LibraryQuestions" Relationship="Tateeda.Clires.DBModel.FK_LibraryQuestion_FieldDataType" FromRole="CssType" ToRole="LibraryQuestion" />
+  </EntityType>
+  <EntityType Name="CTGovSubmission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SubmissionXML" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Drug">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="DrugClassId" Nullable="false" />
+    <Property Type="Int32" Name="DrugTypeId" />
+    <Property Type="Int32" Name="StudyId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="DrugClass" Relationship="Tateeda.Clires.DBModel.FK_Drug_DrugClass" FromRole="Drug" ToRole="DrugClass" />
+    <NavigationProperty Name="Study" Relationship="Tateeda.Clires.DBModel.FK_Drug_Study" FromRole="Drug" ToRole="Study" />
+    <NavigationProperty Name="SubjectDrugs" Relationship="Tateeda.Clires.DBModel.FK_SubjectDrug_Drug" FromRole="Drug" ToRole="SubjectDrug" />
+  </EntityType>
+  <EntityType Name="DrugCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="DrugClasses" Relationship="Tateeda.Clires.DBModel.FK_DrugClass_DrugCategory" FromRole="DrugCategory" ToRole="DrugClass" />
+  </EntityType>
+  <EntityType Name="DrugClass">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="DrugCategoryId" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Drugs" Relationship="Tateeda.Clires.DBModel.FK_Drug_DrugClass" FromRole="DrugClass" ToRole="Drug" />
+    <NavigationProperty Name="DrugCategory" Relationship="Tateeda.Clires.DBModel.FK_DrugClass_DrugCategory" FromRole="DrugClass" ToRole="DrugCategory" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Contacts" Relationship="Tateeda.Clires.DBModel.ContactEmail" FromRole="Email" ToRole="Contact" />
+  </EntityType>
+  <EntityType Name="FormAnswer">
+    <Key>
+      <PropertyRef Name="AppointmentFormId" />
+      <PropertyRef Name="AnswerId" />
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="AppointmentFormId" Nullable="false" />
+    <Property Type="Int32" Name="AnswerId" Nullable="false" />
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="String" Name="FreeTextAnswer" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Notes" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <NavigationProperty Name="AppointmentForm" Relationship="Tateeda.Clires.DBModel.FK_FormAnswer_AppointmentForm" FromRole="FormAnswer" ToRole="AppointmentForm" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FormVisibilityByVisitForSubject">
+    <Key>
+      <PropertyRef Name="FormId" />
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="FormId" Nullable="false" />
+    <Property Type="Int32" Name="VisitId" Nullable="false" />
+    <Property Type="Int32" Name="DaysPriorToVisit" Nullable="false" />
+    <Property Type="Int32" Name="DaysAfterVisit" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Visit" Relationship="Tateeda.Clires.DBModel.FK_FormVisibilityByVisitForSubject_Visit" FromRole="FormVisibilityByVisitForSubject" ToRole="Visit" />
+    <NavigationProperty Name="Form" Relationship="Tateeda.Clires.DBModel.FK_FormVisibilityByVisitForSubject_Form" FromRole="FormVisibilityByVisitForSubject" ToRole="Form" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LanguageCulture" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UniqueSeoCode" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FlagImageFileName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Published" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="LocaleStringResources" Relationship="Tateeda.Clires.DBModel.FK_LocaleStringResource_Language" FromRole="Language" ToRole="LocaleStringResource" />
+    <NavigationProperty Name="MessageTemplates" Relationship="Tateeda.Clires.DBModel.FK_MessageTemplate_Language" FromRole="Language" ToRole="MessageTemplate" />
+  </EntityType>
+  <EntityType Name="LocaleStringResource">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="LanguageId" Nullable="false" />
+    <Property Type="String" Name="ResourceName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ResourceValue" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Language" Relationship="Tateeda.Clires.DBModel.FK_LocaleStringResource_Language" FromRole="LocaleStringResource" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+    <Property Type="Guid" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PasswordFormat" Nullable="false" />
+    <Property Type="String" Name="PasswordSalt" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PasswordQuestion" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PasswordAnswer" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsApproved" Nullable="false" />
+    <Property Type="Boolean" Name="IsLockedOut" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LastPasswordChangedDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LastLockoutDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FailedPasswordAttemptCount" Nullable="false" />
+    <Property Type="DateTime" Name="FailedPasswordAttemptWindowStart" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="FailedPasswordAnswerAttemptCount" Nullable="false" />
+    <Property Type="DateTime" Name="FailedPasswordAnswerAttemptWindowsStart" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Comment" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Tateeda.Clires.DBModel.MembershipUser" FromRole="Membership" ToRole="User" />
+  </EntityType>
+  <EntityType Name="MessageProvider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LicenseKey" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AccountName" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AccountPassword" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ServiceUri" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="MessageTemplates" Relationship="Tateeda.Clires.DBModel.FK_MessageTemplate_MessageProvider" FromRole="MessageProvider" ToRole="MessageTemplate" />
+  </EntityType>
+  <EntityType Name="MessageQueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="TemplateId" Nullable="false" />
+    <Property Type="Int32" Name="PriorityId" Nullable="false" />
+    <Property Type="String" Name="Data" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="RecipientId" Nullable="false" />
+    <Property Type="Int32" Name="SenderId" Nullable="false" />
+    <Property Type="Int32" Name="StatusId" Nullable="false" />
+    <Property Type="DateTime" Name="QueuedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="LastProcessedOn" Precision="3" />
+    <Property Type="Int32" Name="TriesCount" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="MessageTemplate" Relationship="Tateeda.Clires.DBModel.FK_MessageQueue_Template" FromRole="MessageQueue" ToRole="MessageTemplate" />
+  </EntityType>
+  <EntityType Name="MessageTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="BccEmailAddresses" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Subject" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Body" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="LanguageId" Nullable="false" />
+    <Property Type="Int32" Name="MessageProviderId" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Language" Relationship="Tateeda.Clires.DBModel.FK_MessageTemplate_Language" FromRole="MessageTemplate" ToRole="Language" />
+    <NavigationProperty Name="MessageProvider" Relationship="Tateeda.Clires.DBModel.FK_MessageTemplate_MessageProvider" FromRole="MessageTemplate" ToRole="MessageProvider" />
+    <NavigationProperty Name="MessageQueues" Relationship="Tateeda.Clires.DBModel.FK_MessageQueue_Template" FromRole="MessageTemplate" ToRole="MessageQueue" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="PropertyNames" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PropertyValueStrings" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="PropertyValueBinary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Type="DateTime" Name="LastUpdatedDate" Nullable="false" Precision="3" />
+    <NavigationProperty Name="User" Relationship="Tateeda.Clires.DBModel.UserProfile" FromRole="Profile" ToRole="User" />
+  </EntityType>
+  <EntityType Name="RecreationalDrugOrSubstance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="String" Name="Dose" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Unit" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Frequency" />
+    <Property Type="String" Name="FrequencyUnit" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="TypeName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="UseStartDate" Precision="0" />
+    <Property Type="DateTime" Name="UseEndDate" Precision="0" />
+    <Property Type="Int32" Name="AppointementId" />
+    <Property Type="String" Name="Comments" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Appointment" Relationship="Tateeda.Clires.DBModel.FK_RecreationalDrugOrSubstance_Appointment" FromRole="RecreationalDrugOrSubstance" ToRole="Appointment" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+    <Property Type="Guid" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AppUsers" Relationship="Tateeda.Clires.DBModel.FK_AppUser_Role" FromRole="Role" ToRole="AppUser" />
+    <NavigationProperty Name="Users" Relationship="Tateeda.Clires.DBModel.UsersInRoles" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ScheduleSubjectVisit">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="Int32" Name="VisitId" Nullable="false" />
+    <NavigationProperty Name="Visit" Relationship="Tateeda.Clires.DBModel.FK_ScheduleSubjectVisit_Visit" FromRole="ScheduleSubjectVisit" ToRole="Visit" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TimeZoneId" Nullable="false" />
+    <Property Type="Boolean" Name="IsPrimary" Nullable="false" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="AppUsers" Relationship="Tateeda.Clires.DBModel.FK_AppUser_Site" FromRole="Site" ToRole="AppUser" />
+    <NavigationProperty Name="TimeZone" Relationship="Tateeda.Clires.DBModel.FK_Site_TimeZone" FromRole="Site" ToRole="TimeZone" />
+    <NavigationProperty Name="Studies" Relationship="Tateeda.Clires.DBModel.StudySite" FromRole="Site" ToRole="Study" />
+    <NavigationProperty Name="Subjects" Relationship="Tateeda.Clires.DBModel.FK_Subject_Site" FromRole="Site" ToRole="Subject" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Abbr" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Countries" Relationship="Tateeda.Clires.DBModel.CountryState" FromRole="State" ToRole="Country" />
+  </EntityType>
+  <EntityType Name="Study">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="EndDate" Precision="3" />
+    <Property Type="String" Name="Target" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Goal" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Budget" Precision="19" Scale="4" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Arms" Relationship="Tateeda.Clires.DBModel.FK_Arm_Study" FromRole="Study" ToRole="Arm" />
+    <NavigationProperty Name="Drugs" Relationship="Tateeda.Clires.DBModel.FK_Drug_Study" FromRole="Study" ToRole="Drug" />
+    <NavigationProperty Name="Sites" Relationship="Tateeda.Clires.DBModel.StudySite" FromRole="Study" ToRole="Site" />
+    <NavigationProperty Name="Forms" Relationship="Tateeda.Clires.DBModel.FK_Form_Study" FromRole="Study" ToRole="Form" />
+    <NavigationProperty Name="Subjects" Relationship="Tateeda.Clires.DBModel.FK_Subject_StudyId" FromRole="Study" ToRole="Subject" />
+    <NavigationProperty Name="Files" Relationship="Tateeda.Clires.DBModel.StudyFile" FromRole="Study" ToRole="File" />
+    <NavigationProperty Name="Organizations" Relationship="Tateeda.Clires.DBModel.OrganizationStudy" FromRole="Study" ToRole="Organization" />
+  </EntityType>
+  <EntityType Name="SubjectDrug">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="Int32" Name="DrugId" Nullable="false" />
+    <Property Type="Int32" Name="AppointmentId" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Precision="3" />
+    <Property Type="DateTime" Name="EndDate" Precision="3" />
+    <Property Type="Int32" Name="MultipleTrialsId" />
+    <Property Type="Int32" Name="DurationUsed" />
+    <Property Type="Int32" Name="ReasonStoppedId" Nullable="false" />
+    <Property Type="Int32" Name="ReasonTypeId" Nullable="false" />
+    <Property Type="Int32" Name="TreatmentInducedId" Nullable="false" />
+    <Property Type="Int32" Name="DosageFrequencyId" Nullable="false" />
+    <Property Type="Boolean" Name="IsCurrent" Nullable="false" />
+    <Property Type="Boolean" Name="IsChanged" Nullable="false" />
+    <Property Type="Boolean" Name="IsStopped" Nullable="false" />
+    <Property Type="Boolean" Name="IsBeforeStudy" Nullable="false" />
+    <Property Type="String" Name="Dosage" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DosageType" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Notes" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MdNotes" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Comments" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Drug" Relationship="Tateeda.Clires.DBModel.FK_SubjectDrug_Drug" FromRole="SubjectDrug" ToRole="Drug" />
+    <NavigationProperty Name="Subject" Relationship="Tateeda.Clires.DBModel.FK_SubjectDrug_SubjectId" FromRole="SubjectDrug" ToRole="Subject" />
+  </EntityType>
+  <EntityType Name="TimeZone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Offset" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Sites" Relationship="Tateeda.Clires.DBModel.FK_Site_TimeZone" FromRole="TimeZone" ToRole="Site" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="ApplicationId" Nullable="false" />
+    <Property Type="Guid" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsAnonymous" Nullable="false" />
+    <Property Type="DateTime" Name="LastActivityDate" Nullable="false" Precision="3" />
+    <NavigationProperty Name="AppUsers" Relationship="Tateeda.Clires.DBModel.FK_AppUser_User" FromRole="User" ToRole="AppUser" />
+    <NavigationProperty Name="Membership" Relationship="Tateeda.Clires.DBModel.MembershipUser" FromRole="User" ToRole="Membership" />
+    <NavigationProperty Name="Profile" Relationship="Tateeda.Clires.DBModel.UserProfile" FromRole="User" ToRole="Profile" />
+    <NavigationProperty Name="Roles" Relationship="Tateeda.Clires.DBModel.UsersInRoles" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="VisitForm">
+    <Key>
+      <PropertyRef Name="VisitId" />
+      <PropertyRef Name="FormId" />
+    </Key>
+    <Property Type="Int32" Name="VisitId" Nullable="false" />
+    <Property Type="Int32" Name="FormId" Nullable="false" />
+    <Property Type="Int32" Name="SortOrder" />
+    <NavigationProperty Name="Visit" Relationship="Tateeda.Clires.DBModel.RefVisit26" FromRole="VisitForm" ToRole="Visit" />
+    <NavigationProperty Name="Form" Relationship="Tateeda.Clires.DBModel.FK_VisitForms_Form" FromRole="VisitForm" ToRole="Form" />
+  </EntityType>
+  <Association Name="FK_AppointmentForm_Appointment">
+    <End Type="Tateeda.Clires.DBModel.Appointment" Role="Appointment" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.AppointmentForm" Role="AppointmentForm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppointmentForm">
+        <PropertyRef Name="AppointmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecreationalDrugOrSubstance_Appointment">
+    <End Type="Tateeda.Clires.DBModel.Appointment" Role="Appointment" Multiplicity="0..1" />
+    <End Type="Tateeda.Clires.DBModel.RecreationalDrugOrSubstance" Role="RecreationalDrugOrSubstance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecreationalDrugOrSubstance">
+        <PropertyRef Name="AppointementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FormAnswer_AppointmentForm">
+    <End Type="Tateeda.Clires.DBModel.AppointmentForm" Role="AppointmentForm" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.FormAnswer" Role="FormAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppointmentForm">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FormAnswer">
+        <PropertyRef Name="AppointmentFormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppUser_Contact">
+    <End Type="Tateeda.Clires.DBModel.Contact" Role="Contact" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.AppUser" Role="AppUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppUser">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppUser_Role">
+    <End Type="Tateeda.Clires.DBModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.AppUser" Role="AppUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="AppUser">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppUser_Site">
+    <End Type="Tateeda.Clires.DBModel.Site" Role="Site" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.AppUser" Role="AppUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppUser">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppUser_User">
+    <End Type="Tateeda.Clires.DBModel.User" Role="User" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.AppUser" Role="AppUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AppUser">
+        <PropertyRef Name="MembershipUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Arm_Study">
+    <End Type="Tateeda.Clires.DBModel.Study" Role="Study" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Arm" Role="Arm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Arm">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Drug_DrugClass">
+    <End Type="Tateeda.Clires.DBModel.DrugClass" Role="DrugClass" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Drug" Role="Drug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DrugClass">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Drug">
+        <PropertyRef Name="DrugClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Drug_Study">
+    <End Type="Tateeda.Clires.DBModel.Study" Role="Study" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Drug" Role="Drug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Drug">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectDrug_Drug">
+    <End Type="Tateeda.Clires.DBModel.Drug" Role="Drug" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.SubjectDrug" Role="SubjectDrug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drug">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubjectDrug">
+        <PropertyRef Name="DrugId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugClass_DrugCategory">
+    <End Type="Tateeda.Clires.DBModel.DrugCategory" Role="DrugCategory" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.DrugClass" Role="DrugClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DrugCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DrugClass">
+        <PropertyRef Name="DrugCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocaleStringResource_Language">
+    <End Type="Tateeda.Clires.DBModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.LocaleStringResource" Role="LocaleStringResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocaleStringResource">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageTemplate_Language">
+    <End Type="Tateeda.Clires.DBModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.MessageTemplate" Role="MessageTemplate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MessageTemplate">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MembershipUser">
+    <End Type="Tateeda.Clires.DBModel.User" Role="User" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Membership" Role="Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageTemplate_MessageProvider">
+    <End Type="Tateeda.Clires.DBModel.MessageProvider" Role="MessageProvider" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.MessageTemplate" Role="MessageTemplate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MessageProvider">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MessageTemplate">
+        <PropertyRef Name="MessageProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageQueue_Template">
+    <End Type="Tateeda.Clires.DBModel.MessageTemplate" Role="MessageTemplate" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.MessageQueue" Role="MessageQueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MessageTemplate">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MessageQueue">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserProfile">
+    <End Type="Tateeda.Clires.DBModel.User" Role="User" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Profile" Role="Profile" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Site_TimeZone">
+    <End Type="Tateeda.Clires.DBModel.TimeZone" Role="TimeZone" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Site" Role="Site" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TimeZone">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Site">
+        <PropertyRef Name="TimeZoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContactAddress">
+    <End Type="Tateeda.Clires.DBModel.Address" Role="Address" Multiplicity="*" />
+    <End Type="Tateeda.Clires.DBModel.Contact" Role="Contact" Multiplicity="*" />
+  </Association>
+  <Association Name="ContactEmail">
+    <End Type="Tateeda.Clires.DBModel.Contact" Role="Contact" Multiplicity="*" />
+    <End Type="Tateeda.Clires.DBModel.Email" Role="Email" Multiplicity="*" />
+  </Association>
+  <Association Name="CountryState">
+    <End Type="Tateeda.Clires.DBModel.Country" Role="Country" Multiplicity="*" />
+    <End Type="Tateeda.Clires.DBModel.State" Role="State" Multiplicity="*" />
+  </Association>
+  <Association Name="StudySite">
+    <End Type="Tateeda.Clires.DBModel.Site" Role="Site" Multiplicity="*" />
+    <End Type="Tateeda.Clires.DBModel.Study" Role="Study" Multiplicity="*" />
+  </Association>
+  <Association Name="UsersInRoles">
+    <End Type="Tateeda.Clires.DBModel.Role" Role="Role" Multiplicity="*" />
+    <End Type="Tateeda.Clires.DBModel.User" Role="User" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="String" Name="OptionText" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Score" />
+    <Property Type="String" Name="Header" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Trailer" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="AnswerChildQuestions" Relationship="Tateeda.Clires.DBModel.FK_AnswerChildQuestion_Answer" FromRole="Answer" ToRole="AnswerChildQuestion" />
+    <NavigationProperty Name="Question" Relationship="Tateeda.Clires.DBModel.FK_Answer_Question" FromRole="Answer" ToRole="Question" />
+  </EntityType>
+  <EntityType Name="AnswerChildQuestion">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Type="Int32" Name="AnswerId" Nullable="false" />
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" />
+    <NavigationProperty Name="Answer" Relationship="Tateeda.Clires.DBModel.FK_AnswerChildQuestion_Answer" FromRole="AnswerChildQuestion" ToRole="Answer" />
+    <NavigationProperty Name="Question" Relationship="Tateeda.Clires.DBModel.FK_AnswerChildQuestion_Question" FromRole="AnswerChildQuestion" ToRole="Question" />
+  </EntityType>
+  <Association Name="FK_AnswerChildQuestion_Answer">
+    <End Type="Tateeda.Clires.DBModel.Answer" Role="Answer" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.AnswerChildQuestion" Role="AnswerChildQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Answer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AnswerChildQuestion">
+        <PropertyRef Name="AnswerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Visit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="VisitTypeId" Nullable="false" />
+    <Property Type="Int32" Name="ArmId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ParentVisitId" />
+    <Property Type="Boolean" Name="IsBaseVisit" Nullable="false" />
+    <Property Type="Boolean" Name="CanRepeat" Nullable="false" />
+    <Property Type="Boolean" Name="CanMove" Nullable="false" />
+    <Property Type="Boolean" Name="HasChild" Nullable="false" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Appointments" Relationship="Tateeda.Clires.DBModel.FK_Appointment_Visit" FromRole="Visit" ToRole="Appointment" />
+    <NavigationProperty Name="Arm" Relationship="Tateeda.Clires.DBModel.FK_Visit_Arm" FromRole="Visit" ToRole="Arm" />
+    <NavigationProperty Name="FormVisibilityByVisitForSubjects" Relationship="Tateeda.Clires.DBModel.FK_FormVisibilityByVisitForSubject_Visit" FromRole="Visit" ToRole="FormVisibilityByVisitForSubject" />
+    <NavigationProperty Name="ScheduleSubjectVisits" Relationship="Tateeda.Clires.DBModel.FK_ScheduleSubjectVisit_Visit" FromRole="Visit" ToRole="ScheduleSubjectVisit" />
+    <NavigationProperty Name="ChildVisit" Relationship="Tateeda.Clires.DBModel.FK_Visit_Visit" FromRole="Visit" ToRole="Visit1" />
+    <NavigationProperty Name="ParentVisit" Relationship="Tateeda.Clires.DBModel.FK_Visit_Visit" FromRole="Visit1" ToRole="Visit" />
+    <NavigationProperty Name="VisitForms" Relationship="Tateeda.Clires.DBModel.RefVisit26" FromRole="Visit" ToRole="VisitForm" />
+    <NavigationProperty Name="VisitStepVisitSequences" Relationship="Tateeda.Clires.DBModel.FK_VisitStepVisitSequence_Visit" FromRole="Visit" ToRole="VisitStepVisitSequence" />
+    <NavigationProperty Name="VisitSteps" Relationship="Tateeda.Clires.DBModel.VisitStepMapping" FromRole="Visit" ToRole="VisitStep" />
+  </EntityType>
+  <Association Name="FK_Appointment_Visit">
+    <End Type="Tateeda.Clires.DBModel.Visit" Role="Visit" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Appointment" Role="Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visit_Arm">
+    <End Type="Tateeda.Clires.DBModel.Arm" Role="Arm" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Visit" Role="Visit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Arm">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visit">
+        <PropertyRef Name="ArmId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FormVisibilityByVisitForSubject_Visit">
+    <End Type="Tateeda.Clires.DBModel.Visit" Role="Visit" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.FormVisibilityByVisitForSubject" Role="FormVisibilityByVisitForSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FormVisibilityByVisitForSubject">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleSubjectVisit_Visit">
+    <End Type="Tateeda.Clires.DBModel.Visit" Role="Visit" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.ScheduleSubjectVisit" Role="ScheduleSubjectVisit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ScheduleSubjectVisit">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visit_Visit">
+    <End Type="Tateeda.Clires.DBModel.Visit" Role="Visit" Multiplicity="0..1" />
+    <End Type="Tateeda.Clires.DBModel.Visit" Role="Visit1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visit1">
+        <PropertyRef Name="ParentVisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefVisit26">
+    <End Type="Tateeda.Clires.DBModel.Visit" Role="Visit" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.VisitForm" Role="VisitForm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitForm">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Form">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="StudyId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="FormTypeId" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Header" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Trailer" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsFilledBySubject" Nullable="false" />
+    <Property Type="Boolean" Name="ShowTotalScore" Nullable="false" />
+    <Property Type="Int32" Name="LayoutTypeId" Nullable="false" />
+    <Property Type="Boolean" Name="IsDoubleChecked" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="AppointmentForms" Relationship="Tateeda.Clires.DBModel.FK_AppointmentForm_Form" FromRole="Form" ToRole="AppointmentForm" />
+    <NavigationProperty Name="Study" Relationship="Tateeda.Clires.DBModel.FK_Form_Study" FromRole="Form" ToRole="Study" />
+    <NavigationProperty Name="FormVerifications" Relationship="Tateeda.Clires.DBModel.FK_FormVerificationRequest_Form" FromRole="Form" ToRole="FormVerification" />
+    <NavigationProperty Name="FormVisibilityByVisitForSubjects" Relationship="Tateeda.Clires.DBModel.FK_FormVisibilityByVisitForSubject_Form" FromRole="Form" ToRole="FormVisibilityByVisitForSubject" />
+    <NavigationProperty Name="VisitForms" Relationship="Tateeda.Clires.DBModel.FK_VisitForms_Form" FromRole="Form" ToRole="VisitForm" />
+    <NavigationProperty Name="Questions" Relationship="Tateeda.Clires.DBModel.FK_Question_Form" FromRole="Form" ToRole="Question" />
+    <NavigationProperty Name="LibraryQuestions" Relationship="Tateeda.Clires.DBModel.FK_LibraryQuestion_Form" FromRole="Form" ToRole="LibraryQuestion" />
+    <Property Type="Boolean" Name="NotifyOnChange" Nullable="false" />
+    <Property Type="Boolean" Name="NotifyOnCompletion" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FormVerification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="FormId" Nullable="false" />
+    <Property Type="String" Name="VerifiedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="VerifiedOn" Precision="3" />
+    <Property Type="Int32" Name="ResultStatus" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Form" Relationship="Tateeda.Clires.DBModel.FK_FormVerificationRequest_Form" FromRole="FormVerification" ToRole="Form" />
+  </EntityType>
+  <Association Name="FK_AppointmentForm_Form">
+    <End Type="Tateeda.Clires.DBModel.Form" Role="Form" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.AppointmentForm" Role="AppointmentForm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppointmentForm">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Form_Study">
+    <End Type="Tateeda.Clires.DBModel.Study" Role="Study" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Form" Role="Form" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Form">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FormVerificationRequest_Form">
+    <End Type="Tateeda.Clires.DBModel.Form" Role="Form" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.FormVerification" Role="FormVerification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FormVerification">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FormVisibilityByVisitForSubject_Form">
+    <End Type="Tateeda.Clires.DBModel.Form" Role="Form" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.FormVisibilityByVisitForSubject" Role="FormVisibilityByVisitForSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FormVisibilityByVisitForSubject">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitForms_Form">
+    <End Type="Tateeda.Clires.DBModel.Form" Role="Form" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.VisitForm" Role="VisitForm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitForm">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="FormId" Nullable="false" />
+    <Property Type="Int32" Name="FieldDataTypeId" Nullable="false" />
+    <Property Type="String" Name="QuestionText" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Header" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Trailer" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsRequired" Nullable="false" />
+    <Property Type="Int32" Name="ParentQuestionId" />
+    <Property Type="Boolean" Name="IsParent" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Answers" Relationship="Tateeda.Clires.DBModel.FK_Answer_Question" FromRole="Question" ToRole="Answer" />
+    <NavigationProperty Name="AnswerChildQuestions" Relationship="Tateeda.Clires.DBModel.FK_AnswerChildQuestion_Question" FromRole="Question" ToRole="AnswerChildQuestion" />
+    <NavigationProperty Name="CssType" Relationship="Tateeda.Clires.DBModel.FK_Question_FieldDataType" FromRole="Question" ToRole="CssType" />
+    <NavigationProperty Name="Form" Relationship="Tateeda.Clires.DBModel.FK_Question_Form" FromRole="Question" ToRole="Form" />
+    <NavigationProperty Name="LibraryAnswers" Relationship="Tateeda.Clires.DBModel.FK_LibraryAnswer_Question" FromRole="Question" ToRole="LibraryAnswer" />
+    <Property Type="String" Name="ValidationRule" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VisitStep">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ArmId" Nullable="false" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Arm" Relationship="Tateeda.Clires.DBModel.FK_VisitStep_Arm" FromRole="VisitStep" ToRole="Arm" />
+    <NavigationProperty Name="VisitStepVisitSequences" Relationship="Tateeda.Clires.DBModel.FK_VisitStepVisitSequence_VisitStep" FromRole="VisitStep" ToRole="VisitStepVisitSequence" />
+    <NavigationProperty Name="Visits" Relationship="Tateeda.Clires.DBModel.VisitStepMapping" FromRole="VisitStep" ToRole="Visit" />
+  </EntityType>
+  <EntityType Name="VisitStepVisitSequence">
+    <Key>
+      <PropertyRef Name="VisitStepId" />
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Type="Int32" Name="VisitStepId" Nullable="false" />
+    <Property Type="Int32" Name="VisitId" Nullable="false" />
+    <Property Type="Int32" Name="DaysFromBase" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="Deviation" Nullable="false" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <NavigationProperty Name="Visit" Relationship="Tateeda.Clires.DBModel.FK_VisitStepVisitSequence_Visit" FromRole="VisitStepVisitSequence" ToRole="Visit" />
+    <NavigationProperty Name="VisitStep" Relationship="Tateeda.Clires.DBModel.FK_VisitStepVisitSequence_VisitStep" FromRole="VisitStepVisitSequence" ToRole="VisitStep" />
+    <Property Type="Boolean" Name="IsTermination" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Answer_Question">
+    <End Type="Tateeda.Clires.DBModel.Question" Role="Question" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Answer" Role="Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnswerChildQuestion_Question">
+    <End Type="Tateeda.Clires.DBModel.Question" Role="Question" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.AnswerChildQuestion" Role="AnswerChildQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AnswerChildQuestion">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitStep_Arm">
+    <End Type="Tateeda.Clires.DBModel.Arm" Role="Arm" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.VisitStep" Role="VisitStep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Arm">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitStep">
+        <PropertyRef Name="ArmId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_FieldDataType">
+    <End Type="Tateeda.Clires.DBModel.CssType" Role="CssType" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Question" Role="Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CssType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="FieldDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_Form">
+    <End Type="Tateeda.Clires.DBModel.Form" Role="Form" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Question" Role="Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitStepVisitSequence_Visit">
+    <End Type="Tateeda.Clires.DBModel.Visit" Role="Visit" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.VisitStepVisitSequence" Role="VisitStepVisitSequence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitStepVisitSequence">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitStepVisitSequence_VisitStep">
+    <End Type="Tateeda.Clires.DBModel.VisitStep" Role="VisitStep" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.VisitStepVisitSequence" Role="VisitStepVisitSequence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VisitStep">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitStepVisitSequence">
+        <PropertyRef Name="VisitStepId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VisitStepMapping">
+    <End Type="Tateeda.Clires.DBModel.Visit" Role="Visit" Multiplicity="*" />
+    <End Type="Tateeda.Clires.DBModel.VisitStep" Role="VisitStep" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubjectAltNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="String" Name="AltId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Phone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="CountryCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="AreaCode" Nullable="false" />
+    <Property Type="Int32" Name="Number" Nullable="false" />
+    <Property Type="String" Name="Telephone" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PhoneTypeId" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Contacts" Relationship="Tateeda.Clires.DBModel.ContactPhone" FromRole="Phone" ToRole="Contact" />
+  </EntityType>
+  <Association Name="ContactPhone">
+    <End Type="Tateeda.Clires.DBModel.Contact" Role="Contact" Multiplicity="*" />
+    <End Type="Tateeda.Clires.DBModel.Phone" Role="Phone" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="uspGetSubjectById_Result">
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="Int32" Name="StudyId" Nullable="false" />
+    <Property Type="String" Name="Directions" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Nickname" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FamilyId" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Notes" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="NIMHID" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="GenderTypeId" Nullable="false" />
+    <Property Type="Int32" Name="YearBorn" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="DateOfBirth" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="SSN" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="FirstNameEnc" Nullable="true" />
+    <Property Type="Int32" Name="LastNameEnc" Nullable="true" />
+    <Property Type="Int32" Name="DateOfBirthEnc" Nullable="true" />
+    <Property Type="Int32" Name="SSNEnc" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Street" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="StateId" Nullable="true" />
+    <Property Type="Int32" Name="CountryId" Nullable="true" />
+    <Property Type="String" Name="CountryCode" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="AreaCode" Nullable="true" />
+    <Property Type="Int32" Name="Number" Nullable="true" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="StateAbbr" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="CountryName" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="AddressTypeId" Nullable="true" />
+    <Property Type="Int32" Name="PhoneTypeId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetSubjectBySiteId_Result">
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="Int32" Name="StudyId" Nullable="false" />
+    <Property Type="String" Name="Directions" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Nickname" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FamilyId" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Notes" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="NIMHID" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="GenderTypeId" Nullable="false" />
+    <Property Type="Int32" Name="YearBorn" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="DateOfBirth" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="SSN" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="FirstNameEnc" Nullable="true" />
+    <Property Type="Int32" Name="LastNameEnc" Nullable="true" />
+    <Property Type="Int32" Name="DateOfBirthEnc" Nullable="true" />
+    <Property Type="Int32" Name="SSNEnc" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Street" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="StateId" Nullable="true" />
+    <Property Type="Int32" Name="CountryId" Nullable="true" />
+    <Property Type="String" Name="CountryCode" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="AreaCode" Nullable="true" />
+    <Property Type="Int32" Name="Number" Nullable="true" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="StateAbbr" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="CountryName" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="AddressTypeId" Nullable="true" />
+    <Property Type="Int32" Name="PhoneTypeId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspSubjectFindByFirstLastName_Result">
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="Int32" Name="StudyId" Nullable="false" />
+    <Property Type="String" Name="Directions" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Nickname" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FamilyId" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Notes" Nullable="true" MaxLength="1000" />
+    <Property Type="String" Name="NIMHID" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="GenderTypeId" Nullable="false" />
+    <Property Type="Int32" Name="YearBorn" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="DateOfBirth" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="SSN" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="FirstNameEnc" Nullable="true" />
+    <Property Type="Int32" Name="LastNameEnc" Nullable="true" />
+    <Property Type="Int32" Name="DateOfBirthEnc" Nullable="true" />
+    <Property Type="Int32" Name="SSNEnc" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="UpdatedOn" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Street" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="PostalCode" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="StateId" Nullable="true" />
+    <Property Type="Int32" Name="CountryId" Nullable="true" />
+    <Property Type="String" Name="CountryCode" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="AreaCode" Nullable="true" />
+    <Property Type="Int32" Name="Number" Nullable="true" />
+    <Property Type="String" Name="Telephone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="StateName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="StateAbbr" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="CountryName" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="AddressTypeId" Nullable="true" />
+    <Property Type="Int32" Name="PhoneTypeId" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Uri" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Type="String" Name="Comment" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="LikeScore" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="String" Name="CreatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SiteId" Nullable="false" />
+    <Property Type="Int32" Name="ContactId" Nullable="false" />
+    <Property Type="Int32" Name="StudyId" Nullable="false" />
+    <Property Type="String" Name="Nickname" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FamilyId" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Notes" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="NIMHID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="GenderTypeId" Nullable="false" />
+    <Property Type="Int32" Name="YearBorn" Nullable="false" />
+    <Property Type="String" Name="DateOfBirth" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SSN" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="SSNEnc" MaxLength="256" FixedLength="false" />
+    <Property Type="Binary" Name="FirstNameEnc" MaxLength="256" FixedLength="false" />
+    <Property Type="Binary" Name="LastNameEnc" MaxLength="256" FixedLength="false" />
+    <Property Type="Binary" Name="DateOfBirthEnc" MaxLength="256" FixedLength="false" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Contact" Relationship="Tateeda.Clires.DBModel.FK_Subject_Contact" FromRole="Subject" ToRole="Contact" />
+    <NavigationProperty Name="Site" Relationship="Tateeda.Clires.DBModel.FK_Subject_Site" FromRole="Subject" ToRole="Site" />
+    <NavigationProperty Name="Study" Relationship="Tateeda.Clires.DBModel.FK_Subject_StudyId" FromRole="Subject" ToRole="Study" />
+    <NavigationProperty Name="SubjectDrugs" Relationship="Tateeda.Clires.DBModel.FK_SubjectDrug_SubjectId" FromRole="Subject" ToRole="SubjectDrug" />
+    <NavigationProperty Name="Files" Relationship="Tateeda.Clires.DBModel.SubjectFile" FromRole="Subject" ToRole="File" />
+  </EntityType>
+  <EntityType Name="SubjectDrugHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="SubjectDrugId" />
+      <PropertyRef Name="SubjectId" />
+      <PropertyRef Name="DrugId" />
+      <PropertyRef Name="AppointmentId" />
+      <PropertyRef Name="ReasonStoppedId" />
+      <PropertyRef Name="ReasonTypeId" />
+      <PropertyRef Name="TreatmentInducedId" />
+      <PropertyRef Name="DosageFrequencyId" />
+      <PropertyRef Name="IsCurrent" />
+      <PropertyRef Name="IsChanged" />
+      <PropertyRef Name="IsStopped" />
+      <PropertyRef Name="IsBeforeStudy" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CreatedOn" />
+      <PropertyRef Name="SavedOn" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SubjectDrugId" Nullable="false" />
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="Int32" Name="DrugId" Nullable="false" />
+    <Property Type="Int32" Name="AppointmentId" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Precision="3" />
+    <Property Type="DateTime" Name="EndDate" Precision="3" />
+    <Property Type="Int32" Name="MultipleTrialsId" />
+    <Property Type="Int32" Name="DurationUsed" />
+    <Property Type="Int32" Name="ReasonStoppedId" Nullable="false" />
+    <Property Type="Int32" Name="ReasonTypeId" Nullable="false" />
+    <Property Type="Int32" Name="TreatmentInducedId" Nullable="false" />
+    <Property Type="Int32" Name="DosageFrequencyId" Nullable="false" />
+    <Property Type="Boolean" Name="IsCurrent" Nullable="false" />
+    <Property Type="Boolean" Name="IsChanged" Nullable="false" />
+    <Property Type="Boolean" Name="IsStopped" Nullable="false" />
+    <Property Type="Boolean" Name="IsBeforeStudy" Nullable="false" />
+    <Property Type="String" Name="Dosage" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DosageType" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Notes" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MdNotes" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Comments" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="DateTime" Name="SavedOn" Nullable="false" Precision="7" />
+  </EntityType>
+  <Association Name="FK_Subject_Contact">
+    <End Type="Tateeda.Clires.DBModel.Contact" Role="Contact" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Subject" Role="Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subject">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_Site">
+    <End Type="Tateeda.Clires.DBModel.Site" Role="Site" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Subject" Role="Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subject">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_StudyId">
+    <End Type="Tateeda.Clires.DBModel.Study" Role="Study" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.Subject" Role="Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subject">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectDrug_SubjectId">
+    <End Type="Tateeda.Clires.DBModel.Subject" Role="Subject" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.SubjectDrug" Role="SubjectDrug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubjectDrug">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LibraryAnswer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="String" Name="OptionText" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Score" />
+    <Property Type="String" Name="Header" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Trailer" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Question" Relationship="Tateeda.Clires.DBModel.FK_LibraryAnswer_Question" FromRole="LibraryAnswer" ToRole="Question" />
+  </EntityType>
+  <EntityType Name="LibraryForm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="FormTypeId" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Header" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Trailer" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsFilledBySubject" Nullable="false" />
+    <Property Type="Boolean" Name="ShowTotalScore" Nullable="false" />
+    <Property Type="Int32" Name="LayoutTypeId" Nullable="false" />
+    <Property Type="Boolean" Name="IsDoubleChecked" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LibraryQuestion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="LibraryFormId" Nullable="false" />
+    <Property Type="Int32" Name="FieldDataTypeId" Nullable="false" />
+    <Property Type="String" Name="QuestionText" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Code" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Directions" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Header" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Trailer" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsRequired" Nullable="false" />
+    <Property Type="Int32" Name="ParentQuestionId" />
+    <Property Type="Boolean" Name="IsParent" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="CssType" Relationship="Tateeda.Clires.DBModel.FK_LibraryQuestion_FieldDataType" FromRole="LibraryQuestion" ToRole="CssType" />
+    <NavigationProperty Name="Form" Relationship="Tateeda.Clires.DBModel.FK_LibraryQuestion_Form" FromRole="LibraryQuestion" ToRole="Form" />
+  </EntityType>
+  <Association Name="FK_LibraryQuestion_FieldDataType">
+    <End Type="Tateeda.Clires.DBModel.CssType" Role="CssType" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.LibraryQuestion" Role="LibraryQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CssType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LibraryQuestion">
+        <PropertyRef Name="FieldDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LibraryQuestion_Form">
+    <End Type="Tateeda.Clires.DBModel.Form" Role="Form" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.LibraryQuestion" Role="LibraryQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LibraryQuestion">
+        <PropertyRef Name="LibraryFormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LibraryAnswer_Question">
+    <End Type="Tateeda.Clires.DBModel.Question" Role="Question" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.LibraryAnswer" Role="LibraryAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LibraryAnswer">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="FileGuid" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Guid" Name="FileGuid" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FileType" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Binary" Name="FielContent" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Studies" Relationship="Tateeda.Clires.DBModel.StudyFile" FromRole="File" ToRole="Study" />
+    <NavigationProperty Name="Subjects" Relationship="Tateeda.Clires.DBModel.SubjectFile" FromRole="File" ToRole="Subject" />
+  </EntityType>
+  <Association Name="StudyFile">
+    <End Type="Tateeda.Clires.DBModel.File" Role="File" Multiplicity="*" />
+    <End Type="Tateeda.Clires.DBModel.Study" Role="Study" Multiplicity="*" />
+  </Association>
+  <Association Name="SubjectFile">
+    <End Type="Tateeda.Clires.DBModel.File" Role="File" Multiplicity="*" />
+    <End Type="Tateeda.Clires.DBModel.Subject" Role="Subject" Multiplicity="*" />
+  </Association>
+  <EntityType Name="FormInProcess">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FormId" Nullable="false" />
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="Int32" Name="AppUserId" Nullable="false" />
+    <Property Type="Boolean" Name="IsLocked" Nullable="false" />
+    <Property Type="DateTime" Name="OpenendOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="ReleasedOn" Precision="3" />
+    <Property Type="Int32" Name="MaxLockTimeMin" Nullable="false" />
+    <Property Type="Int32" Name="UnlockedByAppUserId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Message" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="StackTrace" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="Studies" Relationship="Tateeda.Clires.DBModel.OrganizationStudy" FromRole="Organization" ToRole="Study" />
+  </EntityType>
+  <Association Name="OrganizationStudy">
+    <End Type="Tateeda.Clires.DBModel.Organization" Role="Organization" Multiplicity="*" />
+    <End Type="Tateeda.Clires.DBModel.Study" Role="Study" Multiplicity="*" />
+  </Association>
+  <EntityType Name="StudySetupMap">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="OrganizationId" />
+    <Property Type="Int32" Name="StudyId" />
+    <Property Type="Int32" Name="StudySetupStepId" />
+    <Property Type="Int32" Name="StepSetupStatus" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="StudySetupStep" Relationship="Tateeda.Clires.DBModel.FK_StudySetupMap_StudySetupSteps" FromRole="StudySetupMap" ToRole="StudySetupStep" />
+  </EntityType>
+  <EntityType Name="StudySetupStep">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="OrganizationId" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ContextUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CreatedOn" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="Boolean" Name="IsActive" />
+    <Property Type="Int32" Name="SortOrder" />
+    <NavigationProperty Name="StudySetupMaps" Relationship="Tateeda.Clires.DBModel.FK_StudySetupMap_StudySetupSteps" FromRole="StudySetupStep" ToRole="StudySetupMap" />
+  </EntityType>
+  <Association Name="FK_StudySetupMap_StudySetupSteps">
+    <End Type="Tateeda.Clires.DBModel.StudySetupStep" Role="StudySetupStep" Multiplicity="0..1" />
+    <End Type="Tateeda.Clires.DBModel.StudySetupMap" Role="StudySetupMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudySetupStep">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudySetupMap">
+        <PropertyRef Name="StudySetupStepId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FormQuestionAnswerImport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FormId" Nullable="false" />
+    <Property Type="String" Name="FormName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="title" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="FormType" Nullable="false" />
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="String" Name="QuestionText" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="QuestionTypeId" Nullable="false" />
+    <Property Type="Int32" Name="AnswerId" Nullable="false" />
+    <Property Type="String" Name="AnswerText" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="AppUserId" Nullable="false" />
+    <Property Type="String" Name="SettingName" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SettingValue" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedOn" Precision="3" />
+    <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UpdatedBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <NavigationProperty Name="AppUser" Relationship="Tateeda.Clires.DBModel.FK_UserSettings_AppUser" FromRole="UserSetting" ToRole="AppUser" />
+  </EntityType>
+  <Association Name="FK_UserSettings_AppUser">
+    <End Type="Tateeda.Clires.DBModel.AppUser" Role="AppUser" Multiplicity="1" />
+    <End Type="Tateeda.Clires.DBModel.UserSetting" Role="UserSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserSetting">
+        <PropertyRef Name="AppUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,15 @@
+﻿CREATE TABLE [dbo].[Arm] (
+    [Id] INT           IDENTITY (1, 1) NOT NULL,
+	[StudyId] INT NOT NULL,
+    [Code]  NVARCHAR(50)      NULL,
+    [Name]  NVARCHAR (50) NOT NULL,
+	[Description] NVARCHAR(1000) NULL,
+    [CreatedOn] DATETIME NOT NULL DEFAULT GETUTCDATE(), 
+    [UpdatedOn] DATETIME NULL DEFAULT GETUTCDATE(), 
+    [CreatedBy] NVARCHAR(100) NOT NULL, 
+    [UpdatedBy] NVARCHAR(100) NULL, 
+    [IsActive] BIT NOT NULL DEFAULT 1, 
+    CONSTRAINT [PK_Arm] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (FILLFACTOR = 90), 
+    CONSTRAINT [FK_Arm_Study] FOREIGN KEY ([StudyId]) REFERENCES [Study]([Id])
+);
+

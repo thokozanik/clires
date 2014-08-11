@@ -1,0 +1,15 @@
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\Tateeda.Clires.Core.dll.config
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\Tateeda.Clires.Core.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\Tateeda.Clires.Core.pdb
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\Elmah.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\EntityFramework.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\EntityFramework.Extended.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\Newtonsoft.Json.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\NLog.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\EntityFramework.xml
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\EntityFramework.Extended.xml
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\Newtonsoft.Json.xml
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\bin\Debug\NLog.xml
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\obj\Debug\Tateeda.Clires.Core.dll
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\obj\Debug\Tateeda.Clires.Core.pdb
+C:\dev\TFS\Clires4\Dev\Tateeda.Clires.Shared\Tateeda.Clires.Core\obj\Debug\Tateeda.Clires.Core.csprojResolveAssemblyReference.cache

@@ -1,0 +1,2360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Tateeda.Clires.DBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TateedaCliresDBModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Tateeda.Clires.DBModel.Store.Address" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Answer" EntityType="Tateeda.Clires.DBModel.Store.Answer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AnswerChildQuestion" EntityType="Tateeda.Clires.DBModel.Store.AnswerChildQuestion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Appointment" EntityType="Tateeda.Clires.DBModel.Store.Appointment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AppointmentForm" EntityType="Tateeda.Clires.DBModel.Store.AppointmentForm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AppUser" EntityType="Tateeda.Clires.DBModel.Store.AppUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Arm" EntityType="Tateeda.Clires.DBModel.Store.Arm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Code" EntityType="Tateeda.Clires.DBModel.Store.Code" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contact" EntityType="Tateeda.Clires.DBModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactAddress" EntityType="Tateeda.Clires.DBModel.Store.ContactAddress" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactEmail" EntityType="Tateeda.Clires.DBModel.Store.ContactEmail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactPhone" EntityType="Tateeda.Clires.DBModel.Store.ContactPhone" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Country" EntityType="Tateeda.Clires.DBModel.Store.Country" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CountryState" EntityType="Tateeda.Clires.DBModel.Store.CountryState" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CssType" EntityType="Tateeda.Clires.DBModel.Store.CssType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CTGovSubmission" EntityType="Tateeda.Clires.DBModel.Store.CTGovSubmission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Drug" EntityType="Tateeda.Clires.DBModel.Store.Drug" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DrugCategory" EntityType="Tateeda.Clires.DBModel.Store.DrugCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DrugClass" EntityType="Tateeda.Clires.DBModel.Store.DrugClass" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Email" EntityType="Tateeda.Clires.DBModel.Store.Email" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ErrorLog" EntityType="Tateeda.Clires.DBModel.Store.ErrorLog" store:Type="Tables" store:Schema="dbo" store:Name="ErrorLog">
+      <DefiningQuery>SELECT 
+      [ErrorLog].[Id] AS [Id], 
+      [ErrorLog].[Message] AS [Message], 
+      [ErrorLog].[StackTrace] AS [StackTrace], 
+      [ErrorLog].[CreatedOn] AS [CreatedOn]
+      FROM [dbo].[ErrorLog] AS [ErrorLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Feedback" EntityType="Tateeda.Clires.DBModel.Store.Feedback" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="File" EntityType="Tateeda.Clires.DBModel.Store.File" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Form" EntityType="Tateeda.Clires.DBModel.Store.Form" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FormAnswer" EntityType="Tateeda.Clires.DBModel.Store.FormAnswer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FormInProcess" EntityType="Tateeda.Clires.DBModel.Store.FormInProcess" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FormQuestionAnswerImport" EntityType="Tateeda.Clires.DBModel.Store.FormQuestionAnswerImport" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FormVerification" EntityType="Tateeda.Clires.DBModel.Store.FormVerification" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FormVisibilityByVisitForSubject" EntityType="Tateeda.Clires.DBModel.Store.FormVisibilityByVisitForSubject" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Language" EntityType="Tateeda.Clires.DBModel.Store.Language" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocaleStringResource" EntityType="Tateeda.Clires.DBModel.Store.LocaleStringResource" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Memberships" EntityType="Tateeda.Clires.DBModel.Store.Memberships" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MessageProvider" EntityType="Tateeda.Clires.DBModel.Store.MessageProvider" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MessageQueue" EntityType="Tateeda.Clires.DBModel.Store.MessageQueue" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MessageTemplate" EntityType="Tateeda.Clires.DBModel.Store.MessageTemplate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Organization" EntityType="Tateeda.Clires.DBModel.Store.Organization" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrganizationStudy" EntityType="Tateeda.Clires.DBModel.Store.OrganizationStudy" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Phone" EntityType="Tateeda.Clires.DBModel.Store.Phone" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Profiles" EntityType="Tateeda.Clires.DBModel.Store.Profiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Question" EntityType="Tateeda.Clires.DBModel.Store.Question" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecreationalDrugOrSubstance" EntityType="Tateeda.Clires.DBModel.Store.RecreationalDrugOrSubstance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="Tateeda.Clires.DBModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ScheduleSubjectVisit" EntityType="Tateeda.Clires.DBModel.Store.ScheduleSubjectVisit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Settings" EntityType="Tateeda.Clires.DBModel.Store.Settings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Site" EntityType="Tateeda.Clires.DBModel.Store.Site" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="State" EntityType="Tateeda.Clires.DBModel.Store.State" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Study" EntityType="Tateeda.Clires.DBModel.Store.Study" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudyFile" EntityType="Tateeda.Clires.DBModel.Store.StudyFile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudySetupMap" EntityType="Tateeda.Clires.DBModel.Store.StudySetupMap" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudySetupSteps" EntityType="Tateeda.Clires.DBModel.Store.StudySetupSteps" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudySite" EntityType="Tateeda.Clires.DBModel.Store.StudySite" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Subject" EntityType="Tateeda.Clires.DBModel.Store.Subject" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubjectAltNumber" EntityType="Tateeda.Clires.DBModel.Store.SubjectAltNumber" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubjectDrug" EntityType="Tateeda.Clires.DBModel.Store.SubjectDrug" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubjectDrugHistory" EntityType="Tateeda.Clires.DBModel.Store.SubjectDrugHistory" store:Type="Tables" store:Schema="dbo" store:Name="SubjectDrugHistory">
+      <DefiningQuery>SELECT 
+      [SubjectDrugHistory].[Id] AS [Id], 
+      [SubjectDrugHistory].[SubjectDrugId] AS [SubjectDrugId], 
+      [SubjectDrugHistory].[SubjectId] AS [SubjectId], 
+      [SubjectDrugHistory].[DrugId] AS [DrugId], 
+      [SubjectDrugHistory].[AppointmentId] AS [AppointmentId], 
+      [SubjectDrugHistory].[StartDate] AS [StartDate], 
+      [SubjectDrugHistory].[EndDate] AS [EndDate], 
+      [SubjectDrugHistory].[MultipleTrialsId] AS [MultipleTrialsId], 
+      [SubjectDrugHistory].[DurationUsed] AS [DurationUsed], 
+      [SubjectDrugHistory].[ReasonStoppedId] AS [ReasonStoppedId], 
+      [SubjectDrugHistory].[ReasonTypeId] AS [ReasonTypeId], 
+      [SubjectDrugHistory].[TreatmentInducedId] AS [TreatmentInducedId], 
+      [SubjectDrugHistory].[DosageFrequencyId] AS [DosageFrequencyId], 
+      [SubjectDrugHistory].[IsCurrent] AS [IsCurrent], 
+      [SubjectDrugHistory].[IsChanged] AS [IsChanged], 
+      [SubjectDrugHistory].[IsStopped] AS [IsStopped], 
+      [SubjectDrugHistory].[IsBeforeStudy] AS [IsBeforeStudy], 
+      [SubjectDrugHistory].[Dosage] AS [Dosage], 
+      [SubjectDrugHistory].[DosageType] AS [DosageType], 
+      [SubjectDrugHistory].[Notes] AS [Notes], 
+      [SubjectDrugHistory].[MdNotes] AS [MdNotes], 
+      [SubjectDrugHistory].[Comments] AS [Comments], 
+      [SubjectDrugHistory].[Status] AS [Status], 
+      [SubjectDrugHistory].[CreatedOn] AS [CreatedOn], 
+      [SubjectDrugHistory].[UpdatedOn] AS [UpdatedOn], 
+      [SubjectDrugHistory].[SavedOn] AS [SavedOn]
+      FROM [dbo].[SubjectDrugHistory] AS [SubjectDrugHistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SubjectFile" EntityType="Tateeda.Clires.DBModel.Store.SubjectFile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TimeZone" EntityType="Tateeda.Clires.DBModel.Store.TimeZone" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="Tateeda.Clires.DBModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSettings" EntityType="Tateeda.Clires.DBModel.Store.UserSettings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsersInRoles" EntityType="Tateeda.Clires.DBModel.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Visit" EntityType="Tateeda.Clires.DBModel.Store.Visit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VisitForms" EntityType="Tateeda.Clires.DBModel.Store.VisitForms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VisitStep" EntityType="Tateeda.Clires.DBModel.Store.VisitStep" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VisitStepMapping" EntityType="Tateeda.Clires.DBModel.Store.VisitStepMapping" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VisitStepVisitSequence" EntityType="Tateeda.Clires.DBModel.Store.VisitStepVisitSequence" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LibraryAnswer" EntityType="Tateeda.Clires.DBModel.Store.LibraryAnswer" store:Type="Tables" Schema="Library" />
+    <EntitySet Name="LibraryForm" EntityType="Tateeda.Clires.DBModel.Store.LibraryForm" store:Type="Tables" Schema="Library" />
+    <EntitySet Name="LibraryQuestion" EntityType="Tateeda.Clires.DBModel.Store.LibraryQuestion" store:Type="Tables" Schema="Library" />
+    <AssociationSet Name="FK_Answer_Question" Association="Tateeda.Clires.DBModel.Store.FK_Answer_Question">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="Answer" EntitySet="Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnswerChildQuestion_Answer" Association="Tateeda.Clires.DBModel.Store.FK_AnswerChildQuestion_Answer">
+      <End Role="Answer" EntitySet="Answer" />
+      <End Role="AnswerChildQuestion" EntitySet="AnswerChildQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnswerChildQuestion_Question" Association="Tateeda.Clires.DBModel.Store.FK_AnswerChildQuestion_Question">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="AnswerChildQuestion" EntitySet="AnswerChildQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointment_Visit" Association="Tateeda.Clires.DBModel.Store.FK_Appointment_Visit">
+      <End Role="Visit" EntitySet="Visit" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppointmentForm_Appointment" Association="Tateeda.Clires.DBModel.Store.FK_AppointmentForm_Appointment">
+      <End Role="Appointment" EntitySet="Appointment" />
+      <End Role="AppointmentForm" EntitySet="AppointmentForm" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppointmentForm_Form" Association="Tateeda.Clires.DBModel.Store.FK_AppointmentForm_Form">
+      <End Role="Form" EntitySet="Form" />
+      <End Role="AppointmentForm" EntitySet="AppointmentForm" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppUser_Contact" Association="Tateeda.Clires.DBModel.Store.FK_AppUser_Contact">
+      <End Role="Contact" EntitySet="Contact" />
+      <End Role="AppUser" EntitySet="AppUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppUser_Role" Association="Tateeda.Clires.DBModel.Store.FK_AppUser_Role">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="AppUser" EntitySet="AppUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppUser_Site" Association="Tateeda.Clires.DBModel.Store.FK_AppUser_Site">
+      <End Role="Site" EntitySet="Site" />
+      <End Role="AppUser" EntitySet="AppUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppUser_User" Association="Tateeda.Clires.DBModel.Store.FK_AppUser_User">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="AppUser" EntitySet="AppUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Arm_Study" Association="Tateeda.Clires.DBModel.Store.FK_Arm_Study">
+      <End Role="Study" EntitySet="Study" />
+      <End Role="Arm" EntitySet="Arm" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactAddress_Address" Association="Tateeda.Clires.DBModel.Store.FK_ContactAddress_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="ContactAddress" EntitySet="ContactAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactAddress_Contact" Association="Tateeda.Clires.DBModel.Store.FK_ContactAddress_Contact">
+      <End Role="Contact" EntitySet="Contact" />
+      <End Role="ContactAddress" EntitySet="ContactAddress" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactEmail_Contact" Association="Tateeda.Clires.DBModel.Store.FK_ContactEmail_Contact">
+      <End Role="Contact" EntitySet="Contact" />
+      <End Role="ContactEmail" EntitySet="ContactEmail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactEmail_Email" Association="Tateeda.Clires.DBModel.Store.FK_ContactEmail_Email">
+      <End Role="Email" EntitySet="Email" />
+      <End Role="ContactEmail" EntitySet="ContactEmail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactPhone_Contact" Association="Tateeda.Clires.DBModel.Store.FK_ContactPhone_Contact">
+      <End Role="Contact" EntitySet="Contact" />
+      <End Role="ContactPhone" EntitySet="ContactPhone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContactPhone_Phone" Association="Tateeda.Clires.DBModel.Store.FK_ContactPhone_Phone">
+      <End Role="Phone" EntitySet="Phone" />
+      <End Role="ContactPhone" EntitySet="ContactPhone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryState_Country" Association="Tateeda.Clires.DBModel.Store.FK_CountryState_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="CountryState" EntitySet="CountryState" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CountryState_State" Association="Tateeda.Clires.DBModel.Store.FK_CountryState_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="CountryState" EntitySet="CountryState" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Drug_DrugClass" Association="Tateeda.Clires.DBModel.Store.FK_Drug_DrugClass">
+      <End Role="DrugClass" EntitySet="DrugClass" />
+      <End Role="Drug" EntitySet="Drug" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Drug_Study" Association="Tateeda.Clires.DBModel.Store.FK_Drug_Study">
+      <End Role="Study" EntitySet="Study" />
+      <End Role="Drug" EntitySet="Drug" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugClass_DrugCategory" Association="Tateeda.Clires.DBModel.Store.FK_DrugClass_DrugCategory">
+      <End Role="DrugCategory" EntitySet="DrugCategory" />
+      <End Role="DrugClass" EntitySet="DrugClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Form_Study" Association="Tateeda.Clires.DBModel.Store.FK_Form_Study">
+      <End Role="Study" EntitySet="Study" />
+      <End Role="Form" EntitySet="Form" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FormAnswer_AppointmentForm" Association="Tateeda.Clires.DBModel.Store.FK_FormAnswer_AppointmentForm">
+      <End Role="AppointmentForm" EntitySet="AppointmentForm" />
+      <End Role="FormAnswer" EntitySet="FormAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FormVerificationRequest_Form" Association="Tateeda.Clires.DBModel.Store.FK_FormVerificationRequest_Form">
+      <End Role="Form" EntitySet="Form" />
+      <End Role="FormVerification" EntitySet="FormVerification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FormVisibilityByVisitForSubject_Form" Association="Tateeda.Clires.DBModel.Store.FK_FormVisibilityByVisitForSubject_Form">
+      <End Role="Form" EntitySet="Form" />
+      <End Role="FormVisibilityByVisitForSubject" EntitySet="FormVisibilityByVisitForSubject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FormVisibilityByVisitForSubject_Visit" Association="Tateeda.Clires.DBModel.Store.FK_FormVisibilityByVisitForSubject_Visit">
+      <End Role="Visit" EntitySet="Visit" />
+      <End Role="FormVisibilityByVisitForSubject" EntitySet="FormVisibilityByVisitForSubject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LibraryAnswer_Question" Association="Tateeda.Clires.DBModel.Store.FK_LibraryAnswer_Question">
+      <End Role="Question" EntitySet="Question" />
+      <End Role="LibraryAnswer" EntitySet="LibraryAnswer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LibraryQuestion_FieldDataType" Association="Tateeda.Clires.DBModel.Store.FK_LibraryQuestion_FieldDataType">
+      <End Role="CssType" EntitySet="CssType" />
+      <End Role="LibraryQuestion" EntitySet="LibraryQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LibraryQuestion_Form" Association="Tateeda.Clires.DBModel.Store.FK_LibraryQuestion_Form">
+      <End Role="Form" EntitySet="Form" />
+      <End Role="LibraryQuestion" EntitySet="LibraryQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocaleStringResource_Language" Association="Tateeda.Clires.DBModel.Store.FK_LocaleStringResource_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="LocaleStringResource" EntitySet="LocaleStringResource" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageQueue_Template" Association="Tateeda.Clires.DBModel.Store.FK_MessageQueue_Template">
+      <End Role="MessageTemplate" EntitySet="MessageTemplate" />
+      <End Role="MessageQueue" EntitySet="MessageQueue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageTemplate_Language" Association="Tateeda.Clires.DBModel.Store.FK_MessageTemplate_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="MessageTemplate" EntitySet="MessageTemplate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MessageTemplate_MessageProvider" Association="Tateeda.Clires.DBModel.Store.FK_MessageTemplate_MessageProvider">
+      <End Role="MessageProvider" EntitySet="MessageProvider" />
+      <End Role="MessageTemplate" EntitySet="MessageTemplate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrganizationStudy_Organization" Association="Tateeda.Clires.DBModel.Store.FK_OrganizationStudy_Organization">
+      <End Role="Organization" EntitySet="Organization" />
+      <End Role="OrganizationStudy" EntitySet="OrganizationStudy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrganizationStudy_Study" Association="Tateeda.Clires.DBModel.Store.FK_OrganizationStudy_Study">
+      <End Role="Study" EntitySet="Study" />
+      <End Role="OrganizationStudy" EntitySet="OrganizationStudy" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_FieldDataType" Association="Tateeda.Clires.DBModel.Store.FK_Question_FieldDataType">
+      <End Role="CssType" EntitySet="CssType" />
+      <End Role="Question" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question_Form" Association="Tateeda.Clires.DBModel.Store.FK_Question_Form">
+      <End Role="Form" EntitySet="Form" />
+      <End Role="Question" EntitySet="Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecreationalDrugOrSubstance_Appointment" Association="Tateeda.Clires.DBModel.Store.FK_RecreationalDrugOrSubstance_Appointment">
+      <End Role="Appointment" EntitySet="Appointment" />
+      <End Role="RecreationalDrugOrSubstance" EntitySet="RecreationalDrugOrSubstance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScheduleSubjectVisit_Visit" Association="Tateeda.Clires.DBModel.Store.FK_ScheduleSubjectVisit_Visit">
+      <End Role="Visit" EntitySet="Visit" />
+      <End Role="ScheduleSubjectVisit" EntitySet="ScheduleSubjectVisit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Site_TimeZone" Association="Tateeda.Clires.DBModel.Store.FK_Site_TimeZone">
+      <End Role="TimeZone" EntitySet="TimeZone" />
+      <End Role="Site" EntitySet="Site" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudyFile_File" Association="Tateeda.Clires.DBModel.Store.FK_StudyFile_File">
+      <End Role="File" EntitySet="File" />
+      <End Role="StudyFile" EntitySet="StudyFile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudyFile_Study" Association="Tateeda.Clires.DBModel.Store.FK_StudyFile_Study">
+      <End Role="Study" EntitySet="Study" />
+      <End Role="StudyFile" EntitySet="StudyFile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudySetupMap_StudySetupSteps" Association="Tateeda.Clires.DBModel.Store.FK_StudySetupMap_StudySetupSteps">
+      <End Role="StudySetupSteps" EntitySet="StudySetupSteps" />
+      <End Role="StudySetupMap" EntitySet="StudySetupMap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudySite_Site" Association="Tateeda.Clires.DBModel.Store.FK_StudySite_Site">
+      <End Role="Site" EntitySet="Site" />
+      <End Role="StudySite" EntitySet="StudySite" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudySite_Study" Association="Tateeda.Clires.DBModel.Store.FK_StudySite_Study">
+      <End Role="Study" EntitySet="Study" />
+      <End Role="StudySite" EntitySet="StudySite" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_Contact" Association="Tateeda.Clires.DBModel.Store.FK_Subject_Contact">
+      <End Role="Contact" EntitySet="Contact" />
+      <End Role="Subject" EntitySet="Subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_Site" Association="Tateeda.Clires.DBModel.Store.FK_Subject_Site">
+      <End Role="Site" EntitySet="Site" />
+      <End Role="Subject" EntitySet="Subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Subject_StudyId" Association="Tateeda.Clires.DBModel.Store.FK_Subject_StudyId">
+      <End Role="Study" EntitySet="Study" />
+      <End Role="Subject" EntitySet="Subject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectDrug_Drug" Association="Tateeda.Clires.DBModel.Store.FK_SubjectDrug_Drug">
+      <End Role="Drug" EntitySet="Drug" />
+      <End Role="SubjectDrug" EntitySet="SubjectDrug" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectDrug_SubjectId" Association="Tateeda.Clires.DBModel.Store.FK_SubjectDrug_SubjectId">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="SubjectDrug" EntitySet="SubjectDrug" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectFile_File" Association="Tateeda.Clires.DBModel.Store.FK_SubjectFile_File">
+      <End Role="File" EntitySet="File" />
+      <End Role="SubjectFile" EntitySet="SubjectFile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectFile_Subject" Association="Tateeda.Clires.DBModel.Store.FK_SubjectFile_Subject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="SubjectFile" EntitySet="SubjectFile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSettings_AppUser" Association="Tateeda.Clires.DBModel.Store.FK_UserSettings_AppUser">
+      <End Role="AppUser" EntitySet="AppUser" />
+      <End Role="UserSettings" EntitySet="UserSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visit_Arm" Association="Tateeda.Clires.DBModel.Store.FK_Visit_Arm">
+      <End Role="Arm" EntitySet="Arm" />
+      <End Role="Visit" EntitySet="Visit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visit_ParentVisit" Association="Tateeda.Clires.DBModel.Store.FK_Visit_ParentVisit">
+      <End Role="Visit" EntitySet="Visit" />
+      <End Role="Visit1" EntitySet="Visit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitForms_Form" Association="Tateeda.Clires.DBModel.Store.FK_VisitForms_Form">
+      <End Role="Form" EntitySet="Form" />
+      <End Role="VisitForms" EntitySet="VisitForms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitStep_Arm" Association="Tateeda.Clires.DBModel.Store.FK_VisitStep_Arm">
+      <End Role="Arm" EntitySet="Arm" />
+      <End Role="VisitStep" EntitySet="VisitStep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitStepMapping_Visit" Association="Tateeda.Clires.DBModel.Store.FK_VisitStepMapping_Visit">
+      <End Role="Visit" EntitySet="Visit" />
+      <End Role="VisitStepMapping" EntitySet="VisitStepMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitStepMapping_VisitStep" Association="Tateeda.Clires.DBModel.Store.FK_VisitStepMapping_VisitStep">
+      <End Role="VisitStep" EntitySet="VisitStep" />
+      <End Role="VisitStepMapping" EntitySet="VisitStepMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitStepVisitSequence_Visit" Association="Tateeda.Clires.DBModel.Store.FK_VisitStepVisitSequence_Visit">
+      <End Role="Visit" EntitySet="Visit" />
+      <End Role="VisitStepVisitSequence" EntitySet="VisitStepVisitSequence" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VisitStepVisitSequence_VisitStep" Association="Tateeda.Clires.DBModel.Store.FK_VisitStepVisitSequence_VisitStep">
+      <End Role="VisitStep" EntitySet="VisitStep" />
+      <End Role="VisitStepVisitSequence" EntitySet="VisitStepVisitSequence" />
+    </AssociationSet>
+    <AssociationSet Name="MembershipUser" Association="Tateeda.Clires.DBModel.Store.MembershipUser">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="RefVisit26" Association="Tateeda.Clires.DBModel.Store.RefVisit26">
+      <End Role="Visit" EntitySet="Visit" />
+      <End Role="VisitForms" EntitySet="VisitForms" />
+    </AssociationSet>
+    <AssociationSet Name="UserProfile" Association="Tateeda.Clires.DBModel.Store.UserProfile">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Profiles" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRoleRole" Association="Tateeda.Clires.DBModel.Store.UsersInRoleRole">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="UsersInRoleUser" Association="Tateeda.Clires.DBModel.Store.UsersInRoleUser">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AddressTypeId" Type="int" Nullable="false" />
+    <Property Name="Street" Type="nvarchar" MaxLength="250" />
+    <Property Name="City" Type="nvarchar" MaxLength="100" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionId" Type="int" Nullable="false" />
+    <Property Name="OptionText" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Code" Type="nvarchar" MaxLength="32" />
+    <Property Name="Score" Type="int" />
+    <Property Name="Header" Type="nvarchar" MaxLength="200" />
+    <Property Name="Trailer" Type="nvarchar" MaxLength="200" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AnswerChildQuestion">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="AnswerId" Type="int" Nullable="false" />
+    <Property Name="QuestionId" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="VisitId" Type="int" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="AppUserId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" />
+    <Property Name="Location" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="StartTime" Type="time" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="EndTime" Type="time" />
+    <Property Name="VisitStepId" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AppointmentForm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FormId" Type="int" Nullable="false" />
+    <Property Name="AppointmentId" Type="int" Nullable="false" />
+    <Property Name="FormStatusTypeId" Type="int" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="TotalScore" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AppUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MembershipUserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ContactId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="100" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Arm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StudyId" Type="int" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Code">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CodeTypeId" Type="int" Nullable="false" />
+    <Property Name="EnumId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ContactTypeId" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactAddress">
+    <Key>
+      <PropertyRef Name="ContactId" />
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="ContactId" Type="int" Nullable="false" />
+    <Property Name="AddressId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactEmail">
+    <Key>
+      <PropertyRef Name="ContactId" />
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="ContactId" Type="int" Nullable="false" />
+    <Property Name="EmailId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactPhone">
+    <Key>
+      <PropertyRef Name="ContactId" />
+      <PropertyRef Name="PhoneId" />
+    </Key>
+    <Property Name="ContactId" Type="int" Nullable="false" />
+    <Property Name="PhoneId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Abbr" Type="nvarchar" MaxLength="80" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Iso3" Type="char" MaxLength="3" />
+    <Property Name="FlagImgUrl" Type="nvarchar(max)" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CountryState">
+    <Key>
+      <PropertyRef Name="CountryId" />
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="StateId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CssType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CssClassName" Type="nvarchar" MaxLength="100" />
+    <Property Name="InputType" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Html" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CTGovSubmission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="SubmissionXML" Type="xml" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Drug">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DrugClassId" Type="int" Nullable="false" />
+    <Property Name="DrugTypeId" Type="int" />
+    <Property Name="StudyId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DrugCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="Code" Type="nvarchar" MaxLength="32" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DrugClass">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DrugCategoryId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Tateeda.Clires.DB.dbo.ErrorLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="StackTrace" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Feedback">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Uri" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LikeScore" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="FileGuid" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="FileGuid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="FileType" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="FielContent" Type="varbinary(max)" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Form">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StudyId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="Code" Type="nvarchar" MaxLength="32" />
+    <Property Name="FormTypeId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Header" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Trailer" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsFilledBySubject" Type="bit" Nullable="false" />
+    <Property Name="ShowTotalScore" Type="bit" Nullable="false" />
+    <Property Name="LayoutTypeId" Type="int" Nullable="false" />
+    <Property Name="IsDoubleChecked" Type="bit" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="NotifyOnChange" Type="bit" Nullable="false" />
+    <Property Name="NotifyOnCompletion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FormAnswer">
+    <Key>
+      <PropertyRef Name="AppointmentFormId" />
+      <PropertyRef Name="AnswerId" />
+      <PropertyRef Name="QuestionId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AppointmentFormId" Type="int" Nullable="false" />
+    <Property Name="AnswerId" Type="int" Nullable="false" />
+    <Property Name="QuestionId" Type="int" Nullable="false" />
+    <Property Name="FreeTextAnswer" Type="nvarchar(max)" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="FormInProcess">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FormId" Type="int" Nullable="false" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="AppUserId" Type="int" Nullable="false" />
+    <Property Name="IsLocked" Type="bit" Nullable="false" />
+    <Property Name="OpenendOn" Type="datetime" Nullable="false" />
+    <Property Name="ReleasedOn" Type="datetime" />
+    <Property Name="MaxLockTimeMin" Type="int" Nullable="false" />
+    <Property Name="UnlockedByAppUserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FormQuestionAnswerImport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FormId" Type="int" Nullable="false" />
+    <Property Name="FormName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="title" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="FormType" Type="int" Nullable="false" />
+    <Property Name="QuestionId" Type="int" Nullable="false" />
+    <Property Name="QuestionText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="QuestionTypeId" Type="int" Nullable="false" />
+    <Property Name="AnswerId" Type="int" Nullable="false" />
+    <Property Name="AnswerText" Type="nvarchar" Nullable="false" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="FormVerification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="FormId" Type="int" Nullable="false" />
+    <Property Name="VerifiedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="VerifiedOn" Type="datetime" />
+    <Property Name="ResultStatus" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FormVisibilityByVisitForSubject">
+    <Key>
+      <PropertyRef Name="FormId" />
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FormId" Type="int" Nullable="false" />
+    <Property Name="VisitId" Type="int" Nullable="false" />
+    <Property Name="DaysPriorToVisit" Type="int" Nullable="false" />
+    <Property Name="DaysAfterVisit" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="LanguageCulture" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="UniqueSeoCode" Type="nvarchar" MaxLength="2" />
+    <Property Name="FlagImageFileName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Published" Type="bit" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LocaleStringResource">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="ResourceName" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ResourceValue" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Memberships">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="MessageProvider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="LicenseKey" Type="nvarchar" MaxLength="1000" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="200" />
+    <Property Name="AccountPassword" Type="nvarchar" MaxLength="100" />
+    <Property Name="ServiceUri" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MessageQueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TemplateId" Type="int" Nullable="false" />
+    <Property Name="PriorityId" Type="int" Nullable="false" />
+    <Property Name="Data" Type="nvarchar(max)" />
+    <Property Name="RecipientId" Type="int" Nullable="false" />
+    <Property Name="SenderId" Type="int" Nullable="false" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="QueuedOn" Type="datetime" Nullable="false" />
+    <Property Name="LastProcessedOn" Type="datetime" />
+    <Property Name="TriesCount" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MessageTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="BccEmailAddresses" Type="nvarchar" MaxLength="200" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Body" Type="nvarchar(max)" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="MessageProviderId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrganizationStudy">
+    <Key>
+      <PropertyRef Name="OrganizationId" />
+      <PropertyRef Name="StudyId" />
+    </Key>
+    <Property Name="OrganizationId" Type="int" Nullable="false" />
+    <Property Name="StudyId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Phone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CountryCode" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="AreaCode" Type="int" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneTypeId" Type="int" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profiles">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PropertyNames" Type="nvarchar" Nullable="false" />
+    <Property Name="PropertyValueStrings" Type="nvarchar" Nullable="false" />
+    <Property Name="PropertyValueBinary" Type="image" Nullable="false" />
+    <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FormId" Type="int" Nullable="false" />
+    <Property Name="FieldDataTypeId" Type="int" Nullable="false" />
+    <Property Name="QuestionText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="32" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Header" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Trailer" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsRequired" Type="bit" Nullable="false" />
+    <Property Name="ParentQuestionId" Type="int" />
+    <Property Name="IsParent" Type="bit" Nullable="false" />
+    <Property Name="ValidationRule" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecreationalDrugOrSubstance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="Dose" Type="nvarchar" MaxLength="50" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="20" />
+    <Property Name="Frequency" Type="int" />
+    <Property Name="FrequencyUnit" Type="nvarchar" MaxLength="20" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UseStartDate" Type="date" />
+    <Property Name="UseEndDate" Type="date" />
+    <Property Name="AppointementId" Type="int" />
+    <Property Name="Comments" Type="varchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="ScheduleSubjectVisit">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="VisitId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Code" Type="nvarchar" MaxLength="32" />
+    <Property Name="TimeZoneId" Type="int" Nullable="false" />
+    <Property Name="IsPrimary" Type="bit" Nullable="false" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Abbr" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Study">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Target" Type="nvarchar(max)" />
+    <Property Name="Goal" Type="nvarchar(max)" />
+    <Property Name="Budget" Type="money" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudyFile">
+    <Key>
+      <PropertyRef Name="StudyId" />
+      <PropertyRef Name="FileGuid" />
+    </Key>
+    <Property Name="StudyId" Type="int" Nullable="false" />
+    <Property Name="FileGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudySetupMap">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrganizationId" Type="int" />
+    <Property Name="StudyId" Type="int" />
+    <Property Name="StudySetupStepId" Type="int" />
+    <Property Name="StepSetupStatus" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudySetupSteps">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OrganizationId" Type="int" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ContextUrl" Type="nvarchar(max)" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedOn" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="StudySite">
+    <Key>
+      <PropertyRef Name="StudyId" />
+      <PropertyRef Name="SiteId" />
+    </Key>
+    <Property Name="StudyId" Type="int" Nullable="false" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SiteId" Type="int" Nullable="false" />
+    <Property Name="ContactId" Type="int" Nullable="false" />
+    <Property Name="StudyId" Type="int" Nullable="false" />
+    <Property Name="Nickname" Type="nvarchar" MaxLength="100" />
+    <Property Name="FamilyId" Type="nvarchar" MaxLength="100" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+    <Property Name="NIMHID" Type="nvarchar" MaxLength="100" />
+    <Property Name="GenderTypeId" Type="int" Nullable="false" />
+    <Property Name="YearBorn" Type="int" Nullable="false" />
+    <Property Name="DateOfBirth" Type="nvarchar" MaxLength="50" />
+    <Property Name="SSN" Type="nvarchar" MaxLength="40" />
+    <Property Name="SSNEnc" Type="varbinary" MaxLength="256" />
+    <Property Name="FirstNameEnc" Type="varbinary" MaxLength="256" />
+    <Property Name="LastNameEnc" Type="varbinary" MaxLength="256" />
+    <Property Name="DateOfBirthEnc" Type="varbinary" MaxLength="256" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubjectAltNumber">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="AltId" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubjectDrug">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="DrugId" Type="int" Nullable="false" />
+    <Property Name="AppointmentId" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="MultipleTrialsId" Type="int" />
+    <Property Name="DurationUsed" Type="int" />
+    <Property Name="ReasonStoppedId" Type="int" Nullable="false" />
+    <Property Name="ReasonTypeId" Type="int" Nullable="false" />
+    <Property Name="TreatmentInducedId" Type="int" Nullable="false" />
+    <Property Name="DosageFrequencyId" Type="int" Nullable="false" />
+    <Property Name="IsCurrent" Type="bit" Nullable="false" />
+    <Property Name="IsChanged" Type="bit" Nullable="false" />
+    <Property Name="IsStopped" Type="bit" Nullable="false" />
+    <Property Name="IsBeforeStudy" Type="bit" Nullable="false" />
+    <Property Name="Dosage" Type="nvarchar" MaxLength="200" />
+    <Property Name="DosageType" Type="nvarchar" MaxLength="200" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+    <Property Name="MdNotes" Type="nvarchar(max)" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Tateeda.Clires.DB.dbo.SubjectDrugHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="SubjectDrugHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="SubjectDrugId" />
+      <PropertyRef Name="SubjectId" />
+      <PropertyRef Name="DrugId" />
+      <PropertyRef Name="AppointmentId" />
+      <PropertyRef Name="ReasonStoppedId" />
+      <PropertyRef Name="ReasonTypeId" />
+      <PropertyRef Name="TreatmentInducedId" />
+      <PropertyRef Name="DosageFrequencyId" />
+      <PropertyRef Name="IsCurrent" />
+      <PropertyRef Name="IsChanged" />
+      <PropertyRef Name="IsStopped" />
+      <PropertyRef Name="IsBeforeStudy" />
+      <PropertyRef Name="Status" />
+      <PropertyRef Name="CreatedOn" />
+      <PropertyRef Name="SavedOn" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectDrugId" Type="int" Nullable="false" />
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="DrugId" Type="int" Nullable="false" />
+    <Property Name="AppointmentId" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="MultipleTrialsId" Type="int" />
+    <Property Name="DurationUsed" Type="int" />
+    <Property Name="ReasonStoppedId" Type="int" Nullable="false" />
+    <Property Name="ReasonTypeId" Type="int" Nullable="false" />
+    <Property Name="TreatmentInducedId" Type="int" Nullable="false" />
+    <Property Name="DosageFrequencyId" Type="int" Nullable="false" />
+    <Property Name="IsCurrent" Type="bit" Nullable="false" />
+    <Property Name="IsChanged" Type="bit" Nullable="false" />
+    <Property Name="IsStopped" Type="bit" Nullable="false" />
+    <Property Name="IsBeforeStudy" Type="bit" Nullable="false" />
+    <Property Name="Dosage" Type="nvarchar" MaxLength="200" />
+    <Property Name="DosageType" Type="nvarchar" MaxLength="200" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="1000" />
+    <Property Name="MdNotes" Type="nvarchar(max)" />
+    <Property Name="Comments" Type="nvarchar(max)" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="SavedOn" Type="datetime2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubjectFile">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+      <PropertyRef Name="FileGuid" />
+    </Key>
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="FileGuid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeZone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Offset" Type="numeric" Nullable="false" Scale="2" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AppUserId" Type="int" Nullable="false" />
+    <Property Name="SettingName" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="SettingValue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Visit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VisitTypeId" Type="int" Nullable="false" />
+    <Property Name="ArmId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Code" Type="nvarchar" MaxLength="32" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="ParentVisitId" Type="int" />
+    <Property Name="IsBaseVisit" Type="bit" Nullable="false" />
+    <Property Name="CanRepeat" Type="bit" Nullable="false" />
+    <Property Name="CanMove" Type="bit" Nullable="false" />
+    <Property Name="HasChild" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VisitForms">
+    <Key>
+      <PropertyRef Name="VisitId" />
+      <PropertyRef Name="FormId" />
+    </Key>
+    <Property Name="VisitId" Type="int" Nullable="false" />
+    <Property Name="FormId" Type="int" Nullable="false" />
+    <Property Name="SortOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="VisitStep">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ArmId" Type="int" Nullable="false" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VisitStepMapping">
+    <Key>
+      <PropertyRef Name="VisitStepId" />
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Name="VisitStepId" Type="int" Nullable="false" />
+    <Property Name="VisitId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VisitStepVisitSequence">
+    <Key>
+      <PropertyRef Name="VisitStepId" />
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Name="VisitStepId" Type="int" Nullable="false" />
+    <Property Name="VisitId" Type="int" Nullable="false" />
+    <Property Name="DaysFromBase" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Deviation" Type="int" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="IsTermination" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LibraryAnswer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionId" Type="int" Nullable="false" />
+    <Property Name="OptionText" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="Code" Type="nvarchar" MaxLength="32" />
+    <Property Name="Score" Type="int" />
+    <Property Name="Header" Type="nvarchar" MaxLength="200" />
+    <Property Name="Trailer" Type="nvarchar" MaxLength="200" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LibraryForm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+    <Property Name="Code" Type="nvarchar" MaxLength="32" />
+    <Property Name="FormTypeId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Header" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Trailer" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsFilledBySubject" Type="bit" Nullable="false" />
+    <Property Name="ShowTotalScore" Type="bit" Nullable="false" />
+    <Property Name="LayoutTypeId" Type="int" Nullable="false" />
+    <Property Name="IsDoubleChecked" Type="bit" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LibraryQuestion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LibraryFormId" Type="int" Nullable="false" />
+    <Property Name="FieldDataTypeId" Type="int" Nullable="false" />
+    <Property Name="QuestionText" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="32" />
+    <Property Name="Directions" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Header" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Trailer" Type="nvarchar" MaxLength="1000" />
+    <Property Name="IsRequired" Type="bit" Nullable="false" />
+    <Property Name="ParentQuestionId" Type="int" />
+    <Property Name="IsParent" Type="bit" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Answer_Question">
+    <End Role="Question" Type="Tateeda.Clires.DBModel.Store.Question" Multiplicity="1" />
+    <End Role="Answer" Type="Tateeda.Clires.DBModel.Store.Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnswerChildQuestion_Answer">
+    <End Role="Answer" Type="Tateeda.Clires.DBModel.Store.Answer" Multiplicity="1" />
+    <End Role="AnswerChildQuestion" Type="Tateeda.Clires.DBModel.Store.AnswerChildQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Answer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AnswerChildQuestion">
+        <PropertyRef Name="AnswerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnswerChildQuestion_Question">
+    <End Role="Question" Type="Tateeda.Clires.DBModel.Store.Question" Multiplicity="1" />
+    <End Role="AnswerChildQuestion" Type="Tateeda.Clires.DBModel.Store.AnswerChildQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AnswerChildQuestion">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointment_Visit">
+    <End Role="Visit" Type="Tateeda.Clires.DBModel.Store.Visit" Multiplicity="1" />
+    <End Role="Appointment" Type="Tateeda.Clires.DBModel.Store.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppointmentForm_Appointment">
+    <End Role="Appointment" Type="Tateeda.Clires.DBModel.Store.Appointment" Multiplicity="1" />
+    <End Role="AppointmentForm" Type="Tateeda.Clires.DBModel.Store.AppointmentForm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppointmentForm">
+        <PropertyRef Name="AppointmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppointmentForm_Form">
+    <End Role="Form" Type="Tateeda.Clires.DBModel.Store.Form" Multiplicity="1" />
+    <End Role="AppointmentForm" Type="Tateeda.Clires.DBModel.Store.AppointmentForm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppointmentForm">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppUser_Contact">
+    <End Role="Contact" Type="Tateeda.Clires.DBModel.Store.Contact" Multiplicity="1" />
+    <End Role="AppUser" Type="Tateeda.Clires.DBModel.Store.AppUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppUser">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppUser_Role">
+    <End Role="Roles" Type="Tateeda.Clires.DBModel.Store.Roles" Multiplicity="1" />
+    <End Role="AppUser" Type="Tateeda.Clires.DBModel.Store.AppUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="AppUser">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppUser_Site">
+    <End Role="Site" Type="Tateeda.Clires.DBModel.Store.Site" Multiplicity="1" />
+    <End Role="AppUser" Type="Tateeda.Clires.DBModel.Store.AppUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AppUser">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppUser_User">
+    <End Role="Users" Type="Tateeda.Clires.DBModel.Store.Users" Multiplicity="1" />
+    <End Role="AppUser" Type="Tateeda.Clires.DBModel.Store.AppUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AppUser">
+        <PropertyRef Name="MembershipUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Arm_Study">
+    <End Role="Study" Type="Tateeda.Clires.DBModel.Store.Study" Multiplicity="1" />
+    <End Role="Arm" Type="Tateeda.Clires.DBModel.Store.Arm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Arm">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactAddress_Address">
+    <End Role="Address" Type="Tateeda.Clires.DBModel.Store.Address" Multiplicity="1" />
+    <End Role="ContactAddress" Type="Tateeda.Clires.DBModel.Store.ContactAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactAddress">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactAddress_Contact">
+    <End Role="Contact" Type="Tateeda.Clires.DBModel.Store.Contact" Multiplicity="1" />
+    <End Role="ContactAddress" Type="Tateeda.Clires.DBModel.Store.ContactAddress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactAddress">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactEmail_Contact">
+    <End Role="Contact" Type="Tateeda.Clires.DBModel.Store.Contact" Multiplicity="1" />
+    <End Role="ContactEmail" Type="Tateeda.Clires.DBModel.Store.ContactEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactEmail">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactEmail_Email">
+    <End Role="Email" Type="Tateeda.Clires.DBModel.Store.Email" Multiplicity="1" />
+    <End Role="ContactEmail" Type="Tateeda.Clires.DBModel.Store.ContactEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Email">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactEmail">
+        <PropertyRef Name="EmailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactPhone_Contact">
+    <End Role="Contact" Type="Tateeda.Clires.DBModel.Store.Contact" Multiplicity="1" />
+    <End Role="ContactPhone" Type="Tateeda.Clires.DBModel.Store.ContactPhone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactPhone">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContactPhone_Phone">
+    <End Role="Phone" Type="Tateeda.Clires.DBModel.Store.Phone" Multiplicity="1" />
+    <End Role="ContactPhone" Type="Tateeda.Clires.DBModel.Store.ContactPhone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phone">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContactPhone">
+        <PropertyRef Name="PhoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryState_Country">
+    <End Role="Country" Type="Tateeda.Clires.DBModel.Store.Country" Multiplicity="1" />
+    <End Role="CountryState" Type="Tateeda.Clires.DBModel.Store.CountryState" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CountryState">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CountryState_State">
+    <End Role="State" Type="Tateeda.Clires.DBModel.Store.State" Multiplicity="1" />
+    <End Role="CountryState" Type="Tateeda.Clires.DBModel.Store.CountryState" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CountryState">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Drug_DrugClass">
+    <End Role="DrugClass" Type="Tateeda.Clires.DBModel.Store.DrugClass" Multiplicity="1" />
+    <End Role="Drug" Type="Tateeda.Clires.DBModel.Store.Drug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DrugClass">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Drug">
+        <PropertyRef Name="DrugClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Drug_Study">
+    <End Role="Study" Type="Tateeda.Clires.DBModel.Store.Study" Multiplicity="1" />
+    <End Role="Drug" Type="Tateeda.Clires.DBModel.Store.Drug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Drug">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugClass_DrugCategory">
+    <End Role="DrugCategory" Type="Tateeda.Clires.DBModel.Store.DrugCategory" Multiplicity="1" />
+    <End Role="DrugClass" Type="Tateeda.Clires.DBModel.Store.DrugClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DrugCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DrugClass">
+        <PropertyRef Name="DrugCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Form_Study">
+    <End Role="Study" Type="Tateeda.Clires.DBModel.Store.Study" Multiplicity="1" />
+    <End Role="Form" Type="Tateeda.Clires.DBModel.Store.Form" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Form">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FormAnswer_AppointmentForm">
+    <End Role="AppointmentForm" Type="Tateeda.Clires.DBModel.Store.AppointmentForm" Multiplicity="1" />
+    <End Role="FormAnswer" Type="Tateeda.Clires.DBModel.Store.FormAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppointmentForm">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FormAnswer">
+        <PropertyRef Name="AppointmentFormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FormVerificationRequest_Form">
+    <End Role="Form" Type="Tateeda.Clires.DBModel.Store.Form" Multiplicity="1" />
+    <End Role="FormVerification" Type="Tateeda.Clires.DBModel.Store.FormVerification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FormVerification">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FormVisibilityByVisitForSubject_Form">
+    <End Role="Form" Type="Tateeda.Clires.DBModel.Store.Form" Multiplicity="1" />
+    <End Role="FormVisibilityByVisitForSubject" Type="Tateeda.Clires.DBModel.Store.FormVisibilityByVisitForSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FormVisibilityByVisitForSubject">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FormVisibilityByVisitForSubject_Visit">
+    <End Role="Visit" Type="Tateeda.Clires.DBModel.Store.Visit" Multiplicity="1" />
+    <End Role="FormVisibilityByVisitForSubject" Type="Tateeda.Clires.DBModel.Store.FormVisibilityByVisitForSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FormVisibilityByVisitForSubject">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LibraryAnswer_Question">
+    <End Role="Question" Type="Tateeda.Clires.DBModel.Store.Question" Multiplicity="1" />
+    <End Role="LibraryAnswer" Type="Tateeda.Clires.DBModel.Store.LibraryAnswer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LibraryAnswer">
+        <PropertyRef Name="QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LibraryQuestion_FieldDataType">
+    <End Role="CssType" Type="Tateeda.Clires.DBModel.Store.CssType" Multiplicity="1" />
+    <End Role="LibraryQuestion" Type="Tateeda.Clires.DBModel.Store.LibraryQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CssType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LibraryQuestion">
+        <PropertyRef Name="FieldDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LibraryQuestion_Form">
+    <End Role="Form" Type="Tateeda.Clires.DBModel.Store.Form" Multiplicity="1" />
+    <End Role="LibraryQuestion" Type="Tateeda.Clires.DBModel.Store.LibraryQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LibraryQuestion">
+        <PropertyRef Name="LibraryFormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocaleStringResource_Language">
+    <End Role="Language" Type="Tateeda.Clires.DBModel.Store.Language" Multiplicity="1" />
+    <End Role="LocaleStringResource" Type="Tateeda.Clires.DBModel.Store.LocaleStringResource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LocaleStringResource">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageQueue_Template">
+    <End Role="MessageTemplate" Type="Tateeda.Clires.DBModel.Store.MessageTemplate" Multiplicity="1" />
+    <End Role="MessageQueue" Type="Tateeda.Clires.DBModel.Store.MessageQueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MessageTemplate">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MessageQueue">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageTemplate_Language">
+    <End Role="Language" Type="Tateeda.Clires.DBModel.Store.Language" Multiplicity="1" />
+    <End Role="MessageTemplate" Type="Tateeda.Clires.DBModel.Store.MessageTemplate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MessageTemplate">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MessageTemplate_MessageProvider">
+    <End Role="MessageProvider" Type="Tateeda.Clires.DBModel.Store.MessageProvider" Multiplicity="1" />
+    <End Role="MessageTemplate" Type="Tateeda.Clires.DBModel.Store.MessageTemplate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MessageProvider">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MessageTemplate">
+        <PropertyRef Name="MessageProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrganizationStudy_Organization">
+    <End Role="Organization" Type="Tateeda.Clires.DBModel.Store.Organization" Multiplicity="1" />
+    <End Role="OrganizationStudy" Type="Tateeda.Clires.DBModel.Store.OrganizationStudy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrganizationStudy">
+        <PropertyRef Name="OrganizationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrganizationStudy_Study">
+    <End Role="Study" Type="Tateeda.Clires.DBModel.Store.Study" Multiplicity="1" />
+    <End Role="OrganizationStudy" Type="Tateeda.Clires.DBModel.Store.OrganizationStudy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrganizationStudy">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_FieldDataType">
+    <End Role="CssType" Type="Tateeda.Clires.DBModel.Store.CssType" Multiplicity="1" />
+    <End Role="Question" Type="Tateeda.Clires.DBModel.Store.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CssType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="FieldDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question_Form">
+    <End Role="Form" Type="Tateeda.Clires.DBModel.Store.Form" Multiplicity="1" />
+    <End Role="Question" Type="Tateeda.Clires.DBModel.Store.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecreationalDrugOrSubstance_Appointment">
+    <End Role="Appointment" Type="Tateeda.Clires.DBModel.Store.Appointment" Multiplicity="0..1" />
+    <End Role="RecreationalDrugOrSubstance" Type="Tateeda.Clires.DBModel.Store.RecreationalDrugOrSubstance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecreationalDrugOrSubstance">
+        <PropertyRef Name="AppointementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScheduleSubjectVisit_Visit">
+    <End Role="Visit" Type="Tateeda.Clires.DBModel.Store.Visit" Multiplicity="1" />
+    <End Role="ScheduleSubjectVisit" Type="Tateeda.Clires.DBModel.Store.ScheduleSubjectVisit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ScheduleSubjectVisit">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Site_TimeZone">
+    <End Role="TimeZone" Type="Tateeda.Clires.DBModel.Store.TimeZone" Multiplicity="1" />
+    <End Role="Site" Type="Tateeda.Clires.DBModel.Store.Site" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TimeZone">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Site">
+        <PropertyRef Name="TimeZoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudyFile_File">
+    <End Role="File" Type="Tateeda.Clires.DBModel.Store.File" Multiplicity="1" />
+    <End Role="StudyFile" Type="Tateeda.Clires.DBModel.Store.StudyFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="FileGuid" />
+      </Principal>
+      <Dependent Role="StudyFile">
+        <PropertyRef Name="FileGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudyFile_Study">
+    <End Role="Study" Type="Tateeda.Clires.DBModel.Store.Study" Multiplicity="1" />
+    <End Role="StudyFile" Type="Tateeda.Clires.DBModel.Store.StudyFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudyFile">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudySetupMap_StudySetupSteps">
+    <End Role="StudySetupSteps" Type="Tateeda.Clires.DBModel.Store.StudySetupSteps" Multiplicity="0..1" />
+    <End Role="StudySetupMap" Type="Tateeda.Clires.DBModel.Store.StudySetupMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StudySetupSteps">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudySetupMap">
+        <PropertyRef Name="StudySetupStepId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudySite_Site">
+    <End Role="Site" Type="Tateeda.Clires.DBModel.Store.Site" Multiplicity="1" />
+    <End Role="StudySite" Type="Tateeda.Clires.DBModel.Store.StudySite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudySite">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudySite_Study">
+    <End Role="Study" Type="Tateeda.Clires.DBModel.Store.Study" Multiplicity="1" />
+    <End Role="StudySite" Type="Tateeda.Clires.DBModel.Store.StudySite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudySite">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_Contact">
+    <End Role="Contact" Type="Tateeda.Clires.DBModel.Store.Contact" Multiplicity="1" />
+    <End Role="Subject" Type="Tateeda.Clires.DBModel.Store.Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subject">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_Site">
+    <End Role="Site" Type="Tateeda.Clires.DBModel.Store.Site" Multiplicity="1" />
+    <End Role="Subject" Type="Tateeda.Clires.DBModel.Store.Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subject">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Subject_StudyId">
+    <End Role="Study" Type="Tateeda.Clires.DBModel.Store.Study" Multiplicity="1" />
+    <End Role="Subject" Type="Tateeda.Clires.DBModel.Store.Subject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Study">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subject">
+        <PropertyRef Name="StudyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectDrug_Drug">
+    <End Role="Drug" Type="Tateeda.Clires.DBModel.Store.Drug" Multiplicity="1" />
+    <End Role="SubjectDrug" Type="Tateeda.Clires.DBModel.Store.SubjectDrug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drug">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubjectDrug">
+        <PropertyRef Name="DrugId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectDrug_SubjectId">
+    <End Role="Subject" Type="Tateeda.Clires.DBModel.Store.Subject" Multiplicity="1" />
+    <End Role="SubjectDrug" Type="Tateeda.Clires.DBModel.Store.SubjectDrug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubjectDrug">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectFile_File">
+    <End Role="File" Type="Tateeda.Clires.DBModel.Store.File" Multiplicity="1" />
+    <End Role="SubjectFile" Type="Tateeda.Clires.DBModel.Store.SubjectFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="File">
+        <PropertyRef Name="FileGuid" />
+      </Principal>
+      <Dependent Role="SubjectFile">
+        <PropertyRef Name="FileGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectFile_Subject">
+    <End Role="Subject" Type="Tateeda.Clires.DBModel.Store.Subject" Multiplicity="1" />
+    <End Role="SubjectFile" Type="Tateeda.Clires.DBModel.Store.SubjectFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubjectFile">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSettings_AppUser">
+    <End Role="AppUser" Type="Tateeda.Clires.DBModel.Store.AppUser" Multiplicity="1" />
+    <End Role="UserSettings" Type="Tateeda.Clires.DBModel.Store.UserSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AppUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserSettings">
+        <PropertyRef Name="AppUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visit_Arm">
+    <End Role="Arm" Type="Tateeda.Clires.DBModel.Store.Arm" Multiplicity="1" />
+    <End Role="Visit" Type="Tateeda.Clires.DBModel.Store.Visit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Arm">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visit">
+        <PropertyRef Name="ArmId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visit_ParentVisit">
+    <End Role="Visit" Type="Tateeda.Clires.DBModel.Store.Visit" Multiplicity="0..1" />
+    <End Role="Visit1" Type="Tateeda.Clires.DBModel.Store.Visit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visit1">
+        <PropertyRef Name="ParentVisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitForms_Form">
+    <End Role="Form" Type="Tateeda.Clires.DBModel.Store.Form" Multiplicity="1" />
+    <End Role="VisitForms" Type="Tateeda.Clires.DBModel.Store.VisitForms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Form">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitForms">
+        <PropertyRef Name="FormId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitStep_Arm">
+    <End Role="Arm" Type="Tateeda.Clires.DBModel.Store.Arm" Multiplicity="1" />
+    <End Role="VisitStep" Type="Tateeda.Clires.DBModel.Store.VisitStep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Arm">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitStep">
+        <PropertyRef Name="ArmId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitStepMapping_Visit">
+    <End Role="Visit" Type="Tateeda.Clires.DBModel.Store.Visit" Multiplicity="1" />
+    <End Role="VisitStepMapping" Type="Tateeda.Clires.DBModel.Store.VisitStepMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitStepMapping">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitStepMapping_VisitStep">
+    <End Role="VisitStep" Type="Tateeda.Clires.DBModel.Store.VisitStep" Multiplicity="1" />
+    <End Role="VisitStepMapping" Type="Tateeda.Clires.DBModel.Store.VisitStepMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VisitStep">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitStepMapping">
+        <PropertyRef Name="VisitStepId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitStepVisitSequence_Visit">
+    <End Role="Visit" Type="Tateeda.Clires.DBModel.Store.Visit" Multiplicity="1" />
+    <End Role="VisitStepVisitSequence" Type="Tateeda.Clires.DBModel.Store.VisitStepVisitSequence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitStepVisitSequence">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VisitStepVisitSequence_VisitStep">
+    <End Role="VisitStep" Type="Tateeda.Clires.DBModel.Store.VisitStep" Multiplicity="1" />
+    <End Role="VisitStepVisitSequence" Type="Tateeda.Clires.DBModel.Store.VisitStepVisitSequence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VisitStep">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitStepVisitSequence">
+        <PropertyRef Name="VisitStepId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MembershipUser">
+    <End Role="Users" Type="Tateeda.Clires.DBModel.Store.Users" Multiplicity="1" />
+    <End Role="Memberships" Type="Tateeda.Clires.DBModel.Store.Memberships" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefVisit26">
+    <End Role="Visit" Type="Tateeda.Clires.DBModel.Store.Visit" Multiplicity="1" />
+    <End Role="VisitForms" Type="Tateeda.Clires.DBModel.Store.VisitForms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VisitForms">
+        <PropertyRef Name="VisitId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserProfile">
+    <End Role="Users" Type="Tateeda.Clires.DBModel.Store.Users" Multiplicity="1" />
+    <End Role="Profiles" Type="Tateeda.Clires.DBModel.Store.Profiles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Profiles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersInRoleRole">
+    <End Role="Roles" Type="Tateeda.Clires.DBModel.Store.Roles" Multiplicity="1" />
+    <End Role="UsersInRoles" Type="Tateeda.Clires.DBModel.Store.UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsersInRoleUser">
+    <End Role="Users" Type="Tateeda.Clires.DBModel.Store.Users" Multiplicity="1" />
+    <End Role="UsersInRoles" Type="Tateeda.Clires.DBModel.Store.UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="uspGetSubjectById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SubjectId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspGetSubjectBySiteId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SiteId" Type="int" Mode="In" />
+    <Parameter Name="StudyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspSubjectFindByFirstLastName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SiteId" Type="int" Mode="In" />
+    <Parameter Name="StudyId" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspSubjectInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SiteId" Type="int" Mode="In" />
+    <Parameter Name="StudyId" Type="int" Mode="In" />
+    <Parameter Name="Nickname" Type="nvarchar" Mode="In" />
+    <Parameter Name="FamilyId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+    <Parameter Name="NIMHID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Gender" Type="int" Mode="In" />
+    <Parameter Name="YearBorn" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="In" />
+    <Parameter Name="SortOrder" Type="int" Mode="In" />
+    <Parameter Name="SSN" Type="varchar" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateOfBirth" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactTypeId" Type="int" Mode="In" />
+    <Parameter Name="Street" Type="nvarchar" Mode="In" />
+    <Parameter Name="City" Type="nvarchar" Mode="In" />
+    <Parameter Name="Zip" Type="nvarchar" Mode="In" />
+    <Parameter Name="StateId" Type="int" Mode="In" />
+    <Parameter Name="CountryId" Type="int" Mode="In" />
+    <Parameter Name="CountryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddressTypeId" Type="int" Mode="In" />
+    <Parameter Name="AreaCode" Type="int" Mode="In" />
+    <Parameter Name="PhoneNumber" Type="int" Mode="In" />
+    <Parameter Name="Telephone" Type="nvarchar" Mode="In" />
+    <Parameter Name="PhoneTypeId" Type="int" Mode="In" />
+    <Parameter Name="EmailAddress" Type="nvarchar" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspSubjectUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SubjectId" Type="int" Mode="In" />
+    <Parameter Name="SiteId" Type="int" Mode="In" />
+    <Parameter Name="Nickname" Type="nvarchar" Mode="In" />
+    <Parameter Name="FamilyId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Notes" Type="nvarchar" Mode="In" />
+    <Parameter Name="NIMHID" Type="nvarchar" Mode="In" />
+    <Parameter Name="Gender" Type="int" Mode="In" />
+    <Parameter Name="YearBorn" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="In" />
+    <Parameter Name="SortOrder" Type="int" Mode="In" />
+    <Parameter Name="SSN" Type="nvarchar" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateOfBirth" Type="nvarchar" Mode="In" />
+  </Function>
+</Schema>

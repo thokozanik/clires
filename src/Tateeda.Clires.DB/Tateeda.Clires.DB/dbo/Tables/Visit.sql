@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[Visit] (
+    [Id]     INT            IDENTITY (1, 1) NOT NULL,
+    [VisitTypeId] INT            NOT NULL,
+    [ArmId]       INT            CONSTRAINT [DF__Visit__ArmId__4959E263] DEFAULT ((1)) NOT NULL,
+    [Name]        NVARCHAR (100) NOT NULL,
+    [Code]        NVARCHAR (32)  NULL,    
+    [Directions] NVARCHAR (500)  NULL,
+	[ParentVisitId] INT NULL,
+	[IsBaseVisit] BIT NOT NULL DEFAULT(0),
+	[CanRepeat] BIT NOT NULL DEFAULT(0),
+	[CanMove] BIT NOT NULL DEFAULT(1),
+	[HasChild] BIT NOT NULL DEFAULT(0),
+    [SortOrder]  INT             DEFAULT ((0)) NOT NULL,
+    [Status]     INT             DEFAULT ((1)) NOT NULL,
+    [CreatedOn]  DATETIME    DEFAULT (GETUTCDATE())     NOT NULL,
+    [UpdatedOn]  DATETIME        DEFAULT (GETUTCDATE()) NULL,
+    [CreatedBy]  NVARCHAR (100)  NOT NULL,
+    [UpdatedBy]  NVARCHAR (100)  NULL,
+    [IsActive] BIT NOT NULL DEFAULT 1, 
+    CONSTRAINT [PK_Visit] PRIMARY KEY CLUSTERED ([Id] ASC) WITH (FILLFACTOR = 90),
+    CONSTRAINT [FK_Visit_Arm] FOREIGN KEY ([ArmId]) REFERENCES [dbo].[Arm] ([Id]),
+    CONSTRAINT [UX_Visit_Name] UNIQUE NONCLUSTERED ([Name] ASC) WITH (FILLFACTOR = 90), 
+    CONSTRAINT [FK_Visit_ParentVisit] FOREIGN KEY ([ParentVisitId]) REFERENCES [Visit]([Id])
+);
+

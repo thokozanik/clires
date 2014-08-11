@@ -1,0 +1,50 @@
+﻿@model Tateeda.Clires.Areas.Dashboard.Models.IDashboardViewModel
+@{
+    ViewBag.Title = "My Dashboard";
+    Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout;
+}
+
+<link href="~/Content/canvasXpress/css/canvasXpress.css" rel="stylesheet" />
+
+<!--[if lt IE 9]><script type="text/javascript" src="~/Scripts/custom/canvasXpress/flashcanvas.js"></script><![endif]-->
+
+@section scripts{
+    @Scripts.Render(
+    "~/Scripts/custom/canvasXpress/canvasXpress.js",
+    "~/Scripts/app/Dashboard/dashboard.js",
+    "~/Scripts/app/Dashboard/home.js",
+    "~/Scripts/app/Dashboard/messages.js",
+    "~/Scripts/app/Dashboard/profile.js",
+    "~/Scripts/app/Dashboard/tasks.js",
+    "~/Scripts/app/Dashboard/adminstats.js"
+    )
+}
+ 
+
+<div class="site-title">My Dashboard</div>
+<div class="row-fluid">
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+            <li><a href="#profile" data-toggle="tab">Profile</a></li>
+@*            <li><a href="#messages" data-toggle="tab">Messages</a></li>
+            <li><a href="#settings" data-toggle="tab">Settings</a></li>*@
+        </ul>
+        <div class="tab-content" style="overflow: hidden;">
+            <div id="home" class="tab-pane active">
+                @Html.Partial("_DashboardHome")
+            </div>
+            <div id="profile" class="tab-pane">
+                @Html.Partial("_DashboardProfile")
+            </div>
+            @*<div id="messages" class="tab-pane">
+                @Html.Partial("_DashboardMessages")
+            </div>
+            <div id="settings" class="tab-pane">
+                @Html.Partial("_DashboardSettings")
+            </div>*@
+        </div>
+        <!-- /.tab-content -->
+    </div>
+    <!-- /.tabbable -->
+</div>

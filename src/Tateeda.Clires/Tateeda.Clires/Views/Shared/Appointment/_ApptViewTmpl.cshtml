@@ -1,0 +1,17 @@
+﻿@model Tateeda.Clires.Areas.Schedule.Model.AppointmentViewModel
+
+<div class="control-group">
+    <div class="row-fluid"></div>
+    
+    <div class="span3">
+        @Html.LabelFor(m => m.StartDate) @Html.LabelFor(m => m.StartTime)
+    </div>
+
+    <div class="span3">
+        @Html.LabelFor(m => m.EndDate) @Html.LabelFor(m => m.EndTime)
+    </div>
+
+    <div class="span3">
+        @Html.LabelFor(m => m.Description)
+    </div>
+</div>

@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tateeda.Clires", "Tateeda.Clires\Tateeda.Clires\Tateeda.Clires.csproj", "{EFBB92D4-FFB0-4273-AFE3-75D99371407F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{2EBAD3E3-5A4A-4C87-90D1-0D42E46D3EFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{BDFCA20F-6471-469F-8871-B6D89BDC395D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{9272D58E-4E1D-4BB7-A51A-60937998CA54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tateeda.Clires.Core", "Tateeda.Clires.Shared\Tateeda.Clires.Core\Tateeda.Clires.Core.csproj", "{5C5A241C-18E7-464F-AD76-C1CD549044A5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB", "DB", "{3ED30878-3B6F-4826-8C67-E9709BF3783F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tateeda.Clires.CodeTest", "Tateeda.Tests\Tateeda.Clires.CodeTest\Tateeda.Clires.CodeTest.csproj", "{7DBDEBD9-2FFD-41EA-994C-DF13C532FCFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A8CA73B0-E2F2-4176-8DC8-B65811AE1746}"
+	ProjectSection(SolutionItems) = preProject
+		Tateeda.Clires\.nuget\NuGet.Config = Tateeda.Clires\.nuget\NuGet.Config
+		Tateeda.Clires\.nuget\NuGet.exe = Tateeda.Clires\.nuget\NuGet.exe
+		Tateeda.Clires\.nuget\NuGet.targets = Tateeda.Clires\.nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1EF1B3FE-7DF6-4B98-A884-71F91F9BFA34}"
+	ProjectSection(SolutionItems) = preProject
+		Tateeda.Clires\WE-Markdown.css = Tateeda.Clires\WE-Markdown.css
+		Tateeda.Clires\WE-settings.xml = Tateeda.Clires\WE-settings.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tateeda.Clires.Data.UOW", "Tateeda.Clires\Tateeda.Clires.Data.UOW\Tateeda.Clires.Data.UOW.csproj", "{00B3FA8C-8E22-40B1-B596-1BD92BB5B282}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Tateeda.Clires.DB", "Tateeda.Clires.DB\Tateeda.Clires.DB\Tateeda.Clires.DB.sqlproj", "{39977167-6E1F-49DF-8E3E-1EB4944667C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFBB92D4-FFB0-4273-AFE3-75D99371407F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBB92D4-FFB0-4273-AFE3-75D99371407F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBB92D4-FFB0-4273-AFE3-75D99371407F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBB92D4-FFB0-4273-AFE3-75D99371407F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C5A241C-18E7-464F-AD76-C1CD549044A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C5A241C-18E7-464F-AD76-C1CD549044A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C5A241C-18E7-464F-AD76-C1CD549044A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C5A241C-18E7-464F-AD76-C1CD549044A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DBDEBD9-2FFD-41EA-994C-DF13C532FCFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DBDEBD9-2FFD-41EA-994C-DF13C532FCFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DBDEBD9-2FFD-41EA-994C-DF13C532FCFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B3FA8C-8E22-40B1-B596-1BD92BB5B282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B3FA8C-8E22-40B1-B596-1BD92BB5B282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B3FA8C-8E22-40B1-B596-1BD92BB5B282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B3FA8C-8E22-40B1-B596-1BD92BB5B282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39977167-6E1F-49DF-8E3E-1EB4944667C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39977167-6E1F-49DF-8E3E-1EB4944667C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39977167-6E1F-49DF-8E3E-1EB4944667C0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{39977167-6E1F-49DF-8E3E-1EB4944667C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39977167-6E1F-49DF-8E3E-1EB4944667C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39977167-6E1F-49DF-8E3E-1EB4944667C0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EFBB92D4-FFB0-4273-AFE3-75D99371407F} = {2EBAD3E3-5A4A-4C87-90D1-0D42E46D3EFD}
+		{7DBDEBD9-2FFD-41EA-994C-DF13C532FCFE} = {BDFCA20F-6471-469F-8871-B6D89BDC395D}
+		{5C5A241C-18E7-464F-AD76-C1CD549044A5} = {9272D58E-4E1D-4BB7-A51A-60937998CA54}
+		{00B3FA8C-8E22-40B1-B596-1BD92BB5B282} = {9272D58E-4E1D-4BB7-A51A-60937998CA54}
+		{39977167-6E1F-49DF-8E3E-1EB4944667C0} = {3ED30878-3B6F-4826-8C67-E9709BF3783F}
+	EndGlobalSection
+EndGlobal

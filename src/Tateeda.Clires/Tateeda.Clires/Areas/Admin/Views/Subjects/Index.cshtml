@@ -1,0 +1,20 @@
+﻿@using System.Web.Optimization
+@model Tateeda.Clires.Core.Data.EF.ISubject
+
+@{
+    ViewBag.Title = "Subjects Administration";
+    Layout = string.IsNullOrWhiteSpace(ViewBag.Layout) ? "~/Views/Shared/_Layout.cshtml" : ViewBag.Layout; 
+}
+@section scripts{
+    <script type="text/javascript">
+        var siteId = eval(@ViewBag.SiteId);
+    </script>
+
+    @Scripts.Render("~/Scripts/app/Subject/subject.js")
+}
+<div class="site-title">Subjects</div>
+@Html.Partial("Subject/_SubjectSearch")
+
+<div class='cliresGrid app-grid'>
+    <div data-bind='simpleGrid: sub.vm.gridViewModel'></div>
+</div>

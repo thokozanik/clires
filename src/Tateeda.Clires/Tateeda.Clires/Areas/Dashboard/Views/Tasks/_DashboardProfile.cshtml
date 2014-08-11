@@ -1,0 +1,108 @@
+﻿@model Tateeda.Clires.Areas.Dashboard.Models.IDashboardViewModel
+<div class="row-fluid">
+    <div class="span6">
+        <h4>My Information:</h4>
+        <form class="form-horizontal">
+            <div class="control-group">
+                <div class="accordion" id="accordionUser">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionUser" href="#collapseUserInfo">My Information</a>
+                        </div>
+                        <div id="collapseUserInfo" class="accordion-body collapse in">
+                            <div class="accordion-inner">
+                                <label class="control-label" for="FirstName">First Name:<span class="required">*</span></label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(m => m.AppUserView.Contact.FirstName, new Dictionary<string, object> { { "class", "input-large" }, { "required", "required" }, { "placeholder", "First Name" }, { "data-bind", "value: Contact.FirstName" } })
+                                </div>
+                                <br />
+                                <label class="control-label" for="LastName">Last Name:<span class="required">*</span></label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(m => m.AppUserView.Contact.LastName, new Dictionary<string, object> { { "class", "input-large" }, { "required", "required" }, { "placeholder", "Last Name" }, { "data-bind", "value: Contact.LastName" } })
+                                </div>
+                                <br />
+                                <label class="control-label" for="Title">Title:</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(m => m.AppUserView.Title, new Dictionary<string, object> { { "class", "input-large" }, { "placeholder", "Title" }, { "data-bind", "value: Title" } })
+                                </div>
+                                <br />
+
+                                <label class="control-label" for="Email">Email:<span class="required">*</span></label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(m => m.AppUserView.Email, new Dictionary<string, object> { { "class", "input-large" }, { "type", "email" }, { "placeholder", "yourname@domain.com" }, { "data-bind", "value: Email" } })
+                                </div>
+                                <br />
+                                <label class="control-label" for="UserName">User Name:</label>
+                                <div class="controls">
+                                    <label class="label input-large">@Html.DisplayTextFor(m => m.AppUserView.UserName)</label>
+                                </div>
+                                <br />
+                                <label class="control-label">Site:</label>
+                                <div class="controls">
+                                    <label class="label input-large">@Html.DisplayTextFor(m => m.AppUserView.SiteName)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionUser" href="#collapseAddress">Address
+                            </a>
+                        </div>
+                        <div id="collapseAddress" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                @Html.Partial("Common/_Address", @Model.AppUserView.Addresses.FirstOrDefault())
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionUser" href="#collapseOther">Other Info
+                            </a>
+                        </div>
+                        <div id="collapseOther" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                @*@Html.Partial("Common/_Phone")*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+    <div class="span6">
+        <h4>Change Password:</h4>
+        @using (Html.BeginForm("../../Account/ChangePassword", null, FormMethod.Post, new { @class = "form-horizontal", @area = "" }))
+        {
+                <div class="row-fluid">
+                    <div class="">
+                        <label class="control-label">Old Password:<b class="required">*</b></label>
+                    </div>
+                    <div class="span6">
+                        <input required="required" type="password" class="input-medium" name="oldpassword" />
+                    </div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="">
+                        <label class="control-label">New Password:<b class="required">*</b></label>
+                    </div>
+                    <div class="span6">
+                        <input required="required" type="password" class="input-medium" name="newpassword" />
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="">
+                        <label class="control-label">Confirm Password:<b class="required">*</b></label>
+                    </div>
+                    <div class="span6">
+                        <input required="required" type="password" class="input-medium" name="confirmpassword" />
+                    </div>
+                </div>            
+            <button type="submit" class="btn btn-primary">Change</button>
+        }
+    </div>
+</div>

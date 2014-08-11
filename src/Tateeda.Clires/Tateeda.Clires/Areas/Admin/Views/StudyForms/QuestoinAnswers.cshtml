@@ -1,0 +1,61 @@
+﻿@using System.Web.Optimization
+@model  Tateeda.Clires.Areas.Admin.Model.Forms.AnswerViewModel
+@{
+	ViewBag.Title = "Study Administration";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	Layout = ViewBag.Layout;    
+}
+@section scripts{
+	@Scripts.Render("~/Scripts/app/Admin/StudyForms/questionanswers.js")
+}
+
+<div class="site-title">Study Forms Management: Question Answers</div>
+
+<script type="text/javascript">
+	var parentQuestionId = eval(@ViewBag.parentQuestionId);
+</script>
+
+
+<div class="container">
+	<div class="modal hide fade in" style="display: none; top: 40%;" id="studycontainer-modal">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal" style="width: 10px; height: 10px;" aria-hidden="true">&nbsp;X&nbsp;</a>
+			<h3>Answer</h3>
+		</div>
+		<div class="modal-body model-border">
+			@using (@Ajax.BeginForm("CreateNewAnswer", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "fbqa.vm.showFormSuccess", OnFailure = "fbqa.vm.showFormError" }, new { @class = "form-horizontal", id = "frmnewanswer" }))
+   {
+				<!-- ko with: fbqa.vm.answer() -->
+				@Html.Partial("_Answer")
+				<!-- /ko -->
+   }
+		</div>
+	</div>
+
+	<form method="POST" action="/Admin/StudyForms/FormQuestions">
+		<input type="hidden" name="formId" value="@ViewBag.FormId" />
+		<div class="row-fluid">
+			<div class="span2">
+				<a href="#studycontainer-modal" data-toggle="modal" class="btn btn-primary" id="modellink">New Answer</a>
+			</div>
+			<div class="span2">
+				<button type="submit" class="btn  btn-primary" href="#">To Questions</button>
+			</div>
+
+			<div class="span2">
+				<a class="btn  btn-primary" href="/Admin/StudyForms">To Forms</a>
+			</div>
+			<div class='loadingIndicator'><i class="icon-refresh">&nbsp;</i> Loading...</div>
+		</div>
+	</form>
+	<div class="row-fluid">
+		<div class="span12">
+			<h3>Question: @Html.Raw(@ViewBag.Question)</h3>
+		</div>
+	</div>
+	<div class='cliresGrid studyformgrid'>
+		<div data-bind='simpleGrid: fbqa.vm.gridViewModel'></div>
+	</div>
+	​
+</div>
+

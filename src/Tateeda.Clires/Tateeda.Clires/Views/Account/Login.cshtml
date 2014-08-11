@@ -1,0 +1,55 @@
+﻿@model Tateeda.Clires.Models.LoginModel
+@{
+    ViewBag.Title = "Log in";
+    ViewBag.HelpPage = "_HelpLogin";
+}
+<div class="container">
+    <br/><br/>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="title">Log in</div>
+
+            @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl, @class = "form-horizontal" })) {
+                <label class="error">
+                    @Html.ValidationSummary(true, "Log in was unsuccessful. Please correct the errors and try again.")
+                </label>
+        
+                <div class="control-group">
+                    <div class="controls">
+                        <table>
+                            <tr>
+                                <td style="width: 120px;">@Html.LabelFor(m => m.UserName, new { @class = "control-label" })</td>
+                                <td>@Html.TextBoxFor(m => m.UserName, new Dictionary<string, object>
+                                        {
+                                            {"autofocus", "autofocus"},
+                                            {"class", "input-large" }
+                                        })</td>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelFor(m => m.Password, new { @class = "control-label" })</td>
+                                <td>@Html.PasswordFor(m => m.Password, new { @class = "input-large" })</td>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelFor(m => m.RememberMe, new { @class = "control-label" })</td>
+                                <td valign="top">
+                                    @Html.CheckBoxFor(m => m.RememberMe, new { @class = "checkbox" })
+                                </td>
+
+                            </tr>
+                        </table>
+                        <input type="submit" class="btn  btn-primary" value="Log in" />
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+    <hr/>
+    <div style="max-width: 99%; overflow: hidden;">
+    @Html.Partial("Common/_Carusel")
+        </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

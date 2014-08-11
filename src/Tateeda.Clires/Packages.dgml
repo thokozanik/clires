@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Shared\Tateeda.Clires.Core" Label="Tateeda.Clires.Core" Category="Project" />
+    <Node Id="AutoMapper 2.1.267" Label="AutoMapper 2.1.267" Category="Package" />
+    <Node Id="EFMembership 2.0" Label="EFMembership 2.0" Category="Package" />
+    <Node Id="EntityFramework 5.0.0" Label="EntityFramework 5.0.0" Category="Package" />
+    <Node Id="EntityFramework.Extended 1.0.0.65" Label="EntityFramework.Extended 1.0.0.65" Category="Package" />
+    <Node Id="NLog 2.0.0.2000" Label="NLog 2.0.0.2000" Category="Package" />
+    <Node Id="NLog.Extended 2.0.0.2000" Label="NLog.Extended 2.0.0.2000" Category="Package" />
+    <Node Id="Test\Tateeda.Clires.CodeTest" Label="Tateeda.Clires.CodeTest" Category="Project" />
+    <Node Id="Autofac 2.6.3.862" Label="Autofac 2.6.3.862" Category="Package" />
+    <Node Id="Autofac.Mvc3 2.6.3.862" Label="Autofac.Mvc3 2.6.3.862" Category="Package" />
+    <Node Id="FluentAssertions 2.0.0.1" Label="FluentAssertions 2.0.0.1" Category="Package" />
+    <Node Id="NUnit 2.6.1" Label="NUnit 2.6.1" Category="Package" />
+    <Node Id="RhinoMocks 3.6.1" Label="RhinoMocks 3.6.1" Category="Package" />
+    <Node Id="Web\Tateeda.Clires" Label="Tateeda.Clires" Category="Project" />
+    <Node Id="Autofac 2.6.3.862" Label="Autofac 2.6.3.862" Category="Package" />
+    <Node Id="Autofac.Mvc3 2.6.3.862" Label="Autofac.Mvc3 2.6.3.862" Category="Package" />
+    <Node Id="Autofac.Mvc4 2.6.3.862-beta" Label="Autofac.Mvc4 2.6.3.862-beta" Category="Package" />
+    <Node Id="Autofac.Wcf 2.6.3.862" Label="Autofac.Wcf 2.6.3.862" Category="Package" />
+    <Node Id="AutoMapper 2.2.1-ci8" Label="AutoMapper 2.2.1-ci8" Category="Package" />
+    <Node Id="dotless 1.3.1.0" Label="dotless 1.3.1.0" Category="Package" />
+    <Node Id="EFMembership 2.0" Label="EFMembership 2.0" Category="Package" />
+    <Node Id="elmah 1.2.2" Label="elmah 1.2.2" Category="Package" />
+    <Node Id="elmah.corelibrary 1.2.2" Label="elmah.corelibrary 1.2.2" Category="Package" />
+    <Node Id="EntityFramework 5.0.0" Label="EntityFramework 5.0.0" Category="Package" />
+    <Node Id="EntityFramework.Extended 1.0.0.65" Label="EntityFramework.Extended 1.0.0.65" Category="Package" />
+    <Node Id="infuser 0.2.1" Label="infuser 0.2.1" Category="Package" />
+    <Node Id="jQuery 1.8.3" Label="jQuery 1.8.3" Category="Package" />
+    <Node Id="jquery.mobile 1.2.0" Label="jquery.mobile 1.2.0" Category="Package" />
+    <Node Id="jQuery.UI.Combined 1.9.2" Label="jQuery.UI.Combined 1.9.2" Category="Package" />
+    <Node Id="jQuery.Validation 1.10.0" Label="jQuery.Validation 1.10.0" Category="Package" />
+    <Node Id="json2 1.0.2" Label="json2 1.0.2" Category="Package" />
+    <Node Id="KineticJS 3.9.1" Label="KineticJS 3.9.1" Category="Package" />
+    <Node Id="Knockout.js_External_Template_Engine 2.0.5" Label="Knockout.js_External_Template_Engine 2.0.5" Category="Package" />
+    <Node Id="Knockout.Mapping 2.3.4" Label="Knockout.Mapping 2.3.4" Category="Package" />
+    <Node Id="knockoutjs 2.2.0" Label="knockoutjs 2.2.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.20710.0" Label="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Providers.Core 1.2" Label="Microsoft.AspNet.Providers.Core 1.2" Category="Package" />
+    <Node Id="Microsoft.AspNet.Providers.LocalDB 1.1" Label="Microsoft.AspNet.Providers.LocalDB 1.1" Category="Package" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.20715.0" Label="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.0.0" Label="Microsoft.AspNet.Web.Optimization 1.0.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi 4.0.20710.0" Label="Microsoft.AspNet.WebApi 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 4.1.0-alpha-120809" Label="Microsoft.AspNet.WebApi.Client 4.1.0-alpha-120809" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Label="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Label="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.20710.0" Label="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Label="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Label="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Net.Http 2.0.20710.0" Label="Microsoft.Net.Http 2.0.20710.0" Category="Package" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package" />
+    <Node Id="Modernizr 2.6.2" Label="Modernizr 2.6.2" Category="Package" />
+    <Node Id="MvcHtml5Templates 0.5.0.0" Label="MvcHtml5Templates 0.5.0.0" Category="Package" />
+    <Node Id="Newtonsoft.Json 4.5.11" Label="Newtonsoft.Json 4.5.11" Category="Package" />
+    <Node Id="NLog 2.0.0.2000" Label="NLog 2.0.0.2000" Category="Package" />
+    <Node Id="NLog.Extended 2.0.0.2000" Label="NLog.Extended 2.0.0.2000" Category="Package" />
+    <Node Id="RequireJS 2.1.1" Label="RequireJS 2.1.1" Category="Package" />
+    <Node Id="TrafficCop 0.3.1" Label="TrafficCop 0.3.1" Category="Package" />
+    <Node Id="Twitter.Bootstrap 2.2.1" Label="Twitter.Bootstrap 2.2.1" Category="Package" />
+    <Node Id="WebActivator 1.5.2" Label="WebActivator 1.5.2" Category="Package" />
+    <Node Id="WebGrease 1.3.0" Label="WebGrease 1.3.0" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="EntityFramework.Extended 1.0.0.65" Target="EntityFramework 5.0.0" Category="Package Dependency" />
+    <Link Source="NLog.Extended 2.0.0.2000" Target="NLog 2.0.0.2000" Category="Package Dependency" />
+    <Link Source="Shared\Tateeda.Clires.Core" Target="AutoMapper 2.1.267" Category="Installed Package" />
+    <Link Source="Shared\Tateeda.Clires.Core" Target="EFMembership 2.0" Category="Installed Package" />
+    <Link Source="Shared\Tateeda.Clires.Core" Target="EntityFramework.Extended 1.0.0.65" Category="Installed Package" />
+    <Link Source="Shared\Tateeda.Clires.Core" Target="NLog.Extended 2.0.0.2000" Category="Installed Package" />
+    <Link Source="Autofac.Mvc3 2.6.3.862" Target="Autofac 2.6.3.862" Category="Package Dependency" />
+    <Link Source="Test\Tateeda.Clires.CodeTest" Target="Autofac.Mvc3 2.6.3.862" Category="Installed Package" />
+    <Link Source="Test\Tateeda.Clires.CodeTest" Target="FluentAssertions 2.0.0.1" Category="Installed Package" />
+    <Link Source="Test\Tateeda.Clires.CodeTest" Target="NUnit 2.6.1" Category="Installed Package" />
+    <Link Source="Test\Tateeda.Clires.CodeTest" Target="RhinoMocks 3.6.1" Category="Installed Package" />
+    <Link Source="Autofac.Mvc3 2.6.3.862" Target="Autofac 2.6.3.862" Category="Package Dependency" />
+    <Link Source="Autofac.Mvc4 2.6.3.862-beta" Target="Autofac 2.6.3.862" Category="Package Dependency" />
+    <Link Source="Autofac.Wcf 2.6.3.862" Target="Autofac 2.6.3.862" Category="Package Dependency" />
+    <Link Source="elmah 1.2.2" Target="elmah.corelibrary 1.2.2" Category="Package Dependency" />
+    <Link Source="EntityFramework.Extended 1.0.0.65" Target="EntityFramework 5.0.0" Category="Package Dependency" />
+    <Link Source="infuser 0.2.1" Target="TrafficCop 0.3.1" Category="Package Dependency" />
+    <Link Source="jquery.mobile 1.2.0" Target="jQuery 1.8.3" Category="Package Dependency" />
+    <Link Source="jQuery.UI.Combined 1.9.2" Target="jQuery 1.8.3" Category="Package Dependency" />
+    <Link Source="jQuery.Validation 1.10.0" Target="jQuery 1.8.3" Category="Package Dependency" />
+    <Link Source="Knockout.js_External_Template_Engine 2.0.5" Target="infuser 0.2.1" Category="Package Dependency" />
+    <Link Source="Knockout.js_External_Template_Engine 2.0.5" Target="knockoutjs 2.2.0" Category="Package Dependency" />
+    <Link Source="Knockout.Mapping 2.3.4" Target="knockoutjs 2.2.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.WebPages 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Providers.Core 1.2" Target="EntityFramework 5.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Providers.LocalDB 1.1" Target="Microsoft.AspNet.Providers.Core 1.2" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.0.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.0.0" Target="WebGrease 1.3.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi 4.0.20710.0" Target="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.1.0-alpha-120809" Target="Microsoft.Net.Http 2.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.1.0-alpha-120809" Target="Newtonsoft.Json 4.5.11" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.1.0-alpha-120809" Target="Newtonsoft.Json 4.5.11" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Target="Microsoft.AspNet.WebApi.Client 4.1.0-alpha-120809" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.20710.0" Target="Microsoft.AspNet.WebApi.Core 4.0.20710.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.20710.0" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Target="jQuery 1.8.3" Category="Package Dependency" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Target="jQuery.Validation 1.10.0" Category="Package Dependency" />
+    <Link Source="NLog.Extended 2.0.0.2000" Target="NLog 2.0.0.2000" Category="Package Dependency" />
+    <Link Source="TrafficCop 0.3.1" Target="jQuery 1.8.3" Category="Package Dependency" />
+    <Link Source="WebActivator 1.5.2" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="Package Dependency" />
+    <Link Source="Web\Tateeda.Clires" Target="Autofac.Mvc3 2.6.3.862" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Autofac.Mvc4 2.6.3.862-beta" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Autofac.Wcf 2.6.3.862" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="AutoMapper 2.2.1-ci8" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="dotless 1.3.1.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="EFMembership 2.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="elmah 1.2.2" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="elmah.corelibrary 1.2.2" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="EntityFramework.Extended 1.0.0.65" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="jQuery 1.8.3" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="jquery.mobile 1.2.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="jQuery.UI.Combined 1.9.2" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="json2 1.0.2" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="KineticJS 3.9.1" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Knockout.js_External_Template_Engine 2.0.5" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Knockout.Mapping 2.3.4" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="knockoutjs 2.2.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Microsoft.AspNet.Mvc 4.0.20710.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Microsoft.AspNet.Providers.LocalDB 1.1" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Microsoft.AspNet.Razor 2.0.20715.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Microsoft.AspNet.Web.Optimization 1.0.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Microsoft.AspNet.WebApi 4.0.20710.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Microsoft.jQuery.Unobtrusive.Ajax 2.0.20710.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Microsoft.jQuery.Unobtrusive.Validation 2.0.20710.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Modernizr 2.6.2" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="MvcHtml5Templates 0.5.0.0" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Newtonsoft.Json 4.5.11" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="NLog.Extended 2.0.0.2000" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="RequireJS 2.1.1" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="Twitter.Bootstrap 2.2.1" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="WebActivator 1.5.2" Category="Installed Package" />
+    <Link Source="Web\Tateeda.Clires" Target="WebGrease 1.3.0" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

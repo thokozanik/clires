@@ -1,0 +1,57 @@
+﻿@model Tateeda.Clires.Areas.Admin.Model.Forms.QuestionViewModel
+@using System.Web.Optimization
+@{
+	ViewBag.Title = "Study Administration";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	Layout = ViewBag.Layout;
+}
+@section scripts{
+	@Scripts.Render("~/Scripts/app/Admin/StudyForms/formquestions.js")
+}
+<div class="site-title">Study Forms Management: Form Questions</div>
+
+<script type="text/javascript">
+	var parentFormId = eval(@ViewBag.parentFormId);
+</script>
+
+<form action="FormQuestions" method="post" id="frmreload">
+	@Html.HiddenFor(m => m.FormId, new { @value = @ViewBag.parentFormId })
+</form>
+
+<div class="container">
+	<div class="modal hide fade in" style="display: none; top: 40%;" id="studycontainer-modal">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal" style="width: 10px; height: 10px;" aria-hidden="true">&nbsp;X&nbsp;</a>
+			<h3>Form Question</h3>
+		</div>
+		<div class="modal-body model-border">
+			@using (@Ajax.BeginForm("CreateNewFormQuestion", null, new AjaxOptions { HttpMethod = "POST", OnSuccess = "fbq.vm.showFormSuccess", OnFailure = "fbq.vm.showFormError" }, new { @class = "form-horizontal", id = "frmnewquestion" }))
+   {               
+				<!-- ko with: fbq.vm.question() -->
+				@Html.Partial("_Question")
+				<!-- /ko -->
+   }
+		</div>
+	</div>
+
+
+	<div class="row-fluid">
+		<div class="span2">
+			<a href="#studycontainer-modal" data-toggle="modal" class="btn btn-primary" id="modellink">New Question</a>
+		</div>
+		<div class="span2">
+			<a class="btn  btn-primary" href="/admin/StudyForms" id="back2Forms">Back To Forms</a>
+		</div>
+		<div class='loadingIndicator'><i class="icon-refresh">&nbsp;</i> Loading...</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span12">
+			<h3>Form: @ViewBag.FormName</h3>
+		</div>
+	</div>
+	<div class='cliresGrid studyformgrid'>
+		<div data-bind='simpleGrid: fbq.vm.gridViewModel'></div>
+	</div>
+</div>
+
